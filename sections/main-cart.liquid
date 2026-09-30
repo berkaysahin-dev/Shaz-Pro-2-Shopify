@@ -1,16 +1,16 @@
 <section class="section-spacing">
   <div class="container-narrow">
     <div style="margin-bottom: 2.5rem; text-align: center;">
-      <h1 class="display-title">{{ 'cart.title' | t | default: 'Your Shopping Bag' }}</h1>
+      <h1 class="display-title">{{ 'cart.title' | t | default: 'Alışveriş Sepetiniz' }}</h1>
     </div>
 
     {%- if cart.item_count == 0 -%}
       <div style="text-align: center; padding: 4rem 1rem;">
         <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
-          {{ 'cart.empty' | t | default: 'Your shopping bag is currently empty.' }}
+          {{ 'cart.empty' | t | default: 'Alışveriş sepetiniz şu anda boş.' }}
         </p>
         <a href="/collections/all" class="btn btn-primary">
-          {{ 'cart.empty_cta' | t | default: 'Explore New Arrivals' }}
+          {{ 'cart.empty_cta' | t | default: 'Yeni Ürünleri Keşfet' }}
         </a>
       </div>
     {%- else -%}
@@ -41,20 +41,20 @@
                   class="form-input"
                   style="width: 60px; text-align: center; height: 40px;"
                 >
-                <a href="/cart/change?line={{ forloop.index }}&quantity=0" style="font-size: 13px; color: var(--color-text-muted); text-decoration: underline;">Remove</a>
+                <a href="/cart/change?line={{ forloop.index }}&quantity=0" style="font-size: 13px; color: var(--color-text-muted); text-decoration: underline;">Kaldır</a>
               </div>
             </div>
           {%- endfor -%}
         </div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; flex-wrap: wrap; gap: 1.5rem;">
-          <button type="submit" name="update" class="btn btn-secondary btn-sm">Update Bag</button>
+          <button type="submit" name="update" class="btn btn-secondary btn-sm">Sepeti Güncelle</button>
           <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.75rem;">
             <div style="font-size: 1.25rem; font-weight: 700;">
-              <span>Subtotal: </span><span>{{ cart.total_price | money }}</span>
+              <span>Ara Toplam: </span><span>{{ cart.total_price | money }}</span>
             </div>
             <button type="submit" name="checkout" class="btn btn-primary btn-lg">
-              {{ 'cart.checkout' | t | default: 'Proceed to Secure Checkout' }}
+              {{ 'cart.checkout' | t | default: 'Güvenli Ödemeye Geç' }}
             </button>
           </div>
         </div>
@@ -65,7 +65,12 @@
 
 {% schema %}
 {
-  "name": "Cart Page",
-  "settings": []
+  "name": "Sepet Sayfası",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Arka Plan Rengi", "default": "#FFFFFF" },
+    { "type": "color", "id": "text_color", "label": "Metin Rengi", "default": "#0B0C10" },
+    { "type": "color", "id": "btn_bg_color", "label": "Buton Arka Plan Rengi", "default": "#0B0C10" },
+    { "type": "color", "id": "btn_text_color", "label": "Buton Metin Rengi", "default": "#FFFFFF" }
+  ]
 }
 {% endschema %}

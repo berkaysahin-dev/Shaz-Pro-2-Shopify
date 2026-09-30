@@ -1,4 +1,4 @@
-<section class="sticky-story-section">
+<section class="sticky-story-section" style="background-color: {{ section.settings.bg_color | default: 'var(--color-bg)' }}; color: {{ section.settings.text_color | default: 'var(--color-text)' }};">
   <div class="container">
     <div class="sticky-story-grid">
       <!-- Sticky Media Left Column -->
@@ -19,7 +19,7 @@
             {%- else -%}
               <div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #11141A 0%, #1A1F2B 100%); color: #64748B; padding: 2rem; text-align: center; border-radius: var(--border-radius-lg); border: 1px solid rgba(255, 255, 255, 0.08);">
                 <span style="font-size: 3rem; font-weight: 800; color: var(--color-secondary); opacity: 0.6; margin-bottom: 0.5rem;">{{ block.settings.chapter_num | default: forloop.index }}</span>
-                <span style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #FFFFFF;">{{ block.settings.chapter_title | default: 'CHAPTER' }}</span>
+                <span style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #FFFFFF;">{{ block.settings.chapter_title | default: 'AŞAMA' }}</span>
                 <span style="font-size: 0.75rem; color: #94A3B8; margin-top: 0.5rem;">{{ block.settings.title }}</span>
               </div>
             {%- endif -%}
@@ -31,7 +31,7 @@
       <div class="sticky-story-steps-pane">
         {%- for block in section.blocks -%}
           <div class="sticky-story-step" data-step-index="{{ forloop.index }}" data-reveal="fade-up" {{ block.shopify_attributes }}>
-            <span class="sticky-story-counter">{{ block.settings.chapter_num | default: '01' }} &mdash; {{ block.settings.chapter_title | default: 'CHAPTER' }}</span>
+            <span class="sticky-story-counter">{{ block.settings.chapter_num | default: '01' }} &mdash; {{ block.settings.chapter_title | default: 'AŞAMA' }}</span>
             <h3 class="sticky-story-title">{{ block.settings.title }}</h3>
             <p class="sticky-story-desc">{{ block.settings.description }}</p>
             {%- if block.settings.cta_text != blank -%}
@@ -50,94 +50,107 @@
 
 {% schema %}
 {
-  "name": "Sticky Storytelling",
-  "settings": [],
+  "name": "Sabit Görselli Hikaye",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Arka Plan Rengi",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Metin Rengi",
+      "default": "#0B0C10"
+    }
+  ],
   "blocks": [
     {
       "type": "story_chapter",
-      "name": "Story Chapter",
+      "name": "Hikaye Bölümü",
       "settings": [
         {
           "type": "text",
           "id": "chapter_num",
-          "label": "Chapter Number",
+          "label": "Bölüm Numarası",
           "default": "01"
         },
         {
           "type": "text",
           "id": "chapter_title",
-          "label": "Chapter Label",
-          "default": "DESIGN"
+          "label": "Bölüm Etiketi",
+          "default": "TASARIM"
         },
         {
           "type": "text",
           "id": "title",
-          "label": "Title",
-          "default": "Architectural Geometry & Restraint"
+          "label": "Başlık",
+          "default": "Mimari Geometri ve Ergonomi"
         },
         {
           "type": "textarea",
           "id": "description",
-          "label": "Description",
-          "default": "We eliminate every superfluous ornament. Every angle is dictated by the ergonomic natural resting position of the human hand and spatial hardware."
+          "label": "Açıklama",
+          "default": "Gereksiz her türlü süslemeyi eledik. Her açı ve kavis, insan elinin ve donanımın en doğal dinlenme pozisyonuna göre şekillendirildi."
         },
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Chapter Visual Image"
+          "label": "Bölüm Görseli"
         },
         {
           "type": "text",
           "id": "cta_text",
-          "label": "CTA Link Text",
-          "default": "Explore Design Studies"
+          "label": "Buton Metni",
+          "default": "Tasarım Detaylarını Keşfet"
         },
         {
           "type": "url",
           "id": "cta_url",
-          "label": "CTA Link"
+          "label": "Buton Linki"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Sticky Storytelling",
+      "name": "Sabit Görselli Hikaye",
       "blocks": [
         {
           "type": "story_chapter",
           "settings": {
             "chapter_num": "01",
-            "chapter_title": "DESIGN",
-            "title": "Architectural Geometry & Restraint",
-            "description": "We eliminate every superfluous ornament. Every angle is dictated by the ergonomic natural resting position of the human hand."
+            "chapter_title": "TASARIM",
+            "title": "Mimari Geometri ve Ergonomi",
+            "description": "Gereksiz her türlü süslemeyi eledik. Her açı ve kavis, insan elinin ve donanımın en doğal dinlenme pozisyonuna göre şekillendirildi."
           }
         },
         {
           "type": "story_chapter",
           "settings": {
             "chapter_num": "02",
-            "chapter_title": "MATERIAL",
-            "title": "Aerospace Grade 5 Titanium",
-            "description": "Selected for its supreme strength-to-weight ratio and hypoallergenic properties. Precision-milled to 0.02mm tolerances."
+            "chapter_title": "MALZEME",
+            "title": "Havacılık Sınıfı 5. Seviye Titanyum",
+            "description": "Eşsiz mukavemet-ağırlık oranı ve hipoalerjenik özellikleri nedeniyle seçildi. 0.02 mm mikroskobik toleransla hassas olarak işlendi."
           }
         },
         {
           "type": "story_chapter",
           "settings": {
             "chapter_num": "03",
-            "chapter_title": "CRAFT",
-            "title": "Multi-Stage Hand Buffing & Satin Anodization",
-            "description": "Each surface undergoes four stages of microscopic hand finishing, creating a soft matte sheen that diffuses ambient room light."
+            "chapter_title": "İŞÇİLİK",
+            "title": "Çok Aşamalı El Polisajı & Saten Anodizasyon",
+            "description": "Her yüzey, ortam ışığını zarifçe yansıtan ipeksi mat bir doku elde etmek için dört aşamalı mikroskobik el işçiliğinden geçer."
           }
         },
         {
           "type": "story_chapter",
           "settings": {
             "chapter_num": "04",
-            "chapter_title": "EXPERIENCE",
-            "title": "Tactile Equilibrium for Modern Workspaces",
-            "description": "Engineered with integrated neodymium magnetic coupling and acoustic damping silicone pads for zero friction."
+            "chapter_title": "DENEYİM",
+            "title": "Masaüstü İçin Manyetik ve Akustik Denge",
+            "description": "Entegre neodimyum manyetik kilit ve titreşim engelleyici akustik silikon pedlerle sıfır sürtünme ve tam denge sağlar."
           }
         }
       ]

@@ -4,7 +4,7 @@
       {%- if section.settings.subtitle != blank -%}
         <div class="section-subtitle">{{ section.settings.subtitle }}</div>
       {%- endif -%}
-      <h2 class="h2">{{ section.settings.title | default: 'The Art of Micro-Finishing' }}</h2>
+      <h2 class="h2">{{ section.settings.title | default: 'Mikro İşçiliğin Sanatı' }}</h2>
       {%- if section.settings.description != blank -%}
         <p style="color: var(--color-text-muted); max-width: 600px; margin: 0.5rem auto 0;">
           {{ section.settings.description }}
@@ -16,12 +16,12 @@
     <div class="before-after-slider" data-before-after data-reveal="fade-up">
       <!-- Before Image (CNC Raw) -->
       {%- if section.settings.image_before != blank -%}
-        <img src="{{ section.settings.image_before | image_url: width: 1600 }}" alt="Raw CNC Machined" class="before-after-slider__img before-after-slider__img--before" loading="lazy">
+        <img src="{{ section.settings.image_before | image_url: width: 1600 }}" alt="Ham CNC İşleme" class="before-after-slider__img before-after-slider__img--before" loading="lazy">
       {%- else -%}
         <div class="before-after-slider__img before-after-slider__img--before" style="background: linear-gradient(135deg, #181B22 0%, #2A303C 100%); display: flex; align-items: center; justify-content: center; color: #94A3B8;">
           <div style="text-align: center;">
-            <div style="font-size: 2rem; font-weight: 700; letter-spacing: 0.1em;">RAW BILLET</div>
-            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 0.5rem; opacity: 0.7;">CNC Micro-Milled (0.02mm)</div>
+            <div style="font-size: 2rem; font-weight: 700; letter-spacing: 0.1em;">HAM BLOK</div>
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 0.5rem; opacity: 0.7;">CNC Mikro Hassas Kesim (0.02mm)</div>
           </div>
         </div>
       {%- endif -%}
@@ -29,12 +29,12 @@
       <!-- After Image (Satin Hand Buffed) -->
       <div class="before-after-slider__img--after-wrap">
         {%- if section.settings.image_after != blank -%}
-          <img src="{{ section.settings.image_after | image_url: width: 1600 }}" alt="Hand Buffed Satin" class="before-after-slider__img" loading="lazy">
+          <img src="{{ section.settings.image_after | image_url: width: 1600 }}" alt="Saten El Polisajı" class="before-after-slider__img" loading="lazy">
         {%- else -%}
           <div class="before-after-slider__img" style="background: linear-gradient(135deg, #0A0C10 0%, #151821 100%); display: flex; align-items: center; justify-content: center; color: #FFFFFF;">
             <div style="text-align: center;">
-              <div style="font-size: 2rem; font-weight: 700; letter-spacing: 0.1em; color: var(--color-secondary);">SATIN LUSTER</div>
-              <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 0.5rem; opacity: 0.7;">Hand-Buffed Anodized Finish</div>
+              <div style="font-size: 2rem; font-weight: 700; letter-spacing: 0.1em; color: var(--color-secondary);">SATEN PARLAKLIK</div>
+              <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 0.5rem; opacity: 0.7;">Dört Aşamalı El İşi Polisaj</div>
             </div>
           </div>
         {%- endif -%}
@@ -50,46 +50,46 @@
 
 {% schema %}
 {
-  "name": "Before / After Slider",
+  "name": "Öncesi / Sonrası Karşılaştırma",
   "settings": [
     {
       "type": "text",
       "id": "subtitle",
-      "label": "Subtitle",
-      "default": "Finishing Process"
+      "label": "Alt Başlık",
+      "default": "Yüzey İşleme Süreci"
     },
     {
       "type": "text",
       "id": "title",
-      "label": "Heading",
-      "default": "The Art of Micro-Finishing"
+      "label": "Başlık",
+      "default": "Mikro İşçiliğin Sanatı"
     },
     {
       "type": "textarea",
       "id": "description",
-      "label": "Description",
-      "default": "Slide to observe the meticulous transition from raw CNC-milled billet to our multi-stage hand-buffed satin finish."
+      "label": "Açıklama",
+      "default": "Ham CNC işlenmiş titanyum bloktan, çok aşamalı el polisajlı saten yüzeye geçişi görmek için kaydırın."
     },
     {
       "type": "image_picker",
       "id": "image_before",
-      "label": "Before Image (e.g. Raw Machined)"
+      "label": "Önceki Görsel (Ham Hal)"
     },
     {
       "type": "image_picker",
       "id": "image_after",
-      "label": "After Image (e.g. Hand Finished)"
+      "label": "Sonraki Görsel (İşlenmiş Hal)"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Background Color",
+      "label": "Arka Plan Rengi",
       "default": "#FFFFFF"
     }
   ],
   "presets": [
     {
-      "name": "Before / After Slider"
+      "name": "Öncesi / Sonrası Karşılaştırma"
     }
   ]
 }

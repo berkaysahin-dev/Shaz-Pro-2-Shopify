@@ -4,17 +4,187 @@
       "type": "main-product",
       "settings": {}
     },
+    "product_showcase": {
+      "type": "product-showcase",
+      "settings": {
+        "badge": "Mühendislik Standartları",
+        "heading": "Tavizsiz Mikro Toleranslar.",
+        "description": "Yekpare 5. seviye titanyum külçeden CNC ile işlenen her bir yüzey ve kavis, 0.02 mm mikroskobik hassasiyetle el işçiliğiyle tamamlanmıştır.",
+        "spec_1_val": "Grade 5",
+        "spec_1_label": "Havacılık Titanyumu",
+        "spec_2_val": "0.02 mm",
+        "spec_2_label": "CNC Frezeleme Hassasiyeti",
+        "spec_3_val": "%100",
+        "spec_3_label": "Monolitik Özel Kutu",
+        "spec_4_val": "Ömür Boyu",
+        "spec_4_label": "Yapısal Garanti",
+        "cta_text": "Sepete Ekle",
+        "cta_url": "#MainProductForm",
+        "bg_color": "#F8F9FA"
+      }
+    },
+    "product_specs": {
+      "type": "product-specs",
+      "blocks": {
+        "spec_1": {
+          "type": "spec_item",
+          "settings": {
+            "icon": "layers",
+            "title": "Havacılık Sınıfı Titanyum",
+            "description": "Yekpare Grade 5 Ti-6Al-4V külçeden CNC ile işlenmiş gövde. Maksimum mukavemet ve hafiflik sunar."
+          }
+        },
+        "spec_2": {
+          "type": "spec_item",
+          "settings": {
+            "icon": "cpu",
+            "title": "0.02 mm CNC Hassasiyeti",
+            "description": "Çok eksenli CNC frezeleme ile mikroskobik toleranslarda kusursuz kenar ve kavis birleşimleri."
+          }
+        },
+        "spec_3": {
+          "type": "spec_item",
+          "settings": {
+            "icon": "zap",
+            "title": "N52 Manyetik Kilit",
+            "description": "Entegre neodimyum mıknatıslar ile cihazınızı sarsıntısız, tam dengede ve anında kavrar."
+          }
+        },
+        "spec_4": {
+          "type": "spec_item",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Akustik Silikon Taban",
+            "description": "Masanızda sıfır kayma ve mikro titreşimleri emen özel akustik sönümleme yüzeyi."
+          }
+        },
+        "spec_5": {
+          "type": "spec_item",
+          "settings": {
+            "icon": "package",
+            "title": "Özel Kutu İçeriği",
+            "description": "Monolitik lüks koruma kutusu, mikrofiber temizleme bezi ve orijinal seri numaralı sertifika."
+          }
+        },
+        "spec_6": {
+          "type": "spec_item",
+          "settings": {
+            "icon": "award",
+            "title": "Ömür Boyu Yapısal Garanti",
+            "description": "Bozulmaz ve eskimez malzeme kalitesiyle 2 yıl resmi garanti ve ömür boyu gövde güvencesi."
+          }
+        }
+      },
+      "block_order": [
+        "spec_1",
+        "spec_2",
+        "spec_3",
+        "spec_4",
+        "spec_5",
+        "spec_6"
+      ],
+      "settings": {
+        "subtitle": "MÜHENDİSLİK STANDARTLARI",
+        "title": "Teknik Detaylar & Özellikler",
+        "description": "Her bir milimetre, olağanüstü performans ve zarif masaüstü dengesi için mikroskobik hassasiyetle hesaplanmıştır.",
+        "show_table": true,
+        "table_title": "Teknik Özellikler Matrisi",
+        "bg_color": "#FFFFFF"
+      }
+    },
+    "interactive_hotspots": {
+      "type": "interactive-hotspots",
+      "blocks": {
+        "spot_1": {
+          "type": "hotspot",
+          "settings": {
+            "title": "N52 Manyetik Kilit Alanı",
+            "pos_x": 38,
+            "pos_y": 42
+          }
+        },
+        "spot_2": {
+          "type": "hotspot",
+          "settings": {
+            "title": "Akustik Silikon Ped & Ağırlık Merkezi",
+            "pos_x": 62,
+            "pos_y": 68
+          }
+        }
+      },
+      "block_order": [
+        "spot_1",
+        "spot_2"
+      ],
+      "settings": {
+        "subtitle": "İnteraktif İnceleme",
+        "title": "Tasarım & Fonksiyon Odak Noktaları",
+        "bg_color": "#F8F9FA"
+      }
+    },
+    "sticky_story": {
+      "type": "sticky-storytelling",
+      "blocks": {
+        "chap_1": {
+          "type": "story_chapter",
+          "settings": {
+            "chapter_num": "01",
+            "chapter_title": "TASARIM",
+            "title": "Mimari Geometri ve Ergonomi",
+            "description": "Gereksiz her türlü süslemeyi eledik. Her açı ve kavis, insan elinin ve donanımın en doğal dinlenme pozisyonuna göre şekillendirildi."
+          }
+        },
+        "chap_2": {
+          "type": "story_chapter",
+          "settings": {
+            "chapter_num": "02",
+            "chapter_title": "MALZEME",
+            "title": "Havacılık Sınıfı 5. Seviye Titanyum",
+            "description": "Eşsiz mukavemet-ağırlık oranı ve hipoalerjenik özellikleri nedeniyle seçildi. 0.02 mm mikroskobik toleransla hassas olarak işlendi."
+          }
+        },
+        "chap_3": {
+          "type": "story_chapter",
+          "settings": {
+            "chapter_num": "03",
+            "chapter_title": "İŞÇİLİK",
+            "title": "Çok Aşamalı El Polisajı & Saten Anodizasyon",
+            "description": "Her yüzey, ortam ışığını zarifçe yansıtan ipeksi mat bir doku elde etmek için dört aşamalı mikroskobik el işçiliğinden geçer."
+          }
+        },
+        "chap_4": {
+          "type": "story_chapter",
+          "settings": {
+            "chapter_num": "04",
+            "chapter_title": "DENEYİM",
+            "title": "Masaüstü İçin Manyetik ve Akustik Denge",
+            "description": "Entegre neodimyum manyetik kilit ve titreşim engelleyici akustik silikon pedlerle sıfır sürtünme ve tam denge sağlar."
+          }
+        }
+      },
+      "block_order": [
+        "chap_1",
+        "chap_2",
+        "chap_3",
+        "chap_4"
+      ],
+      "settings": {}
+    },
     "faq": {
       "type": "faq-accordion",
       "settings": {
-        "subtitle": "Product Inquiries",
-        "title": "Frequently Inquired Details",
+        "subtitle": "Sıkça Sorulan Sorular",
+        "title": "Ürün Hakkında Merak Edilenler",
         "bg_color": "#FFFFFF"
       }
     }
   },
   "order": [
     "main",
+    "product_showcase",
+    "product_specs",
+    "interactive_hotspots",
+    "sticky_story",
     "faq"
   ]
 }

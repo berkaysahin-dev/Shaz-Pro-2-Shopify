@@ -3,11 +3,11 @@
     "editorial_story": {
       "type": "editorial-story",
       "settings": {
-        "subtitle": "Origin & Manifesto",
-        "title": "Architectural Restraint. Pure Materiality.",
-        "quote": "We craft enduring spatial objects that bring tactile serenity to modern technological life.",
-        "body_text": "Founded in Milan with engineering studios in Tokyo, Atelier was born from a desire to strip away superficial noise and focus purely on materials, micro-tolerances, and human proportion.",
-        "cta_text": "Explore Our Catalog",
+        "subtitle": "Köken & Manifesto",
+        "title": "Mimari Denge. Saf Malzeme.",
+        "quote": "Modern teknolojik yaşama dokunsal bir huzur getiren, kalıcı mekânsal nesneler üretiyoruz.",
+        "body_text": "Milano'da tasarım ve Tokyo'da mühendislik stüdyolarıyla kurulan Atelier, yüzeysel gürültüyü eleyerek yalnızca malzeme, mikro toleranslar ve insan oranlarına odaklanma arzusundan doğdu.",
+        "cta_text": "Koleksiyonu Keşfet",
         "cta_url": "/collections/all",
         "bg_color": "#FFFFFF"
       }
@@ -16,10 +16,10 @@
       "type": "image-with-text",
       "settings": {
         "layout": "image_right",
-        "subheading": "Bespoke Metallurgy",
-        "heading": "Aerospace Grade 5 Titanium",
-        "text": "Every pedestal and housing is CNC-machined from solid billet titanium with 0.02mm tolerances, followed by multi-pass hand polishing and satin bead-blasting.",
-        "button_label": "Discover Series 02",
+        "subheading": "Özel Metalürji",
+        "heading": "Havacılık Sınıfı 5. Seviye Titanyum",
+        "text": "Her ayak ve gövde, yekpare titanyum bloktan 0.02mm toleransla CNC ile işlenir, ardından çok aşamalı el polisajı ve saten boncuk-kumlama uygulanır.",
+        "button_label": "Seri 02'yi Keşfet",
         "button_link": "/collections/all",
         "bg_color": "#F8F9FA"
       }
@@ -27,25 +27,25 @@
     "before_after": {
       "type": "before-after",
       "settings": {
-        "subtitle": "Process & Craft",
-        "title": "From Raw Ingot to Architectural Pedestal",
-        "description": "Slide to observe the difference between raw CNC-milled metal and our proprietary satin hand finish.",
+        "subtitle": "Süreç & Zanaatkârlık",
+        "title": "Ham Külçeden Mimari Ayağa",
+        "description": "Ham CNC frezelenmiş metal ile tescilli saten el işçiliğimiz arasındaki farkı görmek için kaydırın.",
         "bg_color": "#FFFFFF"
       }
     },
     "brand_logos": {
       "type": "brand-logos",
       "settings": {
-        "title": "ACCLAIMED ACROSS INTERNATIONAL ARCHITECTURAL MEDIA",
+        "title": "ULUSLARARASI MİMARLIK MEDYASINDA ÖDÜLLÜ",
         "bg_color": "#F8F9FA"
       }
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "badge": "Atelier Monograph",
-        "title": "Join the Atelier Society",
-        "subtitle": "Receive private invitations, seasonal preview catalogs, and editorial design perspectives.",
+        "badge": "Shaz Pro Bülten",
+        "title": "Shaz Pro Topluluğuna Katılın",
+        "subtitle": "Özel davetiyeler, mevsimlik ön izleme katalogları ve editoryal tasarım perspektifleri alın.",
         "bg_color": "#FFFFFF"
       }
     }

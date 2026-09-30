@@ -16,14 +16,17 @@
     </div>
 
     <div style="margin-top: var(--space-2xl); padding-top: 1.5rem; border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
-      <a href="{{ blog.url }}" class="btn btn-secondary btn-sm">← Back to {{ blog.title }}</a>
+      <a href="{{ blog.url }}" class="btn btn-secondary btn-sm">← Geri: {{ blog.title }}</a>
     </div>
   </div>
 </article>
 
 {% schema %}
 {
-  "name": "Article Monograph",
-  "settings": []
+  "name": "Blog Yazısı",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Arka Plan Rengi", "default": "#FFFFFF" },
+    { "type": "color", "id": "text_color", "label": "Metin Rengi", "default": "#0B0C10" }
+  ]
 }
 {% endschema %}

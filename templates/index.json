@@ -7,13 +7,13 @@
         "height_mobile": 90,
         "overlay_opacity": 45,
         "text_alignment": "left",
-        "badge": "Series 02 Edition",
-        "heading": "Architectural Form.\nPure Function.",
-        "subheading": "Explore a considered collection of minimalist luxury accessories, spatial audio pedestals, and precision-machined titanium hardware.",
-        "primary_cta_text": "Explore Series 02",
+        "badge": "Lansmana Özel Seri",
+        "heading": "Mekânsal Mükemmellik.\nKusursuz Mühendislik.",
+        "subheading": "Havacılık sınıfı 5. seviye titanyum bloktan üretilen, manyetik kilitli ve akustik sönümlemeli tekil başyapıt. Çalışma alanınıza benzersiz bir estetik ve fonksiyon kazandırın.",
+        "primary_cta_text": "Hemen Satın Al",
         "primary_cta_url": "/collections/all",
-        "secondary_cta_text": "Our Craft Monograph",
-        "secondary_cta_url": "/pages/about"
+        "secondary_cta_text": "Özellikleri İncele",
+        "secondary_cta_url": "#product-details"
       }
     },
     "marquee_1": {
@@ -21,26 +21,31 @@
       "blocks": {
         "item_1": {
           "type": "marquee_item",
-          "settings": { "text": "VISION SH — FORM / FUNCTION / FUTURE" }
+          "settings": { "text": "SHAZ PRO — FORM / FONKSİYON / GELECEK" }
         },
         "item_2": {
           "type": "marquee_item",
-          "settings": { "text": "AEROSPACE GRADE 5 TITANIUM BILLET" }
+          "settings": { "text": "HAVACILIK SINIFI 5. SEVİYE TİTANYUM BLOK" }
         },
         "item_3": {
           "type": "marquee_item",
-          "settings": { "text": "COMPLIMENTARY WORLDWIDE EXPRESS DISPATCH" }
+          "settings": { "text": "AYNI GÜN ÜCRETSİZ VIP EXPRESS KARGO" }
         },
         "item_4": {
           "type": "marquee_item",
-          "settings": { "text": "LIMITED 500-UNIT GLOBAL NUMBERED PRODUCTION" }
+          "settings": { "text": "0.02 MM CNC MİKRO HASSASİYET" }
+        },
+        "item_5": {
+          "type": "marquee_item",
+          "settings": { "text": "%100 ÖMÜR BOYU YAPISAL GARANTİ" }
         }
       },
       "block_order": [
         "item_1",
         "item_2",
         "item_3",
-        "item_4"
+        "item_4",
+        "item_5"
       ],
       "settings": {
         "direction": "normal",
@@ -50,25 +55,62 @@
         "text_color": "#FFFFFF"
       }
     },
-    "horizontal_rail": {
-      "type": "horizontal-rail",
+    "featured_product": {
+      "type": "featured-product",
       "settings": {
-        "subtitle": "Curated Signature Series",
-        "title": "Precision Spatial Pedestals",
-        "products_to_show": 6,
+        "eyebrow": "AMİRAL GEMİSİ LANSMANI",
+        "heading": "Mekânsal Titanyum Stand",
+        "short_description": "Havacılık sınıfı 5. seviye titanyum bloktan mikroskobik toleransla üretilmiş, manyetik kilitli ve akustik sönümlemeli tekil başyapıt.",
         "bg_color": "#FFFFFF"
       }
     },
-    "editorial_story": {
-      "type": "editorial-story",
+    "product_showcase": {
+      "type": "product-showcase",
       "settings": {
-        "subtitle": "Design Philosophy",
-        "title": "Where Architectural Restraint Meets Tactile Luxury.",
-        "quote": "We do not build ordinary accessories. We craft timeless spatial artifacts designed to elevate the human touch.",
-        "body_text": "Founded in Milan with engineering studios in Tokyo, Vision SH operates on the conviction that digital tools should exist in total aesthetic harmony with refined physical environments.",
-        "cta_text": "Read the Vision SH Monograph",
-        "cta_url": "/pages/about",
+        "badge": "Mühendislik Odağı",
+        "heading": "Tavizsiz Mikro Toleranslar.",
+        "description": "Yekpare 5. seviye titanyum külçeden CNC ile işlenen her bir yüzey ve kavis, 0.02 mm mikroskobik hassasiyetle el işçiliğiyle tamamlanmıştır.",
+        "spec_1_val": "Grade 5",
+        "spec_1_label": "Havacılık Titanyumu",
+        "spec_2_val": "0.02 mm",
+        "spec_2_label": "CNC Frezeleme Hassasiyeti",
+        "spec_3_val": "%100",
+        "spec_3_label": "Geri Dönüştürülebilir Özel Kutu",
+        "spec_4_val": "Ömür Boyu",
+        "spec_4_label": "Yapısal Garanti",
+        "cta_text": "Ürünü Satın Al",
+        "cta_url": "/collections/all",
         "bg_color": "#F8F9FA"
+      }
+    },
+    "interactive_hotspots": {
+      "type": "interactive-hotspots",
+      "blocks": {
+        "spot_1": {
+          "type": "hotspot",
+          "settings": {
+            "title": "N52 Neodimyum Manyetik Kilit",
+            "pos_x": 38,
+            "pos_y": 42
+          }
+        },
+        "spot_2": {
+          "type": "hotspot",
+          "settings": {
+            "title": "Akustik Silikon Titreşim Sönümleyici Taban",
+            "pos_x": 62,
+            "pos_y": 68
+          }
+        }
+      },
+      "block_order": [
+        "spot_1",
+        "spot_2"
+      ],
+      "settings": {
+        "subtitle": "İnteraktif Ürün Anatomisi",
+        "title": "Detaylı Mimari İnceleme",
+        "bg_color": "#FFFFFF"
       }
     },
     "sticky_story": {
@@ -78,36 +120,36 @@
           "type": "story_chapter",
           "settings": {
             "chapter_num": "01",
-            "chapter_title": "DESIGN",
-            "title": "Architectural Geometry & Restraint",
-            "description": "We eliminate every superfluous ornament. Every angle is dictated by the ergonomic natural resting position of the human hand and spatial computing hardware."
+            "chapter_title": "TASARIM",
+            "title": "Mimari Geometri ve Ergonomi",
+            "description": "Gereksiz her türlü süslemeyi eledik. Her açı ve kavis, insan elinin ve donanımın en doğal dinlenme pozisyonuna göre şekillendirildi."
           }
         },
         "chap_2": {
           "type": "story_chapter",
           "settings": {
             "chapter_num": "02",
-            "chapter_title": "MATERIAL",
-            "title": "Aerospace Grade 5 Titanium",
-            "description": "Selected for its supreme strength-to-weight ratio and hypoallergenic properties. Precision-milled to 0.02mm microscopic tolerances."
+            "chapter_title": "MALZEME",
+            "title": "Havacılık Sınıfı 5. Seviye Titanyum",
+            "description": "Eşsiz mukavemet-ağırlık oranı ve hipoalerjenik özellikleri nedeniyle seçildi. 0.02 mm mikroskobik toleransla hassas olarak işlendi."
           }
         },
         "chap_3": {
           "type": "story_chapter",
           "settings": {
             "chapter_num": "03",
-            "chapter_title": "CRAFT",
-            "title": "Multi-Stage Hand Buffing & Satin Anodization",
-            "description": "Each surface undergoes four stages of microscopic hand finishing, creating a soft matte sheen that diffuses ambient room light with subtle grace."
+            "chapter_title": "İŞÇİLİK",
+            "title": "Çok Aşamalı El Polisajı & Saten Anodizasyon",
+            "description": "Her yüzey, ortam ışığını zarifçe yansıtan ipeksi mat bir doku elde etmek için dört aşamalı mikroskobik el işçiliğinden geçer."
           }
         },
         "chap_4": {
           "type": "story_chapter",
           "settings": {
             "chapter_num": "04",
-            "chapter_title": "EXPERIENCE",
-            "title": "Tactile Equilibrium for Modern Workspaces",
-            "description": "Engineered with integrated neodymium magnetic coupling and acoustic damping silicone pads for zero friction and permanent stability."
+            "chapter_title": "DENEYİM",
+            "title": "Masaüstü İçin Manyetik ve Akustik Denge",
+            "description": "Entegre neodimyum manyetik kilit ve titreşim engelleyici akustik silikon pedlerle sıfır sürtünme ve tam denge sağlar."
           }
         }
       },
@@ -119,76 +161,81 @@
       ],
       "settings": {}
     },
-    "product_showcase": {
-      "type": "product-showcase",
-      "settings": {
-        "badge": "Engineering Spotlight",
-        "heading": "Uncompromising Micro-Tolerances.",
-        "description": "Machined from a monolithic billet of Grade 5 titanium, every bevel and surface is hand-finished to microscopic precision.",
-        "spec_1_val": "Grade 5",
-        "spec_1_label": "Aerospace Titanium",
-        "spec_2_val": "0.02 mm",
-        "spec_2_label": "CNC Milling Precision",
-        "spec_3_val": "100%",
-        "spec_3_label": "Recycled Monolith Box",
-        "spec_4_val": "Lifetime",
-        "spec_4_label": "Structural Guarantee",
-        "cta_text": "Acquire the Edition",
-        "cta_url": "/collections/all",
-        "bg_color": "#F8F9FA"
-      }
-    },
     "cinematic_banner": {
       "type": "cinematic-banner",
       "settings": {
         "height": 80,
         "overlay_opacity": 50,
-        "eyebrow": "THE MONOLITH PHILOSOPHY",
-        "heading": "Pure Materiality.\nZero Compromise.",
-        "subheading": "Every piece is manufactured under ISO-certified microscopic tolerances, creating timeless artifacts that endure across decades of daily use.",
-        "cta_1_text": "Explore All Creations",
+        "eyebrow": "MONOLİTİK TASARIM FELSEFESİ",
+        "heading": "Saf Materyal.\nSıfır Taviz.",
+        "subheading": "Her parça, ISO sertifikalı mikroskobik toleranslarla üretilerek onlarca yıllık günlük kullanımda bile formunu koruyan zamansız bir sanat eserine dönüşür.",
+        "cta_1_text": "Ürünü Keşfet & Satın Al",
         "cta_1_url": "/collections/all",
-        "cta_2_text": "Read the Manifesto",
+        "cta_2_text": "Tasarım Hikayesi",
         "cta_2_url": "/pages/about"
       }
     },
-    "before_after": {
-      "type": "before-after",
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "rev_1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Titanyum standın ağırlığı, mikron hassasiyeti ve dokunsal hissi bugüne kadar sahip olduğum tüm aksesuarların çok ötesinde. Masamda adeta mimari bir heykel gibi duruyor.",
+            "author": "Caner V.",
+            "role": "Endüstriyel Tasarımcı, İstanbul",
+            "verified": true
+          }
+        },
+        "rev_2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Detaylara gösterilen özen olağanüstü. Kutusunu açtığım andan itibaren birinci sınıf bir lüks deneyimi hissettiriyor. Kesinlikle tavsiye ederim.",
+            "author": "Selin R.",
+            "role": "Kreatif Direktör, İzmir",
+            "verified": true
+          }
+        },
+        "rev_3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Monolitik titanyum gövde ve manyetik kilit mekanizması kusursuz çalışıyor. Kargo 24 saat içinde kapımdaydı.",
+            "author": "Kemal T.",
+            "role": "Mimar, Ankara",
+            "verified": true
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3"
+      ],
       "settings": {
-        "subtitle": "Finishing Process",
-        "title": "The Art of Micro-Finishing",
-        "description": "Slide to observe the meticulous transition from raw CNC-milled billet to our multi-stage hand-buffed satin finish.",
-        "bg_color": "#F8F9FA"
-      }
-    },
-    "faq": {
-      "type": "faq-accordion",
-      "settings": {
-        "subtitle": "Client Concierge",
-        "title": "Frequently Inquired Details",
-        "bg_color": "#F8F9FA"
+        "subtitle": "Kullanıcı Deneyimleri",
+        "title": "Tasarımcılar ve Patronlar Tarafından Onaylandı",
+        "bg_color": "#FFFFFF"
       }
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "badge": "The Vision SH Dispatch",
-        "title": "Join the Vision SH Society",
-        "subtitle": "Receive private invitations, seasonal preview catalogs, and editorial design perspectives.",
-        "bg_color": "#FFFFFF"
+        "badge": "Shaz Pro VIP Kulübü",
+        "title": "Ayrıcalıklı Bültene Katılın",
+        "subtitle": "Özel lansman davetiyeleri, sınırlı üretim duyuruları ve teknik tasarım perspektifleri için kaydolun.",
+        "bg_color": "#F8F9FA"
       }
     }
   },
   "order": [
     "hero",
     "marquee_1",
-    "horizontal_rail",
-    "editorial_story",
-    "sticky_story",
+    "featured_product",
     "product_showcase",
+    "interactive_hotspots",
+    "sticky_story",
     "cinematic_banner",
-    "before_after",
-    "faq",
+    "testimonials",
     "newsletter"
   ]
 }

@@ -4,7 +4,7 @@
       {%- if section.settings.subtitle != blank -%}
         <div class="section-subtitle">{{ section.settings.subtitle }}</div>
       {%- endif -%}
-      <h2 class="h2">{{ section.settings.title | default: 'Acclaimed by Patrons & Designers' }}</h2>
+      <h2 class="h2">{{ section.settings.title | default: 'Tasarımcılar ve Patronlar Tarafından Onaylandı' }}</h2>
     </div>
 
     <div class="testimonials-grid">
@@ -16,17 +16,17 @@
             {%- endfor -%}
           </div>
           <p class="testimonial-card__quote">
-            "{{ block.settings.quote | default: 'The weight, tolerance, and tactile feel of the titanium stand is superior to any tech accessory I have owned. It feels like an architectural sculpture.' }}"
+            "{{ block.settings.quote | default: 'Titanyum standın ağırlığı, mikron hassasiyeti ve dokunsal hissi bugüne kadar sahip olduğum tüm aksesuarların çok ötesinde. Masamda adeta mimari bir heykel gibi duruyor.' }}"
           </p>
           <div class="testimonial-card__author">
             <div>
-              <div class="testimonial-card__name">{{ block.settings.author | default: 'Marcus Vance' }}</div>
-              <div class="text-muted" style="font-size: 11px;">{{ block.settings.role | default: 'Industrial Designer, London' }}</div>
+              <div class="testimonial-card__name">{{ block.settings.author | default: 'Caner V.' }}</div>
+              <div class="text-muted" style="font-size: 11px;">{{ block.settings.role | default: 'Endüstriyel Tasarımcı, İstanbul' }}</div>
             </div>
             {%- if block.settings.verified -%}
               <div class="testimonial-card__verified">
                 {% render 'icon', icon: 'shield-check' %}
-                <span>Verified Patron</span>
+                <span>Doğrulanmış Müşteri</span>
               </div>
             {%- endif -%}
           </div>
@@ -38,54 +38,54 @@
 
 {% schema %}
 {
-  "name": "Testimonials & Reviews",
+  "name": "Müşteri Yorumları",
   "settings": [
     {
       "type": "text",
       "id": "subtitle",
-      "label": "Subtitle",
-      "default": "Patron Perspective"
+      "label": "Alt Başlık",
+      "default": "Kullanıcı Deneyimleri"
     },
     {
       "type": "text",
       "id": "title",
-      "label": "Heading",
-      "default": "Acclaimed by Patrons & Designers"
+      "label": "Başlık",
+      "default": "Tasarımcılar ve Patronlar Tarafından Onaylandı"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Background Color",
+      "label": "Arka Plan Rengi",
       "default": "#FFFFFF"
     }
   ],
   "blocks": [
     {
       "type": "testimonial",
-      "name": "Review Card",
+      "name": "Yorum Kartı",
       "settings": [
         {
           "type": "textarea",
           "id": "quote",
-          "label": "Customer Review / Quote",
-          "default": "The weight, tolerance, and tactile feel of the titanium stand is superior to any tech accessory I have owned. It feels like an architectural sculpture on my desk."
+          "label": "Kullanıcı Yorumu",
+          "default": "Titanyum standın ağırlığı, mikron hassasiyeti ve dokunsal hissi bugüne kadar sahip olduğum tüm aksesuarların çok ötesinde. Masamda adeta mimari bir heykel gibi duruyor."
         },
         {
           "type": "text",
           "id": "author",
-          "label": "Author Name",
-          "default": "Marcus Vance"
+          "label": "İsim",
+          "default": "Caner V."
         },
         {
           "type": "text",
           "id": "role",
-          "label": "Location or Title",
-          "default": "Industrial Designer, London"
+          "label": "Unvan / Şehir",
+          "default": "Endüstriyel Tasarımcı, İstanbul"
         },
         {
           "type": "checkbox",
           "id": "verified",
-          "label": "Verified Buyer Badge",
+          "label": "Doğrulanmış Alıcı Rozeti",
           "default": true
         }
       ]
@@ -93,30 +93,33 @@
   ],
   "presets": [
     {
-      "name": "Testimonials & Reviews",
+      "name": "Müşteri Yorumları",
       "blocks": [
         {
           "type": "testimonial",
           "settings": {
-            "quote": "The weight, tolerance, and tactile feel of the titanium stand is superior to any tech accessory I have owned. It feels like an architectural sculpture.",
-            "author": "Marcus Vance",
-            "role": "Industrial Designer, London"
+            "quote": "Titanyum standın ağırlığı, mikron hassasiyeti ve dokunsal hissi bugüne kadar sahip olduğum tüm aksesuarların çok ötesinde. Masamda adeta mimari bir heykel gibi duruyor.",
+            "author": "Caner V.",
+            "role": "Endüstriyel Tasarımcı, İstanbul",
+            "verified": true
           }
         },
         {
           "type": "testimonial",
           "settings": {
-            "quote": "Remarkable attention to detail. The French calfskin strap has aged beautifully with a deep rich patina. Exceptional luxury experience.",
-            "author": "Elena Rostova",
-            "role": "Creative Director, Milan"
+            "quote": "Detaylara gösterilen özen olağanüstü. Kutusunu açtığım andan itibaren birinci sınıf bir lüks deneyimi hissettiriyor. Kesinlikle tavsiye ederim.",
+            "author": "Selin R.",
+            "role": "Kreatif Direktör, İzmir",
+            "verified": true
           }
         },
         {
           "type": "testimonial",
           "settings": {
-            "quote": "Unboxing the monolithic case felt like unveiling an art piece. Delivery was seamless and arrived in Tokyo within 48 hours.",
-            "author": "Kenji Takahashi",
-            "role": "Architect, Tokyo"
+            "quote": "Monolitik titanyum gövde ve manyetik kilit mekanizması kusursuz çalışıyor. Kargo 24 saat içinde kapımdaydı.",
+            "author": "Kemal T.",
+            "role": "Mimar, Ankara",
+            "verified": true
           }
         }
       ]

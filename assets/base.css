@@ -5,17 +5,17 @@
 
 :root {
   /* Dynamic Color Palette */
-  --color-primary: {{ settings.color_primary | default: '#0F1115' }};
-  --color-secondary: {{ settings.color_secondary | default: '#C6A87D' }};
-  --color-background: {{ settings.color_background | default: '#FFFFFF' }};
-  --color-surface: {{ settings.color_surface | default: '#F8F9FA' }};
-  --color-text: {{ settings.color_text | default: '#111827' }};
-  --color-text-muted: {{ settings.color_text_muted | default: '#64748B' }};
-  --color-border: {{ settings.color_border | default: '#E2E8F0' }};
-  --color-sale: {{ settings.color_sale | default: '#E11D48' }};
-  --color-stock-success: {{ settings.color_stock_success | default: '#10B981' }};
-  --color-button-bg: {{ settings.color_button_bg | default: '#0F1115' }};
-  --color-button-text: {{ settings.color_button_text | default: '#FFFFFF' }};
+  --color-primary: #0B0C10;
+  --color-secondary: #6366F1;
+  --color-background: #FFFFFF;
+  --color-surface: #F8F9FA;
+  --color-text: #0B0C10;
+  --color-text-muted: #64748B;
+  --color-border: #E2E8F0;
+  --color-sale: #DC2626;
+  --color-stock-success: #16A34A;
+  --color-button-bg: #0B0C10;
+  --color-button-text: #FFFFFF;
 
   /* Elevation & Shadows */
   --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
@@ -24,8 +24,8 @@
   --shadow-drawer: -12px 0 40px rgba(0, 0, 0, 0.16);
 
   /* Geometry & Layout */
-  --container-max-width: {{ settings.container_max_width | default: 1440 }}px;
-  --border-radius: {{ settings.border_radius | default: 6 }}px;
+  --container-max-width: 1440px;
+  --border-radius: 6px;
   --border-radius-sm: calc(var(--border-radius) * 0.5);
   --border-radius-lg: calc(var(--border-radius) * 1.6);
   --border-radius-pill: 9999px;
@@ -42,7 +42,7 @@
   /* Typography Scale */
   --font-family-heading: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --font-family-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  --heading-letter-spacing: {{ settings.heading_letter_spacing | default: '-0.02em' }};
+  --heading-letter-spacing: -0.02em;
 
   --font-size-display: clamp(3rem, 2.2rem + 4vw, 5.75rem);
   --font-size-h1: clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem);

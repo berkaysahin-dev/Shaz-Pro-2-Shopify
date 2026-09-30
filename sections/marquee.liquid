@@ -13,15 +13,15 @@
 
 {% schema %}
 {
-  "name": "Marquee Statement",
+  "name": "Kayan Kayan Metin (Marquee)",
   "settings": [
     {
       "type": "select",
       "id": "direction",
-      "label": "Scroll Direction",
+      "label": "Kayma Yönü",
       "options": [
-        { "value": "normal", "label": "Left to Right" },
-        { "value": "reverse", "label": "Right to Left" }
+        { "value": "normal", "label": "Soldan Sağa" },
+        { "value": "reverse", "label": "Sağdan Sola" }
       ],
       "default": "normal"
     },
@@ -32,50 +32,51 @@
       "max": 60,
       "step": 2,
       "unit": "s",
-      "label": "Animation Duration (Speed)",
+      "label": "Animasyon Hızı (Süre)",
       "default": 24
     },
     {
       "type": "text",
       "id": "divider",
-      "label": "Divider Symbol",
+      "label": "Ayırıcı Sembol",
       "default": "✦"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Background Color",
+      "label": "Arka Plan Rengi",
       "default": "#0F1115"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Text Color",
+      "label": "Yazı Rengi",
       "default": "#FFFFFF"
     }
   ],
   "blocks": [
     {
       "type": "marquee_item",
-      "name": "Statement Item",
+      "name": "Kayan Metin Öğesi",
       "settings": [
         {
           "type": "text",
           "id": "text",
-          "label": "Brand Statement",
-          "default": "VISION SH — FORM / FUNCTION / FUTURE"
+          "label": "Vurgu Metni",
+          "default": "SHAZ PRO — FORM / FONKSİYON / GELECEK"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Marquee Statement",
+      "name": "Kayan Metin (Marquee)",
       "blocks": [
-        { "type": "marquee_item", "settings": { "text": "VISION SH — FORM / FUNCTION / FUTURE" } },
-        { "type": "marquee_item", "settings": { "text": "AEROSPACE GRADE 5 TITANIUM BILLET" } },
-        { "type": "marquee_item", "settings": { "text": "COMPLIMENTARY WORLDWIDE EXPRESS DISPATCH" } },
-        { "type": "marquee_item", "settings": { "text": "LIMITED 500-UNIT GLOBAL PRODUCTION" } }
+        { "type": "marquee_item", "settings": { "text": "SHAZ PRO — FORM / FONKSİYON / GELECEK" } },
+        { "type": "marquee_item", "settings": { "text": "HAVACILIK SINIFI 5. SEVİYE TİTANYUM BLOK" } },
+        { "type": "marquee_item", "settings": { "text": "AYNI GÜN ÜCRETSİZ VIP EXPRESS KARGO" } },
+        { "type": "marquee_item", "settings": { "text": "0.02 MM CNC MİKRO HASSASİYET" } },
+        { "type": "marquee_item", "settings": { "text": "%100 ÖMÜR BOYU YAPISAL GARANTİ" } }
       ]
     }
   ]

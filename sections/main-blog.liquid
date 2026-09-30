@@ -3,8 +3,8 @@
 <section class="section-spacing">
   <div class="container">
     <div style="margin-bottom: var(--space-2xl); text-align: center;">
-      <span class="text-uppercase text-muted">Editorial Perspectives</span>
-      <h1 class="display-title" style="margin: 0.25rem 0 0.5rem;">{{ blog.title | default: 'The Atelier Journal' }}</h1>
+      <span class="text-uppercase text-muted">Blog Yazıları</span>
+      <h1 class="display-title" style="margin: 0.25rem 0 0.5rem;">{{ blog.title | default: 'Blog' }}</h1>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem;">
@@ -23,7 +23,7 @@
             <p style="color: var(--color-text-muted); font-size: 14px; line-height: 1.6;">
               {{ article.excerpt_or_content | strip_html | truncatewords: 24 }}
             </p>
-            <a href="{{ article.url }}" style="font-size: 13px; font-weight: 600; text-decoration: underline; margin-top: 0.5rem; display: inline-block;">Read Monograph →</a>
+            <a href="{{ article.url }}" style="font-size: 13px; font-weight: 600; text-decoration: underline; margin-top: 0.5rem; display: inline-block;">Yazıyı Oku →</a>
           </div>
         </article>
       {%- endfor -%}
@@ -37,7 +37,11 @@
 
 {% schema %}
 {
-  "name": "Blog Journal",
-  "settings": []
+  "name": "Blog Sayfası",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Arka Plan Rengi", "default": "#FFFFFF" },
+    { "type": "color", "id": "text_color", "label": "Metin Rengi", "default": "#0B0C10" },
+    { "type": "color", "id": "card_bg_color", "label": "Kart Arka Plan Rengi", "default": "#F8F9FA" }
+  ]
 }
 {% endschema %}

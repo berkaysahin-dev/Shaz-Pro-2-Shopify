@@ -1,32 +1,42 @@
 {
-  "name": "Footer Group",
+  "name": "Alt Bilgi Grubu (Footer)",
   "type": "footer",
   "sections": {
+    "section_divider_footer": {
+      "type": "section-divider",
+      "settings": {
+        "shape": "waves_3",
+        "fill_color": "#07080A",
+        "bg_color": "transparent",
+        "flip_horizontal": false,
+        "flip_vertical": false
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {
-        "brand_text": "Meticulously engineered essentials for modern life. Guided by the principles of architectural restraint, pure materials, and timeless durability."
+        "brand_text": "Titizlikle tasarlanmış mekânsal ve teknolojik donanımlar. Yalın mimari estetik, saf metalurji ve zamansız fonksiyonel tasarım ilkeleriyle geliştirildi."
       },
       "blocks": {
         "col_1": {
           "type": "link_list",
           "settings": {
-            "title": "Collections",
+            "title": "Ürünler",
             "menu": "main-menu"
           }
         },
         "col_2": {
           "type": "link_list",
           "settings": {
-            "title": "Customer Care",
+            "title": "Müşteri Hizmetleri",
             "menu": "footer"
           }
         },
         "newsletter_block": {
           "type": "newsletter",
           "settings": {
-            "title": "Private Dispatch",
-            "subtext": "Receive seasonal previews, editorial lookbooks, and private gallery invites."
+            "title": "Özel Bülten",
+            "subtext": "Lansman duyuruları, özel fırsatlar ve ürün ön gösterimleri için kaydolun."
           }
         }
       },
@@ -38,6 +48,7 @@
     }
   },
   "order": [
+    "section_divider_footer",
     "footer"
   ]
 }

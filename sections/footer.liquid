@@ -1,22 +1,13 @@
 <footer class="footer-wrapper" style="background-color: #07080A; color: #FFFFFF; padding: clamp(2.5rem, 4vw, 4rem) 0 var(--space-lg); border-top: 1px solid rgba(255, 255, 255, 0.08);">
   <div class="container">
-    <!-- Centered Editorial Wordmark (Refined Scale & Spacing) -->
-    {%- if section.settings.show_wordmark -%}
-      <div style="margin-bottom: clamp(1.5rem, 3vw, 2.5rem); border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 1.5rem; text-align: center; overflow: hidden;" data-reveal="fade-up">
-        <div style="font-family: var(--font-family-heading); font-size: clamp(1.75rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; color: rgba(255, 255, 255, 0.08); user-select: none; text-align: center; width: 100%; display: block;">
-          {{ section.settings.wordmark_text | default: shop.name | default: 'VISION SH' }}
-        </div>
-      </div>
-    {%- endif -%}
-
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; margin-bottom: var(--space-2xl);">
       <!-- Brand Manifesto -->
       <div style="display: flex; flex-direction: column; gap: 1.25rem;">
         <h3 style="font-size: 1.5rem; letter-spacing: 0.06em; text-transform: uppercase; color: #FFFFFF;">
-          {{ shop.name | default: 'VISION SH' }}
+          {{ shop.name | default: 'SHAZ PRO' }}
         </h3>
         <p style="color: #94A3B8; font-size: 14px; line-height: 1.7; max-width: 320px;">
-          {{ section.settings.brand_text | default: 'Meticulously engineered spatial essentials. Guided by the principles of architectural restraint, pure metallurgy, and timeless functional design.' }}
+          {{ section.settings.brand_text | default: 'Titizlikle tasarlanmış mekânsal ve teknolojik donanımlar. Yalın mimari estetik, saf metalurji ve zamansız fonksiyonel tasarım ilkeleriyle geliştirildi.' }}
         </p>
         <div style="display: flex; gap: 1rem; color: #94A3B8; font-size: 13px;">
           {%- if settings.social_instagram_link != blank -%}
@@ -48,10 +39,10 @@
           {%- when 'newsletter' -%}
             <div {{ block.shopify_attributes }} style="display: flex; flex-direction: column; gap: 1rem;">
               <h4 style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #64748B;">
-                {{ block.settings.title | default: 'Private Dispatch' }}
+                {{ block.settings.title | default: 'Özel Bülten' }}
               </h4>
               <p style="color: #94A3B8; font-size: 14px; line-height: 1.6;">
-                {{ block.settings.subtext | default: 'Receive seasonal previews, editorial lookbooks, and private gallery invites.' }}
+                {{ block.settings.subtext | default: 'Lansman duyuruları, özel fırsatlar ve ürün ön gösterimleri için kaydolun.' }}
               </p>
               {% form 'customer', class: 'footer-newsletter-form' %}
                 <input type="hidden" name="contact[tags]" value="newsletter">
@@ -60,11 +51,11 @@
                     type="email"
                     name="contact[email]"
                     class="form-input"
-                    placeholder="Enter email address"
+                    placeholder="E-posta adresinizi girin"
                     style="background: #14171F; border-color: #242936; color: #FFFFFF; font-size: 13px;"
                     required
                   >
-                  <button type="submit" class="btn btn-white btn-sm">Subscribe</button>
+                  <button type="submit" class="btn btn-white btn-sm">Kayıt Ol</button>
                 </div>
               {% endform %}
             </div>
@@ -75,11 +66,17 @@
     <!-- Bottom Bar with Shaz Vision Signature -->
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 12px; color: #64748B;">
       <div>
-        &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All Rights Reserved. Crafted &amp; Designed by <a href="https://shazvision.com" target="_blank" rel="noopener" style="color: #CBD5E1; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; transition: color var(--transition-fast);">Shaz Vision</a>.
+        &copy; {{ 'now' | date: '%Y' }} {{ shop.name | default: 'Shaz Pro' }}. Tüm Hakları Saklıdır. Tasarım &amp; Geliştirme: <a href="https://shazvision.com" target="_blank" rel="noopener" style="color: #CBD5E1; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; transition: color var(--transition-fast);">Shaz Vision</a>.
       </div>
-      <div style="display: flex; gap: 1.5rem;">
-        <span>🔒 256-Bit SSL Encrypted</span>
-        <span>🌍 Carbon-Neutral Shipping</span>
+      <div style="display: flex; gap: 1.5rem; align-items: center;">
+        <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+          {% render 'icon', icon: 'lock' %}
+          256-Bit SSL Güvenli Ödeme
+        </span>
+        <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+          {% render 'icon', icon: 'globe' %}
+          Karbon Nötr Hızlı Kargo
+        </span>
       </div>
     </div>
   </div>
@@ -87,62 +84,50 @@
 
 {% schema %}
 {
-  "name": "Footer",
+  "name": "Alt Bilgi (Footer)",
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "show_wordmark",
-      "label": "Show Editorial Wordmark",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "wordmark_text",
-      "label": "Wordmark Text (Centered)",
-      "default": "VISION SH"
-    },
     {
       "type": "textarea",
       "id": "brand_text",
-      "label": "Brand Narrative Statement",
-      "default": "Meticulously engineered spatial essentials. Guided by the principles of architectural restraint, pure metallurgy, and timeless functional design."
+      "label": "Marka Açıklaması",
+      "default": "Titizlikle tasarlanmış mekânsal ve teknolojik donanımlar. Yalın mimari estetik, saf metalurji ve zamansız fonksiyonel tasarım ilkeleriyle geliştirildi."
     }
   ],
   "blocks": [
     {
       "type": "link_list",
-      "name": "Menu Column",
+      "name": "Menü Sütunu",
       "settings": [
         {
           "type": "text",
           "id": "title",
-          "label": "Column Title",
-          "default": "Collection"
+          "label": "Sütun Başlığı",
+          "default": "Koleksiyon"
         },
         {
           "type": "link_list",
           "id": "menu",
-          "label": "Select Menu",
+          "label": "Menü Seç",
           "default": "footer"
         }
       ]
     },
     {
       "type": "newsletter",
-      "name": "Newsletter Block",
+      "name": "Bülten Bloğu",
       "limit": 1,
       "settings": [
         {
           "type": "text",
           "id": "title",
-          "label": "Title",
-          "default": "Private Dispatch"
+          "label": "Başlık",
+          "default": "Özel Bülten"
         },
         {
           "type": "text",
           "id": "subtext",
-          "label": "Subtitle",
-          "default": "Receive seasonal previews, editorial lookbooks, and private gallery invites."
+          "label": "Alt Metin",
+          "default": "Lansman duyuruları, özel fırsatlar ve ürün ön gösterimleri için kaydolun."
         }
       ]
     }
@@ -151,11 +136,11 @@
     "blocks": [
       {
         "type": "link_list",
-        "settings": { "title": "Collection" }
+        "settings": { "title": "Ürünler" }
       },
       {
         "type": "link_list",
-        "settings": { "title": "Customer Care" }
+        "settings": { "title": "Müşteri Hizmetleri" }
       },
       {
         "type": "newsletter",

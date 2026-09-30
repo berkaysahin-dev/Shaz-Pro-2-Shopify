@@ -105,7 +105,7 @@ class PredictiveSearch {
     if (products.length === 0 && collections.length === 0 && articles.length === 0) {
       this.resultsContainer.innerHTML = `
         <div style="padding: 2rem 0; text-align: center; color: var(--color-text-muted);">
-          <p>No results found for "<strong>${query}</strong>".</p>
+          <p>"<strong>${query}</strong>" için sonuç bulunamadı.</p>
         </div>
       `;
       return;
@@ -114,7 +114,7 @@ class PredictiveSearch {
     this.resultsContainer.innerHTML = `
       <div class="search-modal__results-grid">
         <div class="search-modal__products-col">
-          <h4 class="search-modal__section-title">Matching Products (${products.length})</h4>
+          <h4 class="search-modal__section-title">Eşleşen Ürünler (${products.length})</h4>
           <div class="search-modal__products-list">
             ${products.map(p => `
               <a href="${p.url}" class="search-result-item">
@@ -127,14 +127,14 @@ class PredictiveSearch {
             `).join('')}
           </div>
           <div style="margin-top: 1.5rem;">
-            <a href="/search?q=${encodeURIComponent(query)}" class="btn btn-secondary btn-sm">View all results for "${query}" →</a>
+            <a href="/search?q=${encodeURIComponent(query)}" class="btn btn-secondary btn-sm">"${query}" için tüm sonuçları gör →</a>
           </div>
         </div>
 
         <div class="search-modal__meta-col">
           ${collections.length > 0 ? `
             <div style="margin-bottom: 2rem;">
-              <h4 class="search-modal__section-title">Collections</h4>
+              <h4 class="search-modal__section-title">Koleksiyonlar</h4>
               <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
                 ${collections.map(c => `
                   <li><a href="${c.url}" style="font-size: 14px; text-decoration: underline;">${c.title}</a></li>
@@ -145,7 +145,7 @@ class PredictiveSearch {
 
           ${articles.length > 0 ? `
             <div>
-              <h4 class="search-modal__section-title">Journal & Articles</h4>
+              <h4 class="search-modal__section-title">Blog Yazıları</h4>
               <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
                 ${articles.map(a => `
                   <li><a href="${a.url}" style="font-size: 14px;">${a.title}</a></li>

@@ -1,13 +1,13 @@
 {
-  "name": "Announcement Bar Group",
+  "name": "Duyuru Çubuğu Grubu",
   "type": "header",
   "sections": {
     "announcement_bar": {
       "type": "announcement-bar",
       "settings": {
         "show_announcement": true,
-        "text": "Complimentary Worldwide Express Delivery on Orders Over $150",
-        "link_text": "Explore Series 02",
+        "text": "Tüm Siparişlerde Aynı Gün Ücretsiz VIP Express Kargo",
+        "link_text": "Hemen İncele",
         "link_url": "/collections/all",
         "bg_color": "#0F1115",
         "text_color": "#FFFFFF"

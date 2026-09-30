@@ -1,8 +1,8 @@
 <section class="section-spacing">
   <div class="container">
     <div style="margin-bottom: var(--space-xl); text-align: center;">
-      <span class="text-uppercase text-muted">Private Selection</span>
-      <h1 class="display-title" style="margin: 0.25rem 0 0.5rem;">{{ 'products.wishlist.title' | t | default: 'Your Curated Wishlist' }}</h1>
+      <span class="text-uppercase text-muted">Favori Listem</span>
+      <h1 class="display-title" style="margin: 0.25rem 0 0.5rem;">{{ 'products.wishlist.title' | t | default: 'Favori Listesi' }}</h1>
     </div>
 
     <!-- Dynamic Grid injected by wishlist.js -->
@@ -14,7 +14,11 @@
 
 {% schema %}
 {
-  "name": "Wishlist Page",
-  "settings": []
+  "name": "Favori Sayfası",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Üst Başlık", "default": "Favori Listem" },
+    { "type": "color", "id": "bg_color", "label": "Arka Plan Rengi", "default": "#FFFFFF" },
+    { "type": "color", "id": "text_color", "label": "Metin Rengi", "default": "#0B0C10" }
+  ]
 }
 {% endschema %}

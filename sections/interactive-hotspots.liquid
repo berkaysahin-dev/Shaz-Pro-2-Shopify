@@ -4,14 +4,14 @@
       {%- if section.settings.subtitle != blank -%}
         <div class="section-subtitle">{{ section.settings.subtitle }}</div>
       {%- endif -%}
-      <h2 class="h2">{{ section.settings.title | default: 'Interactive Spatial Environment' }}</h2>
+      <h2 class="h2">{{ section.settings.title | default: 'İnteraktif Ürün Anatomisi' }}</h2>
     </div>
 
     <div class="hotspot-container" data-reveal="fade-up">
       {%- if section.settings.image != blank -%}
         <img src="{{ section.settings.image | image_url: width: 1600 }}" alt="{{ section.settings.title | escape }}" loading="lazy" style="width: 100%; height: auto; display: block;">
       {%- else -%}
-        <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=1600&auto=format&fit=crop" alt="Vision SH Living Lookbook" loading="lazy" style="width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover;">
+        <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=1600&auto=format&fit=crop" alt="Shaz Pro Mekânsal Stand" loading="lazy" style="width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover;">
       {%- endif -%}
 
       <!-- Hotspot Points -->
@@ -22,13 +22,13 @@
 
           <div class="hotspot-tooltip">
             <div style="font-weight: 600; font-size: 13px; margin-bottom: 0.25rem;">
-              {{ hotspot_product.title | default: block.settings.title | default: 'Titanium Spatial Stand' }}
+              {{ hotspot_product.title | default: block.settings.title | default: 'N52 Manyetik Kilit Alanı' }}
             </div>
             <div style="font-size: 12px; color: var(--color-text-muted); margin-bottom: 0.5rem;">
-              {{ hotspot_product.price | money | default: '$240.00' }}
+              {{ hotspot_product.price | money | default: '2.400 ₺' }}
             </div>
             <a href="{{ hotspot_product.url | default: '/collections/all' }}" class="btn btn-primary btn-sm btn-full" style="padding: 0.35rem 0.5rem; font-size: 11px;">
-              View Piece →
+              Detayı İncele →
             </a>
           </div>
         </div>
@@ -39,47 +39,47 @@
 
 {% schema %}
 {
-  "name": "Shoppable Hotspots",
+  "name": "İnteraktif Ürün Noktaları",
   "settings": [
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Scene Image"
+      "label": "Ana Sahne Görseli"
     },
     {
       "type": "text",
       "id": "subtitle",
-      "label": "Subtitle",
-      "default": "Interactive Lookbook"
+      "label": "Alt Başlık",
+      "default": "İnteraktif İnceleme"
     },
     {
       "type": "text",
       "id": "title",
-      "label": "Heading",
-      "default": "Interactive Spatial Environment"
+      "label": "Başlık",
+      "default": "Detaylı Mimari İnceleme"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Background Color",
+      "label": "Arka Plan Rengi",
       "default": "#FFFFFF"
     }
   ],
   "blocks": [
     {
       "type": "hotspot",
-      "name": "Product Hotspot",
+      "name": "İnteraktif Nokta (Hotspot)",
       "settings": [
         {
           "type": "product",
           "id": "product",
-          "label": "Tagged Product"
+          "label": "Etiketli Ürün (İsteğe bağlı)"
         },
         {
           "type": "text",
           "id": "title",
-          "label": "Fallback Title",
-          "default": "Titanium Spatial Stand"
+          "label": "Nokta Başlığı",
+          "default": "N52 Manyetik Kilit Alanı"
         },
         {
           "type": "range",
@@ -88,7 +88,7 @@
           "max": 95,
           "step": 1,
           "unit": "%",
-          "label": "Horizontal Position (X)",
+          "label": "Yatay Konum (X)",
           "default": 35
         },
         {
@@ -98,7 +98,7 @@
           "max": 95,
           "step": 1,
           "unit": "%",
-          "label": "Vertical Position (Y)",
+          "label": "Dikey Konum (Y)",
           "default": 45
         }
       ]
@@ -106,15 +106,15 @@
   ],
   "presets": [
     {
-      "name": "Shoppable Hotspots",
+      "name": "İnteraktif Ürün Noktaları",
       "blocks": [
         {
           "type": "hotspot",
-          "settings": { "title": "Titanium Spatial Pedestal", "pos_x": 32, "pos_y": 48 }
+          "settings": { "title": "N52 Manyetik Kilit Alanı", "pos_x": 38, "pos_y": 42 }
         },
         {
           "type": "hotspot",
-          "settings": { "title": "Calfskin Magnetic Travel Shield", "pos_x": 68, "pos_y": 38 }
+          "settings": { "title": "Akustik Silikon Ped Taban", "pos_x": 62, "pos_y": 68 }
         }
       ]
     }

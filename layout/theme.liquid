@@ -25,6 +25,25 @@
 
   {% render 'structured-data' %}
 
+  <!-- Dynamic Theme Settings & CSS Variables -->
+  <style>
+    :root {
+      --color-primary: {{ settings.color_primary | default: '#0B0C10' }};
+      --color-secondary: {{ settings.color_secondary | default: '#6366F1' }};
+      --color-background: {{ settings.color_background | default: '#FFFFFF' }};
+      --color-surface: {{ settings.color_surface | default: '#F8F9FA' }};
+      --color-text: {{ settings.color_text | default: '#0B0C10' }};
+      --color-text-muted: {{ settings.color_text_muted | default: '#64748B' }};
+      --color-border: {{ settings.color_border | default: '#E2E8F0' }};
+      --color-sale: {{ settings.color_sale | default: '#DC2626' }};
+      --color-stock-success: {{ settings.color_stock_success | default: '#16A34A' }};
+      --color-button-bg: {{ settings.color_button_bg | default: '#0B0C10' }};
+      --color-button-text: {{ settings.color_button_text | default: '#FFFFFF' }};
+      --container-max-width: {{ settings.container_max_width | default: 1440 }}px;
+      --border-radius: {{ settings.border_radius | default: 6 }}px;
+    }
+  </style>
+
   <!-- Stylesheets -->
   {{ 'base.css' | asset_url | stylesheet_tag }}
   {{ 'component-header.css' | asset_url | stylesheet_tag }}

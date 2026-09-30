@@ -40,12 +40,12 @@
       {%- endif -%}
 
       <h1 class="display-title hero-banner__title" data-split-reveal>
-        {{ section.settings.heading | default: 'Architectural Form.
-Pure Function.' }}
+        {{ section.settings.heading | default: 'Mekânsal Mükemmellik.
+Kusursuz Mühendislik.' }}
       </h1>
 
       <p class="hero-banner__subtitle">
-        {{ section.settings.subheading | default: 'Explore a considered collection of minimalist luxury accessories, spatial audio pedestals, and precision-machined titanium hardware.' }}
+        {{ section.settings.subheading | default: 'Havacılık sınıfı 5. seviye titanyum bloktan üretilen, manyetik kilitli ve akustik sönümlemeli tekil başyapıt.' }}
       </p>
 
       <div class="hero-banner__actions">
@@ -66,29 +66,29 @@ Pure Function.' }}
 
   <!-- Scroll Down Indicator -->
   <div class="hero-scroll-indicator">
-    <span>SCROLL</span>
+    <span>AŞAĞI KAYDIR</span>
     <span style="font-size: 14px;">↓</span>
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Hero Banner",
+  "name": "Ana Sayfa Hero Banner",
   "settings": [
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Desktop Hero Image"
+      "label": "Masaüstü Hero Görseli"
     },
     {
       "type": "text",
       "id": "video_url",
-      "label": "Direct Video MP4 URL (Optional)"
+      "label": "Doğrudan Video MP4 Adresi (İsteğe bağlı)"
     },
     {
       "type": "checkbox",
       "id": "enable_fullscreen",
-      "label": "Enable 100vh Fullscreen Mode",
+      "label": "100vh Tam Ekran Modu",
       "default": true
     },
     {
@@ -98,7 +98,7 @@ Pure Function.' }}
       "max": 100,
       "step": 5,
       "unit": "vh",
-      "label": "Mobile Height",
+      "label": "Mobil Yükseklik",
       "default": 90
     },
     {
@@ -108,64 +108,64 @@ Pure Function.' }}
       "max": 90,
       "step": 5,
       "unit": "%",
-      "label": "Overlay Darkness",
+      "label": "Görsel Karartma Oranı",
       "default": 45
     },
     {
       "type": "select",
       "id": "text_alignment",
-      "label": "Text Alignment",
+      "label": "Metin Hizalaması",
       "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "center", "label": "Center" },
-        { "value": "right", "label": "Right" }
+        { "value": "left", "label": "Sola Hizala" },
+        { "value": "center", "label": "Ortala" },
+        { "value": "right", "label": "Sağa Hizala" }
       ],
       "default": "left"
     },
     {
       "type": "text",
       "id": "badge",
-      "label": "Pill Badge Text",
-      "default": "Series 02 Edition"
+      "label": "Rozet Metni",
+      "default": "Lansmana Özel Seri"
     },
     {
       "type": "textarea",
       "id": "heading",
-      "label": "Hero Heading",
-      "default": "Architectural Form.\nPure Function."
+      "label": "Hero Ana Başlığı",
+      "default": "Mekânsal Mükemmellik.\nKusursuz Mühendislik."
     },
     {
       "type": "textarea",
       "id": "subheading",
-      "label": "Subheading",
-      "default": "Explore a considered collection of minimalist luxury accessories, spatial audio pedestals, and precision-machined titanium hardware."
+      "label": "Alt Açıklama",
+      "default": "Havacılık sınıfı 5. seviye titanyum bloktan üretilen, manyetik kilitli ve akustik sönümlemeli tekil başyapıt."
     },
     {
       "type": "text",
       "id": "primary_cta_text",
-      "label": "Primary CTA Label",
-      "default": "Explore Series 02"
+      "label": "Birincil Buton Metni",
+      "default": "Hemen Satın Al"
     },
     {
       "type": "url",
       "id": "primary_cta_url",
-      "label": "Primary CTA Link"
+      "label": "Birincil Buton Linki"
     },
     {
       "type": "text",
       "id": "secondary_cta_text",
-      "label": "Secondary CTA Label",
-      "default": "Our Craft Monograph"
+      "label": "İkincil Buton Metni",
+      "default": "Özellikleri İncele"
     },
     {
       "type": "url",
       "id": "secondary_cta_url",
-      "label": "Secondary CTA Link"
+      "label": "İkincil Buton Linki"
     }
   ],
   "presets": [
     {
-      "name": "Hero Banner"
+      "name": "Ana Sayfa Hero Banner"
     }
   ]
 }

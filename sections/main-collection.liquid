@@ -22,7 +22,7 @@
       <div style="display: flex; align-items: center; gap: 1.5rem;">
         <!-- Sorting -->
         <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 13px;">
-          <label for="SortBy" style="color: var(--color-text-muted);">Sort:</label>
+          <label for="SortBy" style="color: var(--color-text-muted);">Sırala:</label>
           <select
             name="sort_by"
             id="SortBy"
@@ -31,11 +31,11 @@
             onchange="location.href = window.location.pathname + '?' + new URLSearchParams({...Object.fromEntries(new URLSearchParams(window.location.search)), sort_by: this.value}).toString();"
           >
             {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-            <option value="manual" {% if sort_by == 'manual' %}selected{% endif %}>Featured Selection</option>
-            <option value="best-selling" {% if sort_by == 'best-selling' %}selected{% endif %}>Best Selling</option>
-            <option value="price-ascending" {% if sort_by == 'price-ascending' %}selected{% endif %}>Price: Low to High</option>
-            <option value="price-descending" {% if sort_by == 'price-descending' %}selected{% endif %}>Price: High to Low</option>
-            <option value="created-descending" {% if sort_by == 'created-descending' %}selected{% endif %}>Newest First</option>
+            <option value="manual" {% if sort_by == 'manual' %}selected{% endif %}>Öne Çıkan Seçim</option>
+            <option value="best-selling" {% if sort_by == 'best-selling' %}selected{% endif %}>Çok Satan</option>
+            <option value="price-ascending" {% if sort_by == 'price-ascending' %}selected{% endif %}>Fiyat: Düşükten Yükseğe</option>
+            <option value="price-descending" {% if sort_by == 'price-descending' %}selected{% endif %}>Fiyat: Yüksekten Düşüğe</option>
+            <option value="created-descending" {% if sort_by == 'created-descending' %}selected{% endif %}>Yeniden Eskiye</option>
           </select>
         </div>
       </div>
@@ -46,9 +46,9 @@
       {%- if collection.products.size == 0 -%}
         <div style="text-align: center; padding: 5rem 1rem;">
           <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
-            {{ 'collections.general.no_products' | t | default: 'No products match your selected filters.' }}
+            {{ 'collections.general.no_products' | t | default: 'Seçilen filtrelere uygun ürün bulunamadı.' }}
           </p>
-          <a href="{{ collection.url }}" class="btn btn-secondary btn-sm">Clear All Filters</a>
+          <a href="{{ collection.url }}" class="btn btn-secondary btn-sm">Filtreleri Temizle</a>
         </div>
       {%- else -%}
         <div class="collection-product-grid">
@@ -101,17 +101,12 @@
 
 {% schema %}
 {
-  "name": "Collection Grid",
+  "name": "Koleksiyon Sayfası",
   "settings": [
-    {
-      "type": "range",
-      "id": "products_per_page",
-      "min": 8,
-      "max": 36,
-      "step": 4,
-      "label": "Products Per Page",
-      "default": 12
-    }
+    { "type": "range", "id": "products_per_page", "min": 8, "max": 36, "step": 4, "label": "Sayfa Başına Ürün", "default": 12 },
+    { "type": "color", "id": "bg_color", "label": "Arka Plan Rengi", "default": "#FFFFFF" },
+    { "type": "color", "id": "text_color", "label": "Metin Rengi", "default": "#0B0C10" },
+    { "type": "color", "id": "border_color", "label": "Kenar Rengi", "default": "#E2E8F0" }
   ]
 }
 {% endschema %}

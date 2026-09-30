@@ -92,7 +92,7 @@
 
         <!-- Customer Account -->
         {%- if shop.customer_accounts_enabled -%}
-          <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="header__icon-btn" aria-label="Customer Account">
+          <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="header__icon-btn" aria-label="Müşteri Hesabı">
             {% render 'icon', icon: 'user' %}
           </a>
         {%- endif -%}
@@ -117,7 +117,7 @@
 <div class="mobile-menu-drawer" aria-hidden="true">
   <div class="mobile-menu__header">
     <span class="text-uppercase" style="font-weight: 700;">{{ shop.name | default: 'Menu' }}</span>
-    <button type="button" class="mobile-menu__close btn-ghost" aria-label="Close Navigation">
+    <button type="button" class="mobile-menu__close btn-ghost" aria-label="Menüyü Kapat">
       {% render 'icon', icon: 'close' %}
     </button>
   </div>
@@ -144,7 +144,7 @@
     </a>
     {%- if shop.customer_accounts_enabled -%}
       <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="btn btn-secondary btn-full btn-sm">
-        {% if customer %}My Account{% else %}Sign In / Register{% endif %}
+        {% if customer %}Hesabım{% else %}Giriş Yap / Kayıt Ol{% endif %}
       </a>
     {%- endif -%}
   </div>

@@ -1,0 +1,218 @@
+{%- liquid
+  if section.settings.flip_horizontal
+    assign scaleX = 'scaleX(-1)'
+  else
+    assign scaleX = 'scaleX(1)'
+  endif
+
+  if section.settings.flip_vertical
+    assign scaleY = 'scaleY(-1)'
+  else
+    assign scaleY = 'scaleY(1)'
+  endif
+-%}
+
+{% style %}
+  .section-divider-{{ section.id }} {
+    transform: {{ scaleX }} {{ scaleY }};
+    background-color: {{ section.settings.bg_color | default: 'transparent' }};
+    overflow: hidden;
+    line-height: 0;
+    display: block;
+    width: 100%;
+  }
+
+  .section-divider-{{ section.id }} .section-divider__svg {
+    --max-height: 120px;
+    background: none;
+    overflow: hidden;
+    line-height: 0;
+    display: block;
+    width: 100%;
+  }
+
+  .section-divider-{{ section.id }} .section-divider__svg svg {
+    color: {{ section.settings.fill_color | default: '#07080A' }};
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: var(--max-height);
+    transform: translateY(1px);
+  }
+
+  .section-divider-{{ section.id }} .waves-animated-1 {
+    --max-height: 3.5rem;
+    margin: 0;
+    display: block;
+    width: 100%;
+  }
+
+  .section-divider-{{ section.id }} .parallax1 > use {
+    animation: move-forever1 10s linear infinite;
+  }
+  .section-divider-{{ section.id }} .parallax2 > use {
+    animation: move-forever2 8s linear infinite;
+    opacity: 0.5;
+  }
+  .section-divider-{{ section.id }} .parallax3 > use {
+    animation: move-forever3 6s linear infinite;
+    opacity: 0.3;
+  }
+  .section-divider-{{ section.id }} .parallax4 > use {
+    animation: move-forever4 4s linear infinite;
+    opacity: 0.15;
+  }
+
+  @keyframes move-forever1 {
+    0% { transform: translate(85px, 0%); }
+    100% { transform: translate(-90px, 0%); }
+  }
+  @keyframes move-forever2 {
+    0% { transform: translate(-90px, 0%); }
+    100% { transform: translate(85px, 0%); }
+  }
+  @keyframes move-forever3 {
+    0% { transform: translate(85px, 0%); }
+    100% { transform: translate(-90px, 0%); }
+  }
+  @keyframes move-forever4 {
+    0% { transform: translate(-90px, 0%); }
+    100% { transform: translate(85px, 0%); }
+  }
+
+  @media screen and (min-width: 990px) {
+    .section-divider-{{ section.id }} .waves-animated-1 {
+      --max-height: 5.5rem;
+    }
+  }
+{% endstyle %}
+
+<div class="section-divider section-divider-{{ section.id }}">
+  <div class="section-divider__svg">
+    {% case section.settings.shape %}
+      {% when 'waves_3' %}
+        <svg class="waves-animated-1"
+           xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           viewBox="0 24 150 28"
+           preserveAspectRatio="none"
+        >
+          <defs>
+            <path id="gentle-wave-{{ section.id }}"
+            d="M-160 44c30 0 
+              58-18 88-18s
+              58 18 88 18 
+              58-18 88-18 
+              58 18 88 18
+              v44h-352z" />
+          </defs>
+          <g class="parallax1">
+            <use xlink:href="#gentle-wave-{{ section.id }}" x="50" y="3" fill="currentColor"/>
+          </g>
+          <g class="parallax2">
+            <use xlink:href="#gentle-wave-{{ section.id }}" x="50" y="0" fill="currentColor"/>
+          </g>
+          <g class="parallax3">
+            <use xlink:href="#gentle-wave-{{ section.id }}" x="50" y="9" fill="currentColor"/>
+          </g>
+          <g class="parallax4">
+            <use xlink:href="#gentle-wave-{{ section.id }}" x="50" y="6" fill="currentColor"/>  
+          </g>
+        </svg>
+
+      {% when 'diagonal_1' %}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 32" height="60" width="100%" preserveAspectRatio="none">
+          <polygon fill="currentColor" points="0 29.91 0 32 360 32 360 0 0 29.91"/>
+        </svg>
+
+      {% when 'curved_1' %}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 74.65" height="80" width="100%" preserveAspectRatio="none">
+          <path fill="currentColor" d="M0,20.29,12,23.6A474.72,474.72,0,0,0,72,37c24,3.31,48,3.31,72-6.69S192,.29,216,7c24,6.43,48,40.18,72,50,24,10.18,48-3.57,60-10l12-6.69v40H0Z"/>
+        </svg>
+
+      {% else %}
+        <!-- Default smooth wave -->
+        <svg class="waves-animated-1"
+           xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           viewBox="0 24 150 28"
+           preserveAspectRatio="none"
+        >
+          <defs>
+            <path id="gentle-wave-default-{{ section.id }}"
+            d="M-160 44c30 0 
+              58-18 88-18s
+              58 18 88 18 
+              58-18 88-18 
+              58 18 88 18
+              v44h-352z" />
+          </defs>
+          <g class="parallax1">
+            <use xlink:href="#gentle-wave-default-{{ section.id }}" x="50" y="3" fill="currentColor"/>
+          </g>
+          <g class="parallax2">
+            <use xlink:href="#gentle-wave-default-{{ section.id }}" x="50" y="0" fill="currentColor"/>
+          </g>
+          <g class="parallax3">
+            <use xlink:href="#gentle-wave-default-{{ section.id }}" x="50" y="9" fill="currentColor"/>
+          </g>
+          <g class="parallax4">
+            <use xlink:href="#gentle-wave-default-{{ section.id }}" x="50" y="6" fill="currentColor"/>  
+          </g>
+        </svg>
+    {% endcase %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bölüm Ayırıcı (Divider)",
+  "settings": [
+    {
+      "type": "select",
+      "id": "shape",
+      "options": [
+        { "value": "waves_3", "label": "Hareketli Dalga (Animated Waves)" },
+        { "value": "diagonal_1", "label": "Diyagonal Kesim" },
+        { "value": "curved_1", "label": "Kavisli Dalga" }
+      ],
+      "label": "Şekil / Efekt",
+      "default": "waves_3"
+    },
+    {
+      "type": "checkbox",
+      "id": "flip_horizontal",
+      "label": "Yatay Çevir",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "flip_vertical",
+      "label": "Dikey Çevir",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "fill_color",
+      "label": "Dalga / Şekil Rengi",
+      "default": "#07080A"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Arka Plan Rengi",
+      "default": "transparent"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bölüm Ayırıcı (Animated Divider)",
+      "settings": {
+        "shape": "waves_3",
+        "fill_color": "#07080A",
+        "bg_color": "transparent"
+      }
+    }
+  ]
+}
+{% endschema %}

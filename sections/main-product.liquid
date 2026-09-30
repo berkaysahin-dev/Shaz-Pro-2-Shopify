@@ -1,13 +1,19 @@
 {%- liquid
+  if product == blank or product.title == blank
+    assign product = collections.all.products.first
+  endif
+  if product == blank or product.title == blank
+    assign product = all_products.first
+  endif
   assign current_variant = product.selected_or_first_available_variant
   assign is_on_sale = false
-  if current_variant.compare_at_price > current_variant.price
+  if current_variant and current_variant.compare_at_price > current_variant.price
     assign is_on_sale = true
     assign discount_percent = current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price
   endif
 -%}
 
-<section class="product-section" data-section-id="{{ section.id }}" data-product-id="{{ product.id }}">
+<section class="product-section" style="background-color: {{ section.settings.bg_color | default: 'var(--color-bg)' }}; color: {{ section.settings.text_color | default: 'var(--color-text)' }};" data-section-id="{{ section.id }}" data-product-id="{{ product.id }}">
   <div class="container">
     <div class="product-grid">
       <!-- Media Gallery (Left Side) -->
@@ -52,8 +58,8 @@
       <div class="product-info">
         <!-- Vendor & Title -->
         <div>
-          <div class="product-info__vendor">{{ product.vendor | default: shop.name | default: 'VISION SH' }}</div>
-          <h1 class="product-info__title">{{ product.title | default: 'Spatial Titanium Pedestal Edition 01' }}</h1>
+          <div class="product-info__vendor">{{ product.vendor | default: shop.name | default: 'SHAZ PRO' }}</div>
+          <h1 class="product-info__title">{{ product.title | default: 'Shaz Pro Spatial Titanium Stand' }}</h1>
         </div>
 
         <!-- Rating & Social Proof -->
@@ -64,7 +70,7 @@
             {%- endfor -%}
           </div>
           <span style="font-weight: 700; font-size: 13px; color: var(--color-text);">4.98</span>
-          <span class="product-info__rating-count">(64 Verified Patron Reviews)</span>
+          <span class="product-info__rating-count">(64 Doğrulanmış Müşteri Değerlendirmesi)</span>
         </div>
 
         <!-- Price Block -->
@@ -74,14 +80,14 @@
             {{ current_variant.compare_at_price | money }}
           </span>
           {%- if is_on_sale -%}
-            <span class="product-info__savings-badge">-{{ discount_percent }}% OFF</span>
+            <span class="product-info__savings-badge">-%{{ discount_percent }} İNDİRİM</span>
           {%- endif -%}
         </div>
 
         <!-- Free Worldwide Express Banner (Fully Color Customizable) -->
         <div style="background-color: {{ settings.pdp_shipping_badge_bg | default: '#F0FDF4' }}; border: 1px solid {{ settings.pdp_shipping_badge_border | default: '#BBF7D0' }}; color: {{ settings.pdp_shipping_badge_text | default: '#166534' }}; border-radius: var(--border-radius); padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 12px; font-weight: 500;">
-          <span>✨</span>
-          <span><strong>Complimentary Worldwide Express</strong> unlocked for this piece (DHL Priority).</span>
+          <span style="display: flex; align-items: center; color: #16A34A;">{% render 'icon', icon: 'sparkle' %}</span>
+          <span><strong>Aynı Gün Ücretsiz VIP Express Kargo</strong> bu ürün için tanımlandı.</span>
         </div>
 
         <!-- Scarcity Stock Indicator (Fully Color Customizable) -->
@@ -89,7 +95,10 @@
           <div class="product-stock-urgency" style="color: {{ settings.pdp_stock_text_color | default: '#111827' }};">
             <div class="product-stock-urgency__header">
               <span class="product-stock-urgency__pulse" style="background-color: {{ settings.pdp_stock_pulse_color | default: '#E11D48' }}; box-shadow: 0 0 0 0 {{ settings.pdp_stock_pulse_color | default: '#E11D48' }}40;"></span>
-              <span>⚡ {{ 'products.product.only_left' | t: count: 4 | default: 'Only 4 units left in stock' }}</span>
+              <span style="display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 600;">
+                {% render 'icon', icon: 'zap' %}
+                {{ 'products.product.only_left' | t: count: 4 | default: 'Stokta sadece 4 adet kaldı' }}
+              </span>
             </div>
             <div class="product-stock-urgency__bar">
               <div class="product-stock-urgency__bar-fill" style="width: 25%; background-color: {{ settings.pdp_stock_pulse_color | default: 'var(--color-primary)' }};"></div>
@@ -102,9 +111,9 @@
           <div class="product-delivery-estimator" data-delivery-timer>
             {% render 'icon', icon: 'clock' %}
             <div>
-              <span>Order within </span>
-              <strong class="countdown-time" style="color: var(--color-primary);">02h 35m 18s</strong>
-              <span> for dispatch by <strong>Tomorrow Morning</strong></span>
+              <span>Kargoya veriliş için kalan süre: </span>
+              <strong class="countdown-time" style="color: var(--color-primary);">02sa 35dk 18sn</strong>
+              <span> &mdash; <strong>Yarın Sabah</strong> kargoda!</span>
             </div>
           </div>
         {%- endif -%}
@@ -178,9 +187,9 @@
               {% unless current_variant.available %}disabled{% endunless %}
             >
               {%- if current_variant.available -%}
-                {{ 'products.product.add_to_cart' | t | default: 'Add to Bag' }}
+                {{ 'products.product.add_to_cart' | t | default: 'Sepete Ekle' }}
               {%- else -%}
-                {{ 'products.product.sold_out' | t | default: 'Sold Out' }}
+                {{ 'products.product.sold_out' | t | default: 'Tükendi' }}
               {%- endif -%}
             </button>
 
@@ -191,7 +200,7 @@
               data-wishlist-btn
               data-product-handle="{{ product.handle }}"
               style="width: 50px; padding: 0;"
-              aria-label="{{ 'products.wishlist.add' | t | default: 'Add to Wishlist' }}"
+              aria-label="{{ 'products.wishlist.add' | t | default: 'Favorilere Ekle' }}"
             >
               {% render 'icon', icon: 'heart' %}
             </button>
@@ -208,19 +217,19 @@
           <div class="product-trust-badges">
             <div class="product-trust-item">
               {% render 'icon', icon: 'shield-check' %}
-              <span>{{ 'products.product.trust_secure' | t | default: '256-Bit SSL Encrypted' }}</span>
+              <span>{{ 'products.product.trust_secure' | t | default: '256-Bit SSL Güvenli Ödeme' }}</span>
             </div>
             <div class="product-trust-item">
               {% render 'icon', icon: 'truck' %}
-              <span>{{ 'products.product.trust_shipping' | t | default: 'Worldwide DHL Express' }}</span>
+              <span>{{ 'products.product.trust_shipping' | t | default: 'Aynı Gün VIP Express Kargo' }}</span>
             </div>
             <div class="product-trust-item">
               {% render 'icon', icon: 'rotate-ccw' %}
-              <span>{{ 'products.product.trust_returns' | t | default: '30-Day Returns' }}</span>
+              <span>{{ 'products.product.trust_returns' | t | default: '30 Gün Koşulsuz İade' }}</span>
             </div>
             <div class="product-trust-item">
               {% render 'icon', icon: 'award' %}
-              <span>{{ 'products.product.trust_warranty' | t | default: '2-Year Warranty' }}</span>
+              <span>{{ 'products.product.trust_warranty' | t | default: '2 Yıl Resmi Garanti' }}</span>
             </div>
           </div>
         {%- endif -%}
@@ -230,14 +239,14 @@
           <!-- Description / Details -->
           <div class="product-accordion-item is-open">
             <div class="product-accordion-header">
-              <span>{{ 'products.product.details' | t | default: 'Architectural Details & Specifications' }}</span>
+              <span>{{ 'products.product.details' | t | default: 'Mimari Detaylar & Teknik Özellikler' }}</span>
               <span class="product-accordion-icon">{% render 'icon', icon: 'chevron-down' %}</span>
             </div>
             <div class="product-accordion-body">
               {%- if product.description != blank -%}
                 {{ product.description }}
               {%- else -%}
-                <p>Machined from monolithic aerospace Grade 5 titanium billet with 0.02mm microscopic tolerances. Features integrated acoustic isolation silicone pads and magnetic coupling alignment.</p>
+                <p>Havacılık sınıfı 5. seviye yekpare titanyum bloktan 0.02 mm mikroskobik toleransla üretilmiştir. Entegre akustik izolasyon silikon pedleri ve neodimyum manyetik kilit hizalamasına sahiptir.</p>
               {%- endif -%}
             </div>
           </div>
@@ -245,22 +254,22 @@
           <!-- Materials & Care -->
           <div class="product-accordion-item">
             <div class="product-accordion-header">
-              <span>{{ 'products.product.materials_care' | t | default: 'Metallurgy & Care Instructions' }}</span>
+              <span>{{ 'products.product.materials_care' | t | default: 'Metalurji & Bakım Rehberi' }}</span>
               <span class="product-accordion-icon">{% render 'icon', icon: 'chevron-down' %}</span>
             </div>
             <div class="product-accordion-body">
-              <p>Machined from single-billet Grade 5 Ti-6Al-4V titanium. Anodized and hand-buffed for ultra-refined micro-textures. To maintain luster, wipe gently with a microfiber cloth. Avoid abrasive chemical solvents.</p>
+              <p>Tek parça Grade 5 Ti-6Al-4V titanyum külçeden hassas olarak işlenmiştir. İpeksi mikroskobik mat doku için özel olarak saten el polisajı yapılmıştır. Parlaklığını korumak için mikrofiber bezle nazikçe siliniz. Aşındırıcı kimyasal çözücülerden kaçınınız.</p>
             </div>
           </div>
 
           <!-- Shipping & Returns -->
           <div class="product-accordion-item">
             <div class="product-accordion-header">
-              <span>{{ 'products.product.shipping_returns' | t | default: 'Complimentary Express Delivery & Returns' }}</span>
+              <span>{{ 'products.product.shipping_returns' | t | default: 'Ücretsiz Express Teslimat & İade' }}</span>
               <span class="product-accordion-icon">{% render 'icon', icon: 'chevron-down' %}</span>
             </div>
             <div class="product-accordion-body">
-              <p>All orders are dispatched within 24 hours via DHL Express Priority. We offer complimentary global shipping on orders over $150. Returns are accepted within 30 days of delivery with prepaid return labels.</p>
+              <p>Tüm siparişler 24 saat içinde VIP Express Kargo ile özenle paketlenip yola çıkar. 1-3 iş günü içinde adresinize teslim edilir. 30 gün boyunca koşulsuz deneme ve ücretsiz iade garantisi bulunmaktadır.</p>
             </div>
           </div>
         </div>
@@ -277,13 +286,13 @@
             <img src="{{ product.featured_media | image_url: width: 90 }}" alt="{{ product.title }}" class="sticky-atc-bar__thumb" loading="lazy">
           {%- endif -%}
           <div>
-            <div class="sticky-atc-bar__title">{{ product.title | default: 'Vision Pro Spatial Pedestal' }}</div>
+            <div class="sticky-atc-bar__title">{{ product.title | default: 'Shaz Pro Spatial Titanyum Stand' }}</div>
             <div class="sticky-atc-bar__price text-muted">{{ current_variant.price | default: 24000 | money }}</div>
           </div>
         </div>
         <div>
           <button type="button" class="btn btn-primary btn-sm sticky-atc-btn" onclick="document.querySelector('.product-atc-btn').click();">
-            {{ 'products.product.add_to_cart' | t | default: 'Add to Bag' }}
+            {{ 'products.product.add_to_cart' | t | default: 'Sepete Ekle' }}
           </button>
         </div>
       </div>
@@ -298,7 +307,50 @@
 
 {% schema %}
 {
-  "name": "Product Information",
-  "settings": []
+  "name": "Ürün Bilgileri",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Arka Plan Rengi",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Metin Rengi",
+      "default": "#0B0C10"
+    },
+    {
+      "type": "text",
+      "id": "vendor_fallback",
+      "label": "Marka İsmi (Boşsa)",
+      "default": "SHAZ PRO"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_urgency",
+      "label": "Stok Sayacı Göster",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "urgency_text",
+      "label": "Stok Uyarısı Metni",
+      "default": "Stokta sadece 4 adet kaldı — Seri Numaralı Özel Üretim"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_badge",
+      "label": "VIP Kargo Rozetini Göster",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_badges",
+      "label": "Güvenilirlik Rozetlerini Göster",
+      "default": true
+    }
+  ]
 }
 {% endschema %}

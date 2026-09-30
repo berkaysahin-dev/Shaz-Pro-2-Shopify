@@ -7,8 +7,8 @@
     "faq": {
       "type": "faq-accordion",
       "settings": {
-        "subtitle": "Direct Answers",
-        "title": "Concierge & Delivery FAQ",
+        "subtitle": "Doğrudan Cevaplar",
+        "title": "Destek & Kargo SSS",
         "bg_color": "#F8F9FA"
       }
     }

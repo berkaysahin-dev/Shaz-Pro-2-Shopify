@@ -36,7 +36,7 @@ class QuickViewController {
     this.modalBody.innerHTML = `
       <div style="padding: 4rem 2rem; text-align: center;">
         <div class="spinner"></div>
-        <p style="margin-top: 1rem; color: var(--color-text-muted);">Loading details...</p>
+        <p style="margin-top: 1rem; color: var(--color-text-muted);">Yükleniyor...</p>
       </div>
     `;
 
@@ -52,7 +52,7 @@ class QuickViewController {
       this.renderProduct(product);
     } catch (err) {
       console.error('Quick view error:', err);
-      this.modalBody.innerHTML = `<p style="padding: 2rem; text-align: center; color: var(--color-sale);">Unable to load product preview.</p>`;
+      this.modalBody.innerHTML = `<p style="padding: 2rem; text-align: center; color: var(--color-sale);">Ürün önizlemesi yüklenemedi.</p>`;
     }
   }
 
@@ -80,10 +80,10 @@ class QuickViewController {
           
           <form action="/cart/add" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="${product.variants[0].id}">
-            <button type="submit" class="btn btn-primary btn-full" style="height: 48px; margin-top: 0.5rem;">Add to Bag — ${formattedPrice}</button>
+            <button type="submit" class="btn btn-primary btn-full" style="height: 48px; margin-top: 0.5rem;">Sepete Ekle — ${formattedPrice}</button>
           </form>
 
-          <a href="${product.url}" style="font-size: 13px; text-decoration: underline; text-align: center; margin-top: 0.5rem;">View Full Product Details →</a>
+          <a href="${product.url}" style="font-size: 13px; text-decoration: underline; text-align: center; margin-top: 0.5rem;">Ürün Detaylarını Gör →</a>
         </div>
       </div>
     `;

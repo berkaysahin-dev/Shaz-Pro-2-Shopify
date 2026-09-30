@@ -3,17 +3,17 @@
     "faq": {
       "type": "faq-accordion",
       "settings": {
-        "subtitle": "Knowledge Base",
-        "title": "Frequently Inquired Questions",
+        "subtitle": "Bilgi Merkezi",
+        "title": "Sıkça Sorulan Sorular",
         "bg_color": "#FFFFFF"
       }
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "badge": "Need Assistance?",
-        "title": "Connect with Client Concierge",
-        "subtitle": "Our concierge team is available 24/7 for tailored product consultations.",
+        "badge": "Yardıma İhtiyacınız Mı?",
+        "title": "Müşteri Hizmetleri ile İletişime Geçin",
+        "subtitle": "Destek ekibimiz özel ürün danışmanlığı için 7/24 hizmetinizdedir.",
         "bg_color": "#F8F9FA"
       }
     }

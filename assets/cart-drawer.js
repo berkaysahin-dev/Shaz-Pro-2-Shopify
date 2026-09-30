@@ -107,7 +107,7 @@ class CartDrawer {
       const originalText = submitBtn ? submitBtn.innerHTML : '';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = `Adding to Bag...`;
+        submitBtn.innerHTML = `Sepete Ekleniyor...`;
       }
 
       // Trigger fly-to-cart
@@ -180,7 +180,7 @@ class CartDrawer {
 
       const variantId = addUpsellBtn.dataset.variantId;
       addUpsellBtn.disabled = true;
-      addUpsellBtn.textContent = 'Adding...';
+      addUpsellBtn.textContent = 'Ekleniyor...';
 
       try {
         await fetch('/cart/add.js', {
@@ -229,7 +229,7 @@ class CartDrawer {
     });
 
     const drawerCount = this.drawer.querySelector('.cart-drawer__count-badge');
-    if (drawerCount) drawerCount.textContent = `${cart.item_count} items`;
+    if (drawerCount) drawerCount.textContent = `${cart.item_count} ürün`;
 
     // Free Shipping Progress
     const shippingBar = this.drawer.querySelector('.cart-drawer__shipping-bar');
@@ -243,11 +243,11 @@ class CartDrawer {
 
       if (remaining <= 0) {
         shippingBar.classList.add('is-unlocked');
-        shippingMsg.innerHTML = window.themeSettings?.freeShippingUnlockedMsg || `✨ You qualify for Free Worldwide Express Shipping!`;
+        shippingMsg.innerHTML = window.themeSettings?.freeShippingUnlockedMsg || `Ücretsiz Express Kargo hakkı kazandınız!`;
       } else {
         shippingBar.classList.remove('is-unlocked');
         const formattedAmount = AtelierTheme.formatMoney(remaining);
-        shippingMsg.innerHTML = `Add <strong>${formattedAmount}</strong> more for Free Express Shipping`;
+        shippingMsg.innerHTML = `<strong>${formattedAmount}</strong> daha ekleyerek Ücretsiz Express Kargo fırsatını yakalayın`;
       }
     }
 
@@ -288,7 +288,7 @@ class CartDrawer {
                 <input type="text" class="quantity-stepper__input" value="${item.quantity}" readonly style="width: 32px; font-size: 12px;">
                 <button type="button" class="quantity-stepper__btn cart-qty-btn" data-key="${item.key}" data-qty="${item.quantity}" data-delta="1">+</button>
               </div>
-              <button type="button" class="cart-drawer-item__remove" data-key="${item.key}">Remove</button>
+              <button type="button" class="cart-drawer-item__remove" data-key="${item.key}">Kaldır</button>
             </div>
           </div>
         </div>

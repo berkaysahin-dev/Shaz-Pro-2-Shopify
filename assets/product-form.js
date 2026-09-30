@@ -82,10 +82,10 @@ class ProductFormController {
     if (atcBtn) {
       if (variant.available) {
         atcBtn.disabled = false;
-        atcBtn.textContent = 'Add to Bag';
+        atcBtn.textContent = 'Sepete Ekle';
       } else {
         atcBtn.disabled = true;
-        atcBtn.textContent = 'Sold Out';
+        atcBtn.textContent = 'Tükendi';
       }
     }
 

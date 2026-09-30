@@ -1,8 +1,8 @@
 <section class="section-spacing">
   <div class="container-narrow" style="max-width: 460px;">
     <div style="text-align: center; margin-bottom: 2rem;">
-      <span class="text-uppercase text-muted">Patron Portal</span>
-      <h1 class="h2" style="margin: 0.25rem 0 0.5rem;">{{ 'customer.login.title' | t | default: 'Sign In to Atelier' }}</h1>
+      <span class="text-uppercase text-muted">Giriş</span>
+      <h1 class="h2" style="margin: 0.25rem 0 0.5rem;">{{ 'customer.login.title' | t | default: 'Hesabınıza Giriş Yapın' }}</h1>
     </div>
 
     <div style="background: var(--color-surface); padding: 2.5rem 2rem; border-radius: var(--border-radius-lg); border: 1px solid var(--color-border);">
@@ -31,25 +31,25 @@
         </button>
 
         <div style="text-align: center; margin-top: 1.5rem; font-size: 13px; color: var(--color-text-muted);">
-          <span>New patron? </span>
+          <span>Hesabınız yok mu? </span>
           <a href="{{ routes.account_register_url }}" style="color: var(--color-text); font-weight: 600; text-decoration: underline;">
-            {{ 'customer.login.create_account' | t | default: 'Create an Account' }}
+            {{ 'customer.login.create_account' | t | default: 'Hesap Oluştur' }}
           </a>
         </div>
       {% endform %}
 
       <!-- Password Recovery Form -->
       <div id="recover-form" style="display: none; margin-top: 1rem;">
-        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Reset Password</h3>
-        <p style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 1rem;">We will transmit an encrypted access link to reset your credentials.</p>
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Şifre Sıfırla</h3>
+        <p style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 1rem;">Şifrenizi sıfırlamak için bir bağlantı göndereceğiz.</p>
         {% form 'recover_customer_password' %}
           <div class="form-group">
             <label class="form-label" for="RecoverEmail">Email Address</label>
             <input type="email" name="email" id="RecoverEmail" class="form-input" required>
           </div>
-          <button type="submit" class="btn btn-primary btn-full" style="height: 48px; margin-top: 0.5rem;">Send Reset Link</button>
+          <button type="submit" class="btn btn-primary btn-full" style="height: 48px; margin-top: 0.5rem;">Sıfırlama Bağlantısı Gönder</button>
           <div style="text-align: center; margin-top: 1rem;">
-            <a href="#" onclick="document.getElementById('recover-form').style.display='none'; document.querySelector('form[action*=\'/account/login\']').style.display='block';" style="font-size: 12px; color: var(--color-text-muted);">Cancel</a>
+            <a href="#" onclick="document.getElementById('recover-form').style.display='none'; document.querySelector('form[action*=\'/account/login\']').style.display='block';" style="font-size: 12px; color: var(--color-text-muted);">İptal</a>
           </div>
         {% endform %}
       </div>

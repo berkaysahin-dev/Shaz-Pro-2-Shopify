@@ -1,0 +1,209 @@
+<section class="section-spacing" style="background-color: {{ section.settings.bg_color }};">
+  <div class="container">
+    <div class="section-header text-center" data-reveal="fade-up">
+      {%- if section.settings.subtitle != blank -%}
+        <div class="section-subtitle">{{ section.settings.subtitle }}</div>
+      {%- endif -%}
+      <h2 class="h2">{{ section.settings.title | default: 'Teknik Detaylar & Özellikler' }}</h2>
+      {%- if section.settings.description != blank -%}
+        <p style="color: var(--color-text-muted); max-width: 600px; margin: 0.5rem auto 0; font-size: 1.0625rem; line-height: 1.7;">
+          {{ section.settings.description }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <!-- Feature Grid with Clean SVG Icons -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem;" data-reveal="fade-up">
+      {%- for block in section.blocks -%}
+        <div style="background: {{ section.settings.card_bg_color | default: 'var(--color-surface)' }}; padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--color-border); display: flex; flex-direction: column; gap: 1rem; transition: transform var(--transition-fast), border-color var(--transition-fast);" {{ block.shopify_attributes }}>
+          <div style="width: 44px; height: 44px; border-radius: var(--border-radius-sm); background: #0F1115; color: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            {% render 'icon', icon: block.settings.icon %}
+          </div>
+          <div>
+            <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-text);">
+              {{ block.settings.title }}
+            </h3>
+            <p style="font-size: 14px; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+              {{ block.settings.description }}
+            </p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <!-- Technical Specification Table -->
+    {%- if section.settings.show_table -%}
+      <div style="margin-top: 3.5rem; background: var(--color-surface); border-radius: var(--border-radius); border: 1px solid var(--color-border); padding: clamp(1.5rem, 3vw, 2.5rem);" data-reveal="fade-up">
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; text-align: left;">
+          {{ section.settings.table_title | default: 'Teknik Özellikler Tablosu' }}
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+          <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem;">
+            <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); font-weight: 600;">Gövde Malzemesi</div>
+            <div style="font-size: 14px; font-weight: 600; color: var(--color-text); margin-top: 0.25rem;">Havacılık Sınıfı Grade 5 Ti-6Al-4V Titanyum</div>
+          </div>
+          <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem;">
+            <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); font-weight: 600;">İşleme Hassasiyeti</div>
+            <div style="font-size: 14px; font-weight: 600; color: var(--color-text); margin-top: 0.25rem;">0.02 mm CNC Mikroskopik Tolerans</div>
+          </div>
+          <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem;">
+            <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); font-weight: 600;">Yüzey İşlemi</div>
+            <div style="font-size: 14px; font-weight: 600; color: var(--color-text); margin-top: 0.25rem;">Çok Aşamalı El Polisajı & Saten Anodizasyon</div>
+          </div>
+          <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem;">
+            <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); font-weight: 600;">Manyetik Alan</div>
+            <div style="font-size: 14px; font-weight: 600; color: var(--color-text); margin-top: 0.25rem;">N52 Yüksek Çekimli Neodimyum Dizilimi</div>
+          </div>
+          <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem;">
+            <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); font-weight: 600;">Ağırlık & Ölçüler</div>
+            <div style="font-size: 14px; font-weight: 600; color: var(--color-text); margin-top: 0.25rem;">340g &mdash; 140 x 95 x 22 mm</div>
+          </div>
+          <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem;">
+            <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); font-weight: 600;">Garanti Süresi</div>
+            <div style="font-size: 14px; font-weight: 600; color: var(--color-text); margin-top: 0.25rem;">2 Yıl Resmi & Ömür Boyu Yapısal Garanti</div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ürün Özellikleri & Detay",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Alt Başlık",
+      "default": "MÜHENDİSLİK STANDARTLARI"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Ana Başlık",
+      "default": "Teknik Detaylar & Özellikler"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Açıklama",
+      "default": "Her bir milimetre, olağanüstü performans ve zarif masaüstü dengesi için mikroskobik hassasiyetle hesaplanmıştır."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_table",
+      "label": "Teknik Tabloyu Göster",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "table_title",
+      "label": "Tablo Başlığı",
+      "default": "Teknik Özellikler Matrisi"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Arka Plan Rengi",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Kart Arka Plan Rengi",
+      "default": "#F8F9FA"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "spec_item",
+      "name": "Özellik Kartı",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "İkon",
+          "options": [
+            { "value": "layers", "label": "Katman / Malzeme (Layers)" },
+            { "value": "cpu", "label": "Mikro Çip / Hassasiyet (CPU)" },
+            { "value": "zap", "label": "Manyetik / Güç (Zap)" },
+            { "value": "shield-check", "label": "Koruma / Güvenlik (Shield)" },
+            { "value": "package", "label": "Kutu / Paket (Package)" },
+            { "value": "award", "label": "Ödül / Garanti (Award)" },
+            { "value": "clock", "label": "Zaman / Ömür (Clock)" }
+          ],
+          "default": "layers"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Özellik Başlığı",
+          "default": "Havacılık Sınıfı Titanyum"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Özellik Açıklaması",
+          "default": "Yekpare Grade 5 Ti-6Al-4V külçeden CNC ile işlenmiş gövde. Maksimum mukavemet ve hafiflik sunar."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ürün Özellikleri & Detay",
+      "blocks": [
+        {
+          "type": "spec_item",
+          "settings": {
+            "icon": "layers",
+            "title": "Havacılık Sınıfı Titanyum",
+            "description": "Yekpare Grade 5 Ti-6Al-4V külçeden CNC ile işlenmiş gövde. Maksimum mukavemet ve hafiflik sunar."
+          }
+        },
+        {
+          "type": "spec_item",
+          "settings": {
+            "icon": "cpu",
+            "title": "0.02 mm CNC Hassasiyeti",
+            "description": "Çok eksenli CNC frezeleme ile mikroskobik toleranslarda kusursuz kenar ve kavis birleşimleri."
+          }
+        },
+        {
+          "type": "spec_item",
+          "settings": {
+            "icon": "zap",
+            "title": "N52 Manyetik Kilit",
+            "description": "Entegre neodimyum mıknatıslar ile cihazınızı sarsıntısız, tam dengede ve anında kavrar."
+          }
+        },
+        {
+          "type": "spec_item",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Akustik Silikon Taban",
+            "description": "Masanızda sıfır kayma ve mikro titreşimleri emen özel akustik sönümleme yüzeyi."
+          }
+        },
+        {
+          "type": "spec_item",
+          "settings": {
+            "icon": "package",
+            "title": "Özel Kutu İçeriği",
+            "description": "Monolitik lüks koruma kutusu, mikrofiber temizleme bezi ve orijinal seri numaralı sertifika."
+          }
+        },
+        {
+          "type": "spec_item",
+          "settings": {
+            "icon": "award",
+            "title": "Ömür Boyu Yapısal Garanti",
+            "description": "Bozulmaz ve eskimez malzeme kalitesiyle 2 yıl resmi garanti ve ömür boyu gövde güvencesi."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

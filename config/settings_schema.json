@@ -8,94 +8,100 @@
     "theme_support_url": "https://visionsh.dev/support"
   },
   {
-    "name": "Colors & Theme",
+    "name": "Renk Paleti",
     "settings": [
-      {
-        "type": "header",
-        "content": "Color Palette"
-      },
       {
         "type": "color",
         "id": "color_primary",
-        "label": "Primary Accent",
-        "default": "#0F1115"
+        "label": "Birincil Renk",
+        "default": "#0B0C10"
       },
       {
         "type": "color",
         "id": "color_secondary",
-        "label": "Secondary Accent / Gold",
-        "default": "#C6A87D"
+        "label": "İkincil Renk / Vurgu",
+        "default": "#6366F1"
       },
       {
         "type": "color",
         "id": "color_background",
-        "label": "Background Main",
+        "label": "Arka Plan Rengi",
         "default": "#FFFFFF"
       },
       {
         "type": "color",
         "id": "color_surface",
-        "label": "Surface / Cards",
+        "label": "Yüzey / Kart Rengi",
         "default": "#F8F9FA"
       },
       {
         "type": "color",
-        "id": "color_text",
-        "label": "Text Main",
-        "default": "#111827"
-      },
-      {
-        "type": "color",
-        "id": "color_text_muted",
-        "label": "Text Muted / Subtitle",
-        "default": "#64748B"
-      },
-      {
-        "type": "color",
         "id": "color_border",
-        "label": "Borders & Dividers",
+        "label": "Kenarlık Rengi",
         "default": "#E2E8F0"
       },
       {
         "type": "color",
+        "id": "color_text",
+        "label": "Metin Rengi",
+        "default": "#0B0C10"
+      },
+      {
+        "type": "color",
+        "id": "color_text_muted",
+        "label": "Soluk Metin Rengi",
+        "default": "#64748B"
+      },
+      {
+        "type": "color",
         "id": "color_sale",
-        "label": "Sale / Discount Badge",
-        "default": "#E11D48"
+        "label": "İndirim / Hata Rengi",
+        "default": "#DC2626"
       },
       {
         "type": "color",
         "id": "color_stock_success",
-        "label": "In Stock / Urgency Green",
-        "default": "#10B981"
+        "label": "Başarı Rengi",
+        "default": "#16A34A"
       },
       {
         "type": "color",
         "id": "color_button_bg",
-        "label": "Button Background",
-        "default": "#0F1115"
+        "label": "Buton Arka Planı",
+        "default": "#0B0C10"
       },
       {
         "type": "color",
         "id": "color_button_text",
-        "label": "Button Text",
+        "label": "Buton Metni",
         "default": "#FFFFFF"
       }
     ]
   },
   {
-    "name": "Typography",
+    "name": "Tipografi",
     "settings": [
       {
         "type": "font_picker",
         "id": "font_heading",
-        "label": "Heading Font",
+        "label": "Başlık Fontu",
         "default": "helvetica_n4"
       },
       {
         "type": "font_picker",
         "id": "font_body",
-        "label": "Body Font",
+        "label": "Gövde Fontu",
         "default": "helvetica_n4"
+      },
+      {
+        "type": "range",
+        "id": "font_base_size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Temel Font Boyutu",
+        "default": 16
       },
       {
         "type": "range",
@@ -104,7 +110,7 @@
         "max": 120,
         "step": 5,
         "unit": "%",
-        "label": "Body Font Scale",
+        "label": "Gövde Fontu Ölçeği",
         "default": 100
       },
       {
@@ -114,25 +120,37 @@
         "max": 140,
         "step": 5,
         "unit": "%",
-        "label": "Heading Font Scale",
+        "label": "Başlık Fontu Ölçeği",
         "default": 100
       },
       {
         "type": "select",
         "id": "heading_letter_spacing",
-        "label": "Heading Letter Spacing",
+        "label": "Başlık Harf Aralığı",
         "options": [
-          { "value": "-0.04em", "label": "Tight (-0.04em)" },
-          { "value": "-0.02em", "label": "Editorial Modern (-0.02em)" },
-          { "value": "0", "label": "Normal (0)" },
-          { "value": "0.05em", "label": "Spacious (0.05em)" }
+          {
+            "value": "-0.04em",
+            "label": "Sıkı (-0.04em)"
+          },
+          {
+            "value": "-0.02em",
+            "label": "Modern (-0.02em)"
+          },
+          {
+            "value": "0",
+            "label": "Normal (0)"
+          },
+          {
+            "value": "0.05em",
+            "label": "Geniş (0.05em)"
+          }
         ],
         "default": "-0.02em"
       }
     ]
   },
   {
-    "name": "Layout & Styling",
+    "name": "Düzen & Stil",
     "settings": [
       {
         "type": "range",
@@ -141,7 +159,7 @@
         "max": 1680,
         "step": 40,
         "unit": "px",
-        "label": "Container Max Width",
+        "label": "Maksimum Kapsayıcı Genişliği",
         "default": 1440
       },
       {
@@ -151,237 +169,261 @@
         "max": 24,
         "step": 2,
         "unit": "px",
-        "label": "Global Border Radius",
+        "label": "Genel Kenar Yuvarlaklığı",
         "default": 6
       },
       {
         "type": "select",
         "id": "shadow_style",
-        "label": "Shadow Style",
+        "label": "Gölge Stili",
         "options": [
-          { "value": "none", "label": "None / Flat" },
-          { "value": "subtle", "label": "Subtle Luxury (Soft)" },
-          { "value": "elevated", "label": "Elevated Modern" }
+          {
+            "value": "none",
+            "label": "Yok / Düz"
+          },
+          {
+            "value": "subtle",
+            "label": "Hafif"
+          },
+          {
+            "value": "elevated",
+            "label": "Belirgin"
+          }
         ],
         "default": "subtle"
       },
       {
         "type": "checkbox",
         "id": "enable_micro_animations",
-        "label": "Enable Micro-Interactions & Hover Dynamics",
+        "label": "Mikro Etkileşimleri ve Vurgu Dinamiklerini Etkinleştir",
         "default": true
       }
     ]
   },
   {
-    "name": "Product Cards",
+    "name": "Ürün Kartı",
     "settings": [
       {
         "type": "select",
         "id": "card_image_ratio",
-        "label": "Image Aspect Ratio",
+        "label": "Görsel Oranı",
         "options": [
-          { "value": "portrait", "label": "Portrait (3:4) - Recommended for Luxury" },
-          { "value": "square", "label": "Square (1:1)" },
-          { "value": "landscape", "label": "Landscape (4:3)" }
+          {
+            "value": "portrait",
+            "label": "Dikey (3:4)"
+          },
+          {
+            "value": "square",
+            "label": "Kare (1:1)"
+          },
+          {
+            "value": "landscape",
+            "label": "Yatay (4:3)"
+          }
         ],
         "default": "portrait"
       },
       {
         "type": "checkbox",
         "id": "card_show_secondary_image",
-        "label": "Show Secondary Image on Hover",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "card_show_swatches",
-        "label": "Show Color Swatches with Instant Preview",
+        "label": "Üzerine Gelince İkinci Görseli Göster",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "card_show_vendor",
-        "label": "Show Brand / Vendor",
+        "label": "Satıcıyı Göster",
         "default": false
       },
       {
         "type": "checkbox",
         "id": "card_show_rating",
-        "label": "Show Star Rating",
+        "label": "Değerlendirmeyi Göster",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "card_show_quick_add",
-        "label": "Enable Quick Add to Cart",
+        "label": "Hızlı Eklemeyi Göster",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "card_show_quick_view",
-        "label": "Enable Quick View Modal",
+        "label": "Hızlı Görünümü Göster",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "card_show_wishlist",
-        "label": "Enable Wishlist Button",
+        "label": "Favoriler Butonunu Göster",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "card_show_swatches",
+        "label": "Renk Seçeneklerini (Swatches) Göster",
         "default": true
       }
     ]
   },
   {
-    "name": "Cart Drawer & Conversion",
+    "name": "Sepet & Kargo",
     "settings": [
       {
         "type": "select",
         "id": "cart_type",
-        "label": "Cart Experience",
+        "label": "Sepet Deneyimi",
         "options": [
-          { "value": "drawer", "label": "Slide-Out AJAX Drawer" },
-          { "value": "page", "label": "Standard Cart Page" }
+          {
+            "value": "drawer",
+            "label": "Çekmece Sepet"
+          },
+          {
+            "value": "page",
+            "label": "Standart Sepet Sayfası"
+          }
         ],
         "default": "drawer"
       },
       {
-        "type": "checkbox",
-        "id": "cart_enable_free_shipping_bar",
-        "label": "Enable Free Shipping Progress Bar",
-        "default": true
-      },
-      {
         "type": "number",
         "id": "cart_free_shipping_threshold",
-        "label": "Free Shipping Threshold (Amount in Store Currency)",
+        "label": "Ücretsiz Kargo Limiti",
         "default": 150
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_enable_free_shipping_bar",
+        "label": "Ücretsiz Kargo Barını Etkinleştir",
+        "default": true
       },
       {
         "type": "text",
         "id": "cart_free_shipping_message",
-        "label": "Free Shipping Progress Message",
-        "default": "Add [amount] more to unlock Free Worldwide Express Shipping"
+        "label": "Ücretsiz Kargo İlerleme Mesajı",
+        "default": "Ücretsiz kargoya ulaşmak için [amount] daha ekleyin"
       },
       {
         "type": "text",
         "id": "cart_free_shipping_unlocked_message",
-        "label": "Free Shipping Unlocked Message",
-        "default": "🎉 Congratulations! You have unlocked Free Express Shipping."
-      },
-      {
-        "type": "checkbox",
-        "id": "cart_show_notes",
-        "label": "Enable Order Note / Gift Message",
-        "default": true
+        "label": "Ücretsiz Kargo Kazanıldı Mesajı",
+        "default": "🎉 Tebrikler! Ücretsiz kargo kazandınız."
       },
       {
         "type": "checkbox",
         "id": "cart_enable_upsells",
-        "label": "Enable In-Drawer Cross-Sell Recommendations",
+        "label": "Sepet İçi Çapraz Satış (Upsell) Etkinleştir",
         "default": true
       },
       {
         "type": "collection",
         "id": "cart_upsell_collection",
-        "label": "Cart Upsell Collection (Fallback to Featured)"
+        "label": "Upsell Koleksiyonu"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_show_notes",
+        "label": "Sipariş Notu / Hediye Mesajını Etkinleştir",
+        "default": true
       }
     ]
   },
   {
-    "name": "Product Page (PDP) Conversions",
+    "name": "Ürün Sayfası (PDP) Dönüşümleri",
     "settings": [
       {
         "type": "checkbox",
         "id": "pdp_enable_sticky_atc",
-        "label": "Enable Sticky Add to Cart Bar on Scroll",
+        "label": "Kaydırırken Yapışkan Sepete Ekle Barını Etkinleştir",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "pdp_enable_live_stock",
-        "label": "Show Scarcity Stock Indicator ('Only X left in stock')",
+        "label": "Stok Azlığı Göstergesini Etkinleştir",
         "default": true
       },
       {
         "type": "number",
         "id": "pdp_stock_threshold",
-        "label": "Stock Urgency Threshold (Show when less than)",
+        "label": "Stok Aciliyeti Eşiği",
         "default": 10
       },
       {
         "type": "checkbox",
         "id": "pdp_enable_delivery_estimator",
-        "label": "Show Real-time Delivery Countdown Estimator",
+        "label": "Gerçek Zamanlı Teslimat Tahmini Göster",
         "default": true
       },
       {
         "type": "text",
         "id": "pdp_delivery_days_range",
-        "label": "Estimated Delivery Timeframe",
-        "default": "2-4 Business Days"
+        "label": "Tahmini Teslimat Süresi",
+        "default": "2-4 İş Günü"
       },
       {
         "type": "checkbox",
         "id": "pdp_enable_trust_badges",
-        "label": "Show Security & Trust Badges below Add to Cart",
+        "label": "Güven ve Ödeme Rozetlerini Göster",
         "default": true
       },
       {
         "type": "color",
         "id": "pdp_shipping_badge_bg",
-        "label": "Express Shipping Banner Background",
+        "label": "Hızlı Kargo Rozeti Arka Planı",
         "default": "#F0FDF4"
       },
       {
         "type": "color",
         "id": "pdp_shipping_badge_text",
-        "label": "Express Shipping Banner Text Color",
+        "label": "Hızlı Kargo Rozeti Metni",
         "default": "#166534"
       },
       {
         "type": "color",
         "id": "pdp_shipping_badge_border",
-        "label": "Express Shipping Banner Border Color",
+        "label": "Hızlı Kargo Rozeti Kenarlığı",
         "default": "#BBF7D0"
       },
       {
         "type": "color",
         "id": "pdp_stock_pulse_color",
-        "label": "Live Stock Pulse Indicator Color",
+        "label": "Canlı Stok Vurgu Rengi",
         "default": "#E11D48"
       },
       {
         "type": "color",
         "id": "pdp_stock_text_color",
-        "label": "Stock Urgency Text Color",
+        "label": "Stok Aciliyeti Metin Rengi",
         "default": "#111827"
       }
     ]
   },
   {
-    "name": "Social & Media",
+    "name": "Sosyal Medya",
     "settings": [
       {
         "type": "text",
         "id": "social_instagram_link",
-        "label": "Instagram URL",
+        "label": "Instagram Bağlantısı",
         "default": "https://instagram.com"
       },
       {
         "type": "text",
         "id": "social_twitter_link",
-        "label": "X (Twitter) URL",
+        "label": "X (Twitter) Bağlantısı",
         "default": "https://x.com"
       },
       {
         "type": "text",
         "id": "social_pinterest_link",
-        "label": "Pinterest URL"
+        "label": "Pinterest Bağlantısı"
       },
       {
         "type": "text",
         "id": "social_youtube_link",
-        "label": "YouTube URL"
+        "label": "YouTube Bağlantısı"
       }
     ]
   }

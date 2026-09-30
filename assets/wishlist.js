@@ -83,8 +83,8 @@ class WishlistManager {
     if (this.wishlist.length === 0) {
       container.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem;">
-          <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">Your wishlist is currently empty.</p>
-          <a href="/collections/all" class="btn btn-primary">Discover New Arrivals</a>
+          <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">Favori listeniz şu anda boş.</p>
+          <a href="/collections/all" class="btn btn-primary">Yeni Ürünleri Keşfet</a>
         </div>
       `;
       return;
@@ -93,7 +93,7 @@ class WishlistManager {
     // Dynamic rendering of saved items
     container.innerHTML = `
       <div style="grid-column: 1 / -1; padding-bottom: 1rem;">
-        <p class="text-muted">You have <strong>${this.wishlist.length}</strong> saved items in your private collection.</p>
+        <p class="text-muted">Favori listenizde <strong>${this.wishlist.length}</strong> ürün kayıtlı.</p>
       </div>
     `;
 

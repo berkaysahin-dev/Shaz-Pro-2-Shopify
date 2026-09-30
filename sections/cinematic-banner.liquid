@@ -19,26 +19,26 @@
   </div>
 
   <!-- Ambient Overlay -->
-  <div class="cinematic-banner-overlay" style="background: rgba(11, 12, 16, {{ section.settings.overlay_opacity | divided_by: 100.0 }});"></div>
+  <div class="cinematic-banner-overlay" style="background: {{ section.settings.overlay_color | default: '#0B0C10' }}; opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
 
-  <!-- Editorial Content -->
-  <div class="container" style="position: relative; z-index: 3;">
-    <div class="cinematic-banner-content" data-reveal="fade-up">
+  <!-- Editorial Content (Centered) -->
+  <div class="container" style="position: relative; z-index: 3; display: flex; justify-content: center; align-items: center; width: 100%; text-align: center;">
+    <div class="cinematic-banner-content" data-reveal="fade-up" style="margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
       {%- if section.settings.eyebrow != blank -%}
-        <span class="badge" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.3);">
+        <span class="badge" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.3); align-self: center; margin: 0 auto;">
           {{ section.settings.eyebrow }}
         </span>
       {%- endif -%}
 
-      <h2 class="display-title" style="color: #FFFFFF; font-size: clamp(2.5rem, 2rem + 3vw, 4.75rem);">
-        {{ section.settings.heading | default: 'Pure Materiality. Zero Compromise.' }}
+      <h2 class="display-title" style="color: {{ section.settings.heading_color | default: '#FFFFFF' }}; font-size: clamp(2.5rem, 2rem + 3vw, 4.75rem); text-align: center; width: 100%;">
+        {{ section.settings.heading | default: 'Saf Materyal. Sıfır Taviz.' }}
       </h2>
 
-      <p style="color: rgba(255, 255, 255, 0.88); font-size: 1.125rem; line-height: 1.7; max-width: 620px;">
-        {{ section.settings.subheading | default: 'Every piece is manufactured under ISO-certified microscopic tolerances, creating objects that endure across decades of daily use.' }}
+      <p style="color: {{ section.settings.subheading_color | default: 'rgba(255, 255, 255, 0.88)' }}; font-size: 1.125rem; line-height: 1.7; max-width: 620px; text-align: center; margin: 0 auto;">
+        {{ section.settings.subheading | default: 'Her parça, ISO sertifikalı mikroskobik toleranslarla üretilerek onlarca yıllık günlük kullanımda bile formunu koruyan zamansız bir sanat eserine dönüşür.' }}
       </p>
 
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem;">
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 0.5rem; width: 100%;">
         {%- if section.settings.cta_1_text != blank -%}
           <a href="{{ section.settings.cta_1_url | default: '/collections/all' }}" class="btn btn-white btn-lg">
             {{ section.settings.cta_1_text }}
@@ -56,12 +56,12 @@
 
 {% schema %}
 {
-  "name": "Cinematic Banner",
+  "name": "Sinematik Banner",
   "settings": [
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Full Bleed Image"
+      "label": "Arka Plan Görseli"
     },
     {
       "type": "range",
@@ -70,7 +70,7 @@
       "max": 100,
       "step": 5,
       "unit": "vh",
-      "label": "Section Height",
+      "label": "Bölüm Yüksekliği",
       "default": 75
     },
     {
@@ -80,53 +80,71 @@
       "max": 90,
       "step": 5,
       "unit": "%",
-      "label": "Overlay Darkness",
+      "label": "Koyuluk Oranı (Overlay)",
       "default": 50
     },
     {
       "type": "text",
       "id": "eyebrow",
-      "label": "Eyebrow Pill",
-      "default": "THE MONOLITH PHILOSOPHY"
+      "label": "Üst Rozet Metni",
+      "default": "MONOLİTİK TASARIM FELSEFESİ"
     },
     {
       "type": "textarea",
       "id": "heading",
-      "label": "Heading",
-      "default": "Pure Materiality. Zero Compromise."
+      "label": "Ana Başlık",
+      "default": "Saf Materyal. Sıfır Taviz."
     },
     {
       "type": "textarea",
       "id": "subheading",
-      "label": "Subheading",
-      "default": "Every piece is manufactured under ISO-certified microscopic tolerances, creating objects that endure across decades of daily use."
+      "label": "Alt Açıklama",
+      "default": "Her parça, ISO sertifikalı mikroskobik toleranslarla üretilerek onlarca yıllık günlük kullanımda bile formunu koruyan zamansız bir sanat eserine dönüşür."
     },
     {
       "type": "text",
       "id": "cta_1_text",
-      "label": "Primary CTA",
-      "default": "Explore the Collection"
+      "label": "Birincil Buton Metni",
+      "default": "Ürünü Keşfet & Satın Al"
     },
     {
       "type": "url",
       "id": "cta_1_url",
-      "label": "Primary Link"
+      "label": "Birincil Buton Linki"
     },
     {
       "type": "text",
       "id": "cta_2_text",
-      "label": "Secondary CTA",
-      "default": "Read the Manifesto"
+      "label": "İkincil Buton Metni",
+      "default": "Tasarım Hikayesi"
     },
     {
       "type": "url",
       "id": "cta_2_url",
-      "label": "Secondary Link"
+      "label": "İkincil Buton Linki"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Koyuluk / Katman Rengi",
+      "default": "#0B0C10"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Başlık Rengi",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Alt Başlık Rengi",
+      "default": "#E2E8F0"
     }
   ],
   "presets": [
     {
-      "name": "Cinematic Banner"
+      "name": "Sinematik Banner"
     }
   ]
 }

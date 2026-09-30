@@ -7,7 +7,7 @@
           <span class="section-subtitle">{{ section.settings.subtitle }}</span>
         {%- endif -%}
 
-        <h2 class="h2">{{ section.settings.title | default: 'Where Architectural Restraint Meets Tactile Luxury.' }}</h2>
+        <h2 class="h2">{{ section.settings.title | default: 'Mimari Yalınlığın ve Dokunsal Lüksün Buluştuğu Nokta.' }}</h2>
 
         {%- if section.settings.quote != blank -%}
           <div class="story-quote">
@@ -16,7 +16,7 @@
         {%- endif -%}
 
         <div style="color: var(--color-text-muted); font-size: 1.0625rem; line-height: 1.8;">
-          <p>{{ section.settings.body_text | default: 'Founded in Milan with engineering studios in Tokyo, Vision SH operates on the conviction that digital tools should exist in total aesthetic harmony with refined physical environments.' }}</p>
+          <p>{{ section.settings.body_text | default: 'Shaz Pro, dijital donanımların modern ve rafine fiziksel ortamlarla tam bir estetik uyum içinde var olması gerektiği inancıyla geliştirildi.' }}</p>
         </div>
 
         {%- if section.settings.cta_text != blank -%}
@@ -56,63 +56,63 @@
 
 {% schema %}
 {
-  "name": "Editorial Brand Story",
+  "name": "Marka & Tasarım Hikayesi",
   "settings": [
     {
       "type": "text",
       "id": "subtitle",
-      "label": "Subtitle",
-      "default": "Design Philosophy"
+      "label": "Alt Başlık",
+      "default": "Tasarım Felsefesi"
     },
     {
       "type": "text",
       "id": "title",
-      "label": "Heading",
-      "default": "Where Architectural Restraint Meets Tactile Luxury."
+      "label": "Başlık",
+      "default": "Mimari Yalınlığın ve Dokunsal Lüksün Buluştuğu Nokta."
     },
     {
       "type": "textarea",
       "id": "quote",
-      "label": "Editorial Quote",
-      "default": "We do not build ordinary accessories. We craft timeless spatial artifacts designed to elevate the human touch."
+      "label": "Vurgulu Alıntı",
+      "default": "Biz sıradan aksesuarlar üretmiyoruz. İnsan dokunuşunu ve teknoloji deneyimini yücelten zamansız mekânsal sanat eserleri yaratıyoruz."
     },
     {
       "type": "textarea",
       "id": "body_text",
-      "label": "Body Description",
-      "default": "Founded in Milan with engineering studios in Tokyo, Vision SH operates on the conviction that digital tools should exist in total aesthetic harmony with refined physical environments."
+      "label": "Açıklama Metni",
+      "default": "Shaz Pro, dijital donanımların modern ve rafine fiziksel ortamlarla tam bir estetik uyum içinde var olması gerektiği inancıyla geliştirildi."
     },
     {
       "type": "text",
       "id": "cta_text",
-      "label": "CTA Link Text",
-      "default": "Read the Vision SH Monograph"
+      "label": "Buton Metni",
+      "default": "Tasarım Hikayesini İncele"
     },
     {
       "type": "url",
       "id": "cta_url",
-      "label": "CTA Link Destination"
+      "label": "Buton Linki"
     },
     {
       "type": "image_picker",
       "id": "image_main",
-      "label": "Primary Large Image"
+      "label": "Büyük Ana Görsel"
     },
     {
       "type": "image_picker",
       "id": "image_secondary",
-      "label": "Overlapping Secondary Image"
+      "label": "Küçük Katman Görseli"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Background Color",
+      "label": "Arka Plan Rengi",
       "default": "#F8F9FA"
     }
   ],
   "presets": [
     {
-      "name": "Editorial Brand Story"
+      "name": "Marka & Tasarım Hikayesi"
     }
   ]
 }

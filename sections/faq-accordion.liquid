@@ -4,7 +4,7 @@
       {%- if section.settings.subtitle != blank -%}
         <div class="section-subtitle">{{ section.settings.subtitle }}</div>
       {%- endif -%}
-      <h2 class="h2">{{ section.settings.title | default: 'Frequently Inquired Details' }}</h2>
+      <h2 class="h2">{{ section.settings.title | default: 'Sıkça Sorulan Sorular' }}</h2>
     </div>
 
     <div class="faq-container" data-accordion-type="single">
@@ -25,77 +25,77 @@
 
 {% schema %}
 {
-  "name": "FAQ Accordion",
+  "name": "Sıkça Sorulan Sorular",
   "settings": [
     {
       "type": "text",
       "id": "subtitle",
-      "label": "Subtitle",
-      "default": "Client Concierge"
+      "label": "Alt Başlık",
+      "default": "Merak Edilenler"
     },
     {
       "type": "text",
       "id": "title",
-      "label": "Heading",
-      "default": "Frequently Inquired Details"
+      "label": "Başlık",
+      "default": "Sıkça Sorulan Sorular"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Background Color",
+      "label": "Arka Plan Rengi",
       "default": "#FFFFFF"
     }
   ],
   "blocks": [
     {
       "type": "faq_item",
-      "name": "Question & Answer",
+      "name": "Soru & Cevap",
       "settings": [
         {
           "type": "text",
           "id": "question",
-          "label": "Question",
-          "default": "What precision grade is utilized for the titanium hardware?"
+          "label": "Soru",
+          "default": "Titanyum parçalar hangi kalitede üretiliyor?"
         },
         {
           "type": "textarea",
           "id": "answer",
-          "label": "Answer",
-          "default": "All Atelier structural pieces are CNC-milled from certified aerospace Grade 5 Ti-6Al-4V titanium, renowned for its extraordinary strength-to-weight ratio and natural resistance to corrosion."
+          "label": "Cevap",
+          "default": "Tüm gövde, olağanüstü dayanıklılık ve korozyon direnciyle bilinen havacılık sınıfı Grade 5 Ti-6Al-4V titanyumdan 0.02mm CNC hassasiyetiyle üretilmektedir."
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "FAQ Accordion",
+      "name": "Sıkça Sorulan Sorular",
       "blocks": [
         {
           "type": "faq_item",
           "settings": {
-            "question": "What precision grade is utilized for the titanium hardware?",
-            "answer": "All Atelier structural pieces are CNC-milled from certified aerospace Grade 5 Ti-6Al-4V titanium, renowned for its extraordinary strength-to-weight ratio and natural resistance to corrosion."
+            "question": "Titanyum parçalar hangi kalitede üretiliyor?",
+            "answer": "Tüm gövde, olağanüstü dayanıklılık ve korozyon direnciyle bilinen havacılık sınıfı Grade 5 Ti-6Al-4V titanyumdan 0.02mm CNC hassasiyetiyle üretilmektedir."
           }
         },
         {
           "type": "faq_item",
           "settings": {
-            "question": "How does complimentary express delivery operate internationally?",
-            "answer": "We partner with DHL Express and FedEx Priority to deliver all orders globally within 2-4 business days. All duties and customs clearances are pre-calculated and covered by Atelier."
+            "question": "Kargo ve teslimat süreci nasıl işliyor?",
+            "answer": "Siparişleriniz aynı gün VIP Express kargo ile özenle paketlenip yola çıkarılır. 1-3 iş günü içinde kapınıza teslim edilir."
           }
         },
         {
           "type": "faq_item",
           "settings": {
-            "question": "What is the policy for returns and exchanges?",
-            "answer": "We offer a 30-day trial period. If you are not completely satisfied with your piece, we provide a prepaid return label for a prompt and courteous full refund."
+            "question": "İade ve değişim politikanız nedir?",
+            "answer": "30 gün boyunca koşulsuz deneme imkanınız vardır. Memnun kalmazsanız ücretsiz kargo kodu ile anında iade edebilirsiniz."
           }
         },
         {
           "type": "faq_item",
           "settings": {
-            "question": "Is there a manufacturer warranty on mechanical elements?",
-            "answer": "Every Atelier object comes with our 2-Year Craftsmanship Guarantee, covering all structural integrity and magnetic coupling assemblies."
+            "question": "Ürünün garanti kapsamı nedir?",
+            "answer": "Her bir ürünümüz 2 yıl resmi garanti ve ömür boyu yapısal dayanıklılık güvencesi altındadır."
           }
         }
       ]

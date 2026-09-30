@@ -1,8 +1,8 @@
 <section class="section-spacing">
   <div class="container-narrow" style="max-width: 460px;">
     <div style="text-align: center; margin-bottom: 2rem;">
-      <span class="text-uppercase text-muted">Join Atelier</span>
-      <h1 class="h2" style="margin: 0.25rem 0 0.5rem;">{{ 'customer.register.title' | t | default: 'Create Patron Account' }}</h1>
+      <span class="text-uppercase text-muted">Kayıt Ol</span>
+      <h1 class="h2" style="margin: 0.25rem 0 0.5rem;">{{ 'customer.register.title' | t | default: 'Hesap Oluşturun' }}</h1>
     </div>
 
     <div style="background: var(--color-surface); padding: 2.5rem 2rem; border-radius: var(--border-radius-lg); border: 1px solid var(--color-border);">
@@ -34,7 +34,7 @@
         </button>
 
         <div style="text-align: center; margin-top: 1.5rem; font-size: 13px; color: var(--color-text-muted);">
-          <span>Already registered? </span>
+          <span>Zaten hesabınız var mı? </span>
           <a href="{{ routes.account_login_url }}" style="color: var(--color-text); font-weight: 600; text-decoration: underline;">
             {{ 'customer.register.have_account' | t | default: 'Sign in' }}
           </a>

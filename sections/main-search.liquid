@@ -22,7 +22,7 @@
           class="form-input"
           style="height: 48px;"
         >
-        <button type="submit" class="btn btn-primary" style="height: 48px; min-width: 120px;">Search</button>
+        <button type="submit" class="btn btn-primary" style="height: 48px; min-width: 120px;">Ara</button>
       </form>
     </div>
 
@@ -33,7 +33,7 @@
           <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
             {{ 'general.search.no_results' | t: terms: search.terms }}
           </p>
-          <a href="/collections/all" class="btn btn-secondary btn-sm">Explore All Creations</a>
+          <a href="/collections/all" class="btn btn-secondary btn-sm">Tüm Ürünleri Keşfet</a>
         </div>
       {%- else -%}
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(clamp(230px, 20vw, 300px), 1fr)); gap: clamp(1rem, 2.5vw, 2.5rem);">
@@ -63,7 +63,12 @@
 
 {% schema %}
 {
-  "name": "Search Results",
-  "settings": []
+  "name": "Arama Sonuçları",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Arka Plan Rengi", "default": "#FFFFFF" },
+    { "type": "color", "id": "text_color", "label": "Metin Rengi", "default": "#0B0C10" },
+    { "type": "color", "id": "btn_bg_color", "label": "Buton Arka Plan Rengi", "default": "#0B0C10" },
+    { "type": "color", "id": "btn_text_color", "label": "Buton Metin Rengi", "default": "#FFFFFF" }
+  ]
 }
 {% endschema %}

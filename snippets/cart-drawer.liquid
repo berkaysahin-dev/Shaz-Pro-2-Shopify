@@ -31,9 +31,9 @@
     <div class="cart-drawer__shipping-bar {% if remaining_cents <= 0 %}is-unlocked{% endif %}">
       <div class="cart-drawer__shipping-message">
         {%- if remaining_cents <= 0 -%}
-          {{ settings.cart_free_shipping_unlocked_message | default: '✨ You qualify for Free Worldwide Express Shipping!' }}
+          {{ settings.cart_free_shipping_unlocked_message | default: 'Ücretsiz Dünya Çapında Express Kargo hakkı kazandınız!' }}
         {%- else -%}
-          Add <strong>{{ remaining_cents | money }}</strong> more to unlock Free Worldwide Express Shipping
+          <strong>{{ remaining_cents | money }}</strong> daha ekleyerek Ücretsiz Express Kargo fırsatını yakalayın
         {%- endif -%}
       </div>
       <div class="cart-drawer__shipping-progress">
@@ -46,7 +46,7 @@
   <div class="cart-drawer__empty" style="{% if cart.item_count > 0 %}display: none;{% endif %}">
     {% render 'icon', icon: 'cart' %}
     <h3>{{ 'cart.empty' | t | default: 'Your shopping bag is empty' }}</h3>
-    <p class="text-muted" style="font-size: 14px;">Explore our new seasonal arrivals and design essentials.</p>
+    <p class="text-muted" style="font-size: 14px;">Yeni sezon ürünlerimizi ve tasarım ürünlerini keşfedin.</p>
     <a href="/collections/all" class="btn btn-primary btn-sm" style="margin-top: 0.5rem;">
       {{ 'cart.empty_cta' | t | default: 'Discover New Arrivals' }}
     </a>
@@ -121,9 +121,9 @@
       </button>
     </form>
     <div class="cart-drawer__trust-badges">
-      <span>🔒 256-Bit SSL Encrypted</span>
+      <span>{% render 'icon', icon: 'lock' %} 256-Bit SSL Şifreli</span>
       <span>•</span>
-      <span>⚡ Instant Processing</span>
+      <span>{% render 'icon', icon: 'zap' %} Anında İşlem</span>
     </div>
   </div>
 </div>

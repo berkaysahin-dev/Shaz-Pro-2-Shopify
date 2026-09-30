@@ -1,8 +1,8 @@
 <section class="section-spacing">
   <div class="container">
     <div style="margin-bottom: var(--space-xl); border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-lg);" data-reveal="fade-up">
-      <div class="section-subtitle">Browse</div>
-      <h1 class="display-title" style="margin: 0.25rem 0 0.75rem;">All Collections</h1>
+      <div class="section-subtitle">Göz At</div>
+      <h1 class="display-title" style="margin: 0.25rem 0 0.75rem;">Tüm Koleksiyonlar</h1>
     </div>
 
     <div class="collections-list-grid">
@@ -97,7 +97,11 @@
 
 {% schema %}
 {
-  "name": "Collections List",
-  "settings": []
+  "name": "Koleksiyon Listesi",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Arka Plan Rengi", "default": "#FFFFFF" },
+    { "type": "color", "id": "text_color", "label": "Metin Rengi", "default": "#0B0C10" },
+    { "type": "color", "id": "card_bg_color", "label": "Kart Arka Plan Rengi", "default": "#F8F9FA" }
+  ]
 }
 {% endschema %}

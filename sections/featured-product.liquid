@@ -1,0 +1,304 @@
+{%- liquid
+  assign product = section.settings.product
+  if product == blank or product.title == blank
+    assign product = collections.all.products.first
+  endif
+  if product == blank or product.title == blank
+    assign product = all_products.first
+  endif
+  assign has_real_product = false
+  if product != blank and product.title != blank
+    assign has_real_product = true
+    assign current_variant = product.selected_or_first_available_variant
+  endif
+  assign is_on_sale = false
+  if current_variant and current_variant.compare_at_price > current_variant.price
+    assign is_on_sale = true
+    assign discount_percent = current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price
+  endif
+-%}
+
+<section class="section-spacing product-section featured-product-section" style="background-color: {{ section.settings.bg_color }};" data-section-id="{{ section.id }}" data-product-id="{{ product.id }}">
+  <div class="container">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
+      <div class="section-header text-center" style="margin-bottom: 2.5rem;" data-reveal="fade-up">
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="section-subtitle">{{ section.settings.eyebrow }}</div>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="h2">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="product-grid">
+      <!-- Media Gallery (Left Side) -->
+      <div class="product-gallery" data-reveal="fade-up">
+        {%- if product.media.size > 1 -%}
+          <div class="product-gallery__thumbnails">
+            {%- for media in product.media limit: 4 -%}
+              <div
+                class="product-gallery__thumb-item {% if forloop.first %}is-active{% endif %}"
+                data-media-id="{{ media.id }}"
+                data-media-src="{{ media | image_url: width: 1400 }}"
+              >
+                <img src="{{ media | image_url: width: 160 }}" alt="{{ media.alt | escape }}" loading="lazy" width="72" height="96">
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        <!-- Main Media Preview -->
+        <div class="product-gallery__main">
+          <div class="product-gallery__main-image-wrap">
+            {%- if product.featured_media -%}
+              <img
+                src="{{ product.featured_media | image_url: width: 1400 }}"
+                alt="{{ product.featured_media.alt | escape | default: product.title }}"
+                class="product-gallery__main-image"
+                loading="eager"
+                width="1400"
+                height="1866"
+              >
+            {%- else -%}
+              <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--color-surface); color: var(--color-text-muted); min-height: 480px; border-radius: var(--border-radius-lg);">
+                {{ 'product-1' | placeholder_svg_tag }}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Information & Purchase Form (Right Side) -->
+      <div class="product-info" data-reveal="fade-up">
+        <div>
+          <div class="product-info__vendor">{{ product.vendor | default: shop.name | default: 'SHAZ PRO' }}</div>
+          <h2 class="product-info__title" style="font-size: clamp(1.75rem, 1.5rem + 1.2vw, 2.5rem);">
+            <a href="{{ product.url | default: '#' }}" style="color: inherit;">
+              {{ product.title | default: 'Shaz Pro Spatial Titanyum Stand' }}
+            </a>
+          </h2>
+        </div>
+
+        <!-- Rating & Social Proof -->
+        <div class="product-info__rating">
+          <div style="display: flex; gap: 2px; color: #F59E0B;">
+            {%- for star in (1..5) -%}
+              {% render 'icon', icon: 'star' %}
+            {%- endfor -%}
+          </div>
+          <span style="font-weight: 700; font-size: 13px; color: var(--color-text);">4.98</span>
+          <span class="product-info__rating-count">(64 Doğrulanmış Müşteri Değerlendirmesi)</span>
+        </div>
+
+        <!-- Price Block -->
+        <div class="product-info__price-block">
+          <span class="product-info__price">{{ current_variant.price | default: 24000 | money }}</span>
+          <span class="product-info__price--compare" style="{% unless is_on_sale %}display: none;{% endunless %}">
+            {{ current_variant.compare_at_price | money }}
+          </span>
+          {%- if is_on_sale -%}
+            <span class="product-info__savings-badge">-%{{ discount_percent }} İNDİRİM</span>
+          {%- endif -%}
+        </div>
+
+        <!-- Short Description -->
+        <p style="color: var(--color-text-muted); font-size: 15px; line-height: 1.7; margin: 0;">
+          {{ section.settings.short_description | default: 'Havacılık sınıfı 5. seviye titanyum bloktan mikroskobik toleransla üretilmiş, manyetik kilitli ve akustik sönümlemeli tekil başyapıt.' }}
+        </p>
+
+        <!-- Free Worldwide Express Banner -->
+        <div style="background-color: #F0FDF4; border: 1px solid #BBF7D0; color: #166534; border-radius: var(--border-radius); padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 12px; font-weight: 500;">
+          <span style="display: flex; align-items: center; color: #16A34A;">{% render 'icon', icon: 'sparkle' %}</span>
+          <span><strong>Aynı Gün Ücretsiz VIP Express Kargo</strong> bu ürün için tanımlandı.</span>
+        </div>
+
+        <!-- Scarcity Stock Urgency -->
+        <div class="product-stock-urgency" style="color: #111827;">
+          <div class="product-stock-urgency__header">
+            <span class="product-stock-urgency__pulse" style="background-color: #E11D48; box-shadow: 0 0 0 0 #E11D4840;"></span>
+            <span style="display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 600;">
+              {% render 'icon', icon: 'zap' %}
+              Stokta sadece 4 adet kaldı &mdash; Seri Numaralı Özel Üretim
+            </span>
+          </div>
+          <div class="product-stock-urgency__bar">
+            <div class="product-stock-urgency__bar-fill" style="width: 25%; background-color: var(--color-primary);"></div>
+          </div>
+        </div>
+
+        <!-- Product Purchase Form -->
+        {%- if has_real_product -%}
+          {% form 'product', product, id: 'FeaturedProductForm', class: 'product-form' %}
+            <input type="hidden" name="id" value="{{ current_variant.id }}">
+
+            <!-- Variant Option Selectors -->
+            {%- unless product.has_only_default_variant -%}
+              <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 1.5rem;">
+                {%- for option in product.options_with_values -%}
+                  {%- assign downcase_name = option.name | downcase -%}
+                  {%- assign is_color = false -%}
+                  {%- if downcase_name == 'color' or downcase_name == 'colour' or downcase_name == 'renk' -%}
+                    {%- assign is_color = true -%}
+                  {%- endif -%}
+
+                  <div class="product-option-group">
+                    <div class="product-option-header">
+                      <span class="product-option-label">
+                        {{ option.name }}: <span class="product-option-selected-val text-muted" style="font-weight: 500;">{{ option.selected_value }}</span>
+                      </span>
+                    </div>
+
+                    <div class="product-option-values">
+                      {%- for value in option.values -%}
+                        {%- if is_color -%}
+                          {%- assign color_code = value | downcase | replace: ' ', '' -%}
+                          <button
+                            type="button"
+                            class="product-pdp-swatch {% if option.selected_value == value %}is-selected{% endif %}"
+                            style="background-color: {{ color_code }};"
+                            data-value="{{ value | escape }}"
+                            title="{{ value }}"
+                            aria-label="{{ value }}"
+                          ></button>
+                        {%- else -%}
+                          <button
+                            type="button"
+                            class="product-option-btn {% if option.selected_value == value %}is-selected{% endif %}"
+                            data-value="{{ value | escape }}"
+                          >
+                            {{ value }}
+                          </button>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </div>
+                  </div>
+                {%- endfor -%}
+              </div>
+            {%- endunless -%}
+
+            <!-- Quantity & Action Buttons -->
+            <div class="product-actions-row">
+              <div class="quantity-stepper">
+                <button type="button" class="quantity-stepper__btn" onclick="const input = this.nextElementSibling; if(input.value > 1) input.value--;">-</button>
+                <input type="number" name="quantity" value="1" min="1" class="quantity-stepper__input" aria-label="Adet">
+                <button type="button" class="quantity-stepper__btn" onclick="const input = this.previousElementSibling; input.value++;">+</button>
+              </div>
+
+              <button
+                type="submit"
+                name="add"
+                class="btn btn-primary product-atc-btn"
+                {% unless current_variant.available %}disabled{% endunless %}
+              >
+                {%- if current_variant.available -%}
+                  {{ 'products.product.add_to_cart' | t | default: 'Sepete Ekle' }}
+                {%- else -%}
+                  {{ 'products.product.sold_out' | t | default: 'Tükendi' }}
+                {%- endif -%}
+              </button>
+
+              <!-- Wishlist Button -->
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-wishlist-btn
+                data-product-handle="{{ product.handle }}"
+                style="width: 50px; padding: 0;"
+                aria-label="Favorilere Ekle"
+              >
+                {% render 'icon', icon: 'heart' %}
+              </button>
+            </div>
+
+            <!-- Direct Full Page Link -->
+            <div style="margin-top: 1rem; text-align: center;">
+              <a href="{{ product.url | default: '/collections/all' }}" style="font-size: 13px; color: var(--color-text-muted); text-decoration: underline; text-underline-offset: 4px;">
+                Tüm Teknik Özellikleri &amp; Detayları İncele →
+              </a>
+            </div>
+          {% endform %}
+        {%- else -%}
+          <form action="/cart/add" method="post" id="FeaturedProductForm" class="product-form">
+            <div class="product-actions-row">
+              <button
+                type="submit"
+                name="add"
+                class="btn btn-primary product-atc-btn"
+              >
+                {{ 'products.product.add_to_cart' | t | default: 'Sepete Ekle' }}
+              </button>
+            </div>
+            <div style="margin-top: 1rem; text-align: center;">
+              <a href="/collections/all" style="font-size: 13px; color: var(--color-text-muted); text-decoration: underline; text-underline-offset: 4px;">
+                Tüm Koleksiyonu İncele →
+              </a>
+            </div>
+          </form>
+        {%- endif -%}
+
+        <!-- Trust Signals Row -->
+        <div class="product-trust-badges">
+          <div class="product-trust-item">
+            {% render 'icon', icon: 'shield-check' %}
+            <span>256-Bit SSL Güvenli Ödeme</span>
+          </div>
+          <div class="product-trust-item">
+            {% render 'icon', icon: 'truck' %}
+            <span>Aynı Gün VIP Kargo</span>
+          </div>
+          <div class="product-trust-item">
+            {% render 'icon', icon: 'rotate-ccw' %}
+            <span>30 Gün Koşulsuz İade</span>
+          </div>
+          <div class="product-trust-item">
+            {% render 'icon', icon: 'award' %}
+            <span>2 Yıl Resmi Garanti</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Öne Çıkan Tek Ürün",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Seçili Ürün"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Üst Başlık (Eyebrow)",
+      "default": "AMİRAL GEMİSİ LANSMANI"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Ana Başlık",
+      "default": "Mekânsal Titanyum Stand"
+    },
+    {
+      "type": "textarea",
+      "id": "short_description",
+      "label": "Kısa Açıklama",
+      "default": "Havacılık sınıfı 5. seviye titanyum bloktan mikroskobik toleransla üretilmiş, manyetik kilitli ve akustik sönümlemeli tekil başyapıt."
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Arka Plan Rengi",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Öne Çıkan Tek Ürün"
+    }
+  ]
+}
+{% endschema %}
