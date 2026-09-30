@@ -1,4 +1,28 @@
-<footer class="footer-wrapper" style="background-color: #07080A; color: #FFFFFF; padding: clamp(2.5rem, 4vw, 4rem) 0 var(--space-lg); border-top: 1px solid rgba(255, 255, 255, 0.08);">
+{%- if section.settings.show_animated_divider -%}
+  <div class="footer-animated-divider" style="overflow: hidden; line-height: 0; background: transparent; width: 100%;">
+    <style>
+      .footer-animated-divider .parallax1 > use { animation: move-forever1 10s linear infinite; }
+      .footer-animated-divider .parallax2 > use { animation: move-forever2 8s linear infinite; opacity: 0.5; }
+      .footer-animated-divider .parallax3 > use { animation: move-forever3 6s linear infinite; opacity: 0.3; }
+      .footer-animated-divider .parallax4 > use { animation: move-forever4 4s linear infinite; opacity: 0.15; }
+      @keyframes move-forever1 { 0% { transform: translate(85px, 0%); } 100% { transform: translate(-90px, 0%); } }
+      @keyframes move-forever2 { 0% { transform: translate(-90px, 0%); } 100% { transform: translate(85px, 0%); } }
+      @keyframes move-forever3 { 0% { transform: translate(85px, 0%); } 100% { transform: translate(-90px, 0%); } }
+      @keyframes move-forever4 { 0% { transform: translate(-90px, 0%); } 100% { transform: translate(85px, 0%); } }
+    </style>
+    <svg class="waves-animated-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" style="display: block; width: 100%; height: clamp(40px, 5vw, 75px); transform: translateY(1px);">
+      <defs>
+        <path id="gentle-wave-footer" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax1"><use xlink:href="#gentle-wave-footer" x="50" y="3" fill="{{ section.settings.divider_fill | default: '#07080A' }}"/></g>
+      <g class="parallax2"><use xlink:href="#gentle-wave-footer" x="50" y="0" fill="{{ section.settings.divider_fill | default: '#07080A' }}"/></g>
+      <g class="parallax3"><use xlink:href="#gentle-wave-footer" x="50" y="9" fill="{{ section.settings.divider_fill | default: '#07080A' }}"/></g>
+      <g class="parallax4"><use xlink:href="#gentle-wave-footer" x="50" y="6" fill="{{ section.settings.divider_fill | default: '#07080A' }}"/></g>
+    </svg>
+  </div>
+{%- endif -%}
+
+<footer class="footer-wrapper" style="background-color: {{ section.settings.bg_color | default: '#07080A' }}; color: {{ section.settings.text_color | default: '#FFFFFF' }}; padding: clamp(2.5rem, 4vw, 4rem) 0 var(--space-lg); border-top: 1px solid rgba(255, 255, 255, 0.08);">
   <div class="container">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; margin-bottom: var(--space-2xl);">
       <!-- Brand Manifesto -->
@@ -86,6 +110,30 @@
 {
   "name": "Alt Bilgi (Footer)",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_animated_divider",
+      "label": "Hareketli Dalga Ayırıcıyı Göster",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "divider_fill",
+      "label": "Dalga Rengi",
+      "default": "#07080A"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Footer Arka Plan Rengi",
+      "default": "#07080A"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Footer Metin Rengi",
+      "default": "#FFFFFF"
+    },
     {
       "type": "textarea",
       "id": "brand_text",

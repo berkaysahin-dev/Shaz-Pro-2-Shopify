@@ -14,14 +14,14 @@
   endif
 -%}
 
-<div class="cart-drawer-container" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ 'cart.title' | t | default: 'Shopping Bag' }}">
+<div class="cart-drawer-container" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ 'cart.title' | t | default: 'Alışveriş Sepeti' }}">
   <!-- Drawer Header -->
   <div class="cart-drawer__header">
     <div class="cart-drawer__title">
-      <span>{{ 'cart.title' | t | default: 'Shopping Bag' }}</span>
-      <span class="cart-drawer__count-badge">{{ cart.item_count }} {{ 'cart.title' | t | default: 'items' }}</span>
+      <span>{{ 'cart.title' | t | default: 'Alışveriş Sepeti' }}</span>
+      <span class="cart-drawer__count-badge">{{ cart.item_count }} {{ 'cart.title' | t | default: 'ürün' }}</span>
     </div>
-    <button type="button" class="cart-drawer__close-btn" aria-label="{{ 'general.accessibility.close_cart' | t | default: 'Close Bag' }}">
+    <button type="button" class="cart-drawer__close-btn" aria-label="{{ 'general.accessibility.close_cart' | t | default: 'Sepeti Kapat' }}">
       {% render 'icon', icon: 'close' %}
     </button>
   </div>
@@ -45,10 +45,10 @@
   <!-- Empty Cart State -->
   <div class="cart-drawer__empty" style="{% if cart.item_count > 0 %}display: none;{% endif %}">
     {% render 'icon', icon: 'cart' %}
-    <h3>{{ 'cart.empty' | t | default: 'Your shopping bag is empty' }}</h3>
+    <h3>{{ 'cart.empty' | t | default: 'Alışveriş sepetiniz boş' }}</h3>
     <p class="text-muted" style="font-size: 14px;">Yeni sezon ürünlerimizi ve tasarım ürünlerini keşfedin.</p>
     <a href="/collections/all" class="btn btn-primary btn-sm" style="margin-top: 0.5rem;">
-      {{ 'cart.empty_cta' | t | default: 'Discover New Arrivals' }}
+      {{ 'cart.empty_cta' | t | default: 'Yeni Ürünleri Keşfet' }}
     </a>
   </div>
 
@@ -87,7 +87,7 @@
     {%- assign upsell_collection = collections[settings.cart_upsell_collection] -%}
     {%- if upsell_collection.products.size > 0 -%}
       <div class="cart-drawer__upsells">
-        <div class="cart-drawer__upsells-title">{{ 'cart.upsell_title' | t | default: 'Complete Your Look' }}</div>
+        <div class="cart-drawer__upsells-title">{{ 'cart.upsell_title' | t | default: 'Tamamlayıcı Ürünler' }}</div>
         {%- for product in upsell_collection.products limit: 1 -%}
           <div class="cart-drawer-upsell-item">
             {%- if product.featured_media -%}
@@ -98,7 +98,7 @@
               <div class="cart-drawer-upsell-item__price">{{ product.price | money }}</div>
             </div>
             <button type="button" class="btn btn-secondary btn-sm cart-upsell-btn" data-variant-id="{{ product.selected_or_first_available_variant.id }}">
-              {{ 'cart.add_upsell' | t | default: 'Add +' }}
+              {{ 'cart.add_upsell' | t | default: 'Ekle +' }}
             </button>
           </div>
         {%- endfor -%}
@@ -109,15 +109,15 @@
   <!-- Drawer Footer -->
   <div class="cart-drawer__footer" style="{% if cart.item_count == 0 %}display: none;{% endif %}">
     <div class="cart-drawer__subtotal-row">
-      <span>{{ 'cart.subtotal' | t | default: 'Subtotal' }}</span>
+      <span>{{ 'cart.subtotal' | t | default: 'Ara Toplam' }}</span>
       <span class="cart-drawer__subtotal-price">{{ cart.total_price | money }}</span>
     </div>
     <div class="cart-drawer__taxes-notice">
-      {{ 'cart.taxes_and_shipping_policy_at_checkout_html' | t: link: routes.cart_url | default: 'Taxes and shipping calculated at checkout.' }}
+      {{ 'cart.taxes_and_shipping_policy_at_checkout_html' | t: link: routes.cart_url | default: 'Kargo ve vergiler ödeme adımında hesaplanır.' }}
     </div>
     <form action="/checkout" method="post">
       <button type="submit" name="checkout" class="btn btn-primary cart-drawer__checkout-btn">
-        {{ 'cart.checkout' | t | default: 'Proceed to Secure Checkout' }}
+        {{ 'cart.checkout' | t | default: 'Güvenli Ödemeye Geç' }}
       </button>
     </form>
     <div class="cart-drawer__trust-badges">

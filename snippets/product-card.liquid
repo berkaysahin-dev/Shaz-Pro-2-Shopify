@@ -30,17 +30,17 @@
     <!-- Badges -->
     <div class="product-card__badges">
       {%- if card_product.available == false -%}
-        <span class="badge badge-outline">{{ 'products.product.sold_out' | t | default: 'Sold Out' }}</span>
+        <span class="badge badge-outline">{{ 'products.product.sold_out' | t | default: 'Tükendi' }}</span>
       {%- elsif is_on_sale -%}
         <span class="badge badge-sale">-{{ discount_percent }}%</span>
       {%- elsif card_product.tags contains 'new' or card_product.tags contains 'New' -%}
-        <span class="badge badge-new">New</span>
+        <span class="badge badge-new">Yeni</span>
       {%- endif -%}
     </div>
 
     <!-- Wishlist Button -->
     {%- if show_wishlist -%}
-      <button type="button" class="product-card__wishlist-btn" data-wishlist-btn data-product-handle="{{ card_product.handle }}" aria-label="{{ 'products.wishlist.add' | t | default: 'Add to Wishlist' }}">
+      <button type="button" class="product-card__wishlist-btn" data-wishlist-btn data-product-handle="{{ card_product.handle }}" aria-label="{{ 'products.wishlist.add' | t | default: 'Favorilere Ekle' }}">
         {% render 'icon', icon: 'heart' %}
       </button>
     {%- endif -%}
@@ -80,18 +80,18 @@
           <form action="/cart/add" method="post" enctype="multipart/form-data" style="flex: 1;">
             <input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id }}">
             <button type="submit" class="product-card__quick-btn btn-full">
-              {{ 'products.product.quick_add' | t | default: 'Quick Add' }}
+              {{ 'products.product.quick_add' | t | default: 'Hızlı Ekle' }}
             </button>
           </form>
         {%- else -%}
           <a href="{{ card_product.url }}" class="product-card__quick-btn">
-            {{ 'products.product.choose_options' | t | default: 'Select Options' }}
+            {{ 'products.product.choose_options' | t | default: 'Seçenekleri Gör' }}
           </a>
         {%- endif -%}
       {%- endif -%}
 
       {%- if show_quick_view -%}
-        <button type="button" class="product-card__quick-btn" data-quick-view-btn data-product-handle="{{ card_product.handle }}" aria-label="{{ 'products.product.quick_view' | t | default: 'Quick View' }}" style="flex: 0 0 40px; padding: 0;">
+        <button type="button" class="product-card__quick-btn" data-quick-view-btn data-product-handle="{{ card_product.handle }}" aria-label="{{ 'products.product.quick_view' | t | default: 'Hızlı Bakış' }}" style="flex: 0 0 40px; padding: 0;">
           {% render 'icon', icon: 'eye' %}
         </button>
       {%- endif -%}

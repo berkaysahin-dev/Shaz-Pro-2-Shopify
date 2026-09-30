@@ -152,12 +152,12 @@
 
 {% schema %}
 {
-  "name": "Header",
+  "name": "Üst Menü (Header)",
   "settings": [
     {
       "type": "image_picker",
       "id": "logo",
-      "label": "Logo Image"
+      "label": "Logo Görseli"
     },
     {
       "type": "range",
@@ -166,54 +166,54 @@
       "max": 240,
       "step": 10,
       "unit": "px",
-      "label": "Logo Width",
+      "label": "Logo Genişliği",
       "default": 130
     },
     {
       "type": "link_list",
       "id": "menu",
-      "label": "Main Navigation Menu",
+      "label": "Ana Gezinme Menüsü",
       "default": "main-menu"
     },
     {
       "type": "checkbox",
       "id": "enable_transparent_header",
-      "label": "Enable Transparent Header on Homepage Hero",
+      "label": "Ana Sayfa Hero Üzerinde Şeffaf Menü",
       "default": true
     }
   ],
   "blocks": [
     {
       "type": "mega_menu_feature",
-      "name": "Mega Menu Featured Card",
+      "name": "Mega Menü Öne Çıkan Kartı",
       "settings": [
         {
           "type": "text",
           "id": "menu_handle",
-          "label": "Menu Item Handle (e.g. shop, new-arrivals)",
+          "label": "Menü Öğesi Tanımı (örn: shop)",
           "default": "shop"
         },
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Feature Visual Image"
+          "label": "Görsel"
         },
         {
           "type": "text",
           "id": "title",
-          "label": "Card Title",
-          "default": "Autumn / Winter Capsule"
+          "label": "Kart Başlığı",
+          "default": "Shaz Pro Lansman Serisi"
         },
         {
           "type": "text",
           "id": "link_text",
-          "label": "Link Text",
-          "default": "Explore Editorial"
+          "label": "Buton Metni",
+          "default": "Koleksiyonu Keşfet"
         },
         {
           "type": "url",
           "id": "link_url",
-          "label": "Link Destination"
+          "label": "Buton Linki"
         }
       ]
     }

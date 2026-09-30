@@ -18,7 +18,7 @@
   endif
 -%}
 
-<section class="section-spacing product-section featured-product-section" style="background-color: {{ section.settings.bg_color }};" data-section-id="{{ section.id }}" data-product-id="{{ product.id }}">
+<section id="product-details" class="section-spacing product-section featured-product-section" style="background-color: {{ section.settings.bg_color }};" data-section-id="{{ section.id }}" data-product-id="{{ product.id }}">
   <div class="container">
     {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
       <div class="section-header text-center" style="margin-bottom: 2.5rem;" data-reveal="fade-up">

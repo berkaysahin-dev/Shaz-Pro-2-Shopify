@@ -2,19 +2,13 @@
   "name": "Alt Bilgi Grubu (Footer)",
   "type": "footer",
   "sections": {
-    "section_divider_footer": {
-      "type": "section-divider",
-      "settings": {
-        "shape": "waves_3",
-        "fill_color": "#07080A",
-        "bg_color": "transparent",
-        "flip_horizontal": false,
-        "flip_vertical": false
-      }
-    },
     "footer": {
       "type": "footer",
       "settings": {
+        "show_animated_divider": true,
+        "divider_fill": "#07080A",
+        "bg_color": "#07080A",
+        "text_color": "#FFFFFF",
         "brand_text": "Titizlikle tasarlanmış mekânsal ve teknolojik donanımlar. Yalın mimari estetik, saf metalurji ve zamansız fonksiyonel tasarım ilkeleriyle geliştirildi."
       },
       "blocks": {
@@ -48,7 +42,6 @@
     }
   },
   "order": [
-    "section_divider_footer",
     "footer"
   ]
 }
