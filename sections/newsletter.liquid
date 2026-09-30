@@ -1,9 +1,9 @@
 <section class="section-spacing" style="background-color: {{ section.settings.bg_color }};">
   <div class="container-narrow">
     <div style="text-align: center; display: flex; flex-direction: column; gap: 1rem; align-items: center; background: var(--color-surface); padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem); border-radius: var(--border-radius-lg); border: 1px solid var(--color-border);">
-      <span class="text-uppercase text-accent">{{ section.settings.badge | default: 'Shaz Pro VIP Bülteni' }}</span>
+      <span class="text-uppercase text-accent">{{ section.settings.badge | default: 'Shaz Agency VIP Bülteni' }}</span>
       <h2 class="h1" style="font-size: clamp(2rem, 1.5rem + 1.5vw, 3rem);">
-        {{ section.settings.title | default: 'Shaz Pro Kulübüne Katılın' }}
+        {{ section.settings.title | default: 'Shaz Agency Kulübüne Katılın' }}
       </h2>
       <p style="color: var(--color-text-muted); font-size: 1.0625rem; max-width: 500px; line-height: 1.6;">
         {{ section.settings.subtitle | default: 'Özel lansman davetiyeleri, sınırlı üretim duyuruları ve teknik tasarım bültenleri alın. Gizliliğinize saygı duyuyoruz.' }}
@@ -13,7 +13,7 @@
         <input type="hidden" name="contact[tags]" value="newsletter">
         {%- if form.posted_successfully? -%}
           <div style="color: var(--color-stock-success); font-weight: 600; font-size: 14px;">
-            {{ 'general.newsletter.success' | t | default: 'Bültenimize kaydoldunuz. Shaz Pro ayrıcalıklar dünyasına hoş geldiniz.' }}
+            {{ 'general.newsletter.success' | t | default: 'Bültenimize kaydoldunuz. Shaz Agency ayrıcalıklar dünyasına hoş geldiniz.' }}
           </div>
         {%- else -%}
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -48,13 +48,13 @@
       "type": "text",
       "id": "badge",
       "label": "Üst Rozet",
-      "default": "Shaz Pro VIP Bülteni"
+      "default": "Shaz Agency VIP Bülteni"
     },
     {
       "type": "text",
       "id": "title",
       "label": "Başlık",
-      "default": "Shaz Pro Kulübüne Katılın"
+      "default": "Shaz Agency Kulübüne Katılın"
     },
     {
       "type": "textarea",

@@ -11,7 +11,7 @@
 ![Build Status](https://img.shields.io/badge/Build-Passing%20(Zero%20Errors)-brightgreen?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 ![Responsive](https://img.shields.io/badge/Responsive-100%25%20Fluid-black?style=for-the-badge)
-![Designed by](https://img.shields.io/badge/Crafted%20by-Shaz%20Vision-gold?style=for-the-badge)
+![Designed by](https://img.shields.io/badge/Crafted%20by-Shaz%20Agency-gold?style=for-the-badge)
 
 <p align="center">
   <strong>An architectural, high-conversion commercial Shopify Online Store 2.0 theme inspired by luxury industrial design, titanium metallurgy, and modern spatial computing aesthetics.</strong>

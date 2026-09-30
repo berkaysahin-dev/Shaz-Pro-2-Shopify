@@ -3,7 +3,7 @@
   assign main_menu = linklists[section.settings.menu] | default: linklists.main-menu
 -%}
 
-<header class="header-wrapper">
+<header class="header-wrapper{% if enable_transparent %} header--transparent{% endif %}">
   <div class="container">
     <div class="header-main">
       <!-- Mobile Hamburger Button -->
@@ -25,7 +25,7 @@
               height="auto"
             >
           {%- else -%}
-            <span class="header__logo-text">{{ shop.name | default: 'ATELIER' }}</span>
+            <span class="header__logo-text">{{ shop.name | default: 'SHAZ AGENCY' }}</span>
           {%- endif -%}
         </a>
       </div>
@@ -64,7 +64,7 @@
                         {%- if block.settings.menu_handle == link.handle -%}
                           <div class="mega-menu__featured-card">
                             {%- if block.settings.image != blank -%}
-                              <img src="{{ block.settings.image | image_url: width: 500 }}" alt="{{ block.settings.title | escape }}" class="mega-menu__featured-img" loading="lazy">
+                              <img src="{{ block.settings.image | image_url: width: 500 }}" alt="{{ block.settings.title | escape }}" class="mega-menu__featured-img" loading="lazy" width="500" height="300">
                             {%- endif -%}
                             <div class="mega-menu__featured-overlay"></div>
                             <div class="mega-menu__featured-content">
@@ -202,7 +202,7 @@
           "type": "text",
           "id": "title",
           "label": "Kart Başlığı",
-          "default": "Shaz Pro Lansman Serisi"
+          "default": "Shaz Agency Lansman Serisi"
         },
         {
           "type": "text",

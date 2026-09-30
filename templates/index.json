@@ -21,7 +21,7 @@
       "blocks": {
         "item_1": {
           "type": "marquee_item",
-          "settings": { "text": "SHAZ PRO — FORM / FONKSİYON / GELECEK" }
+          "settings": { "text": "SHAZ AGENCY — FORM / FONKSİYON / GELECEK" }
         },
         "item_2": {
           "type": "marquee_item",
@@ -220,7 +220,7 @@
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "badge": "Shaz Pro VIP Kulübü",
+        "badge": "Shaz Agency VIP Kulübü",
         "title": "Ayrıcalıklı Bültene Katılın",
         "subtitle": "Özel lansman davetiyeleri, sınırlı üretim duyuruları ve teknik tasarım perspektifleri için kaydolun.",
         "bg_color": "#F8F9FA"

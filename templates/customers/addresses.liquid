@@ -55,7 +55,7 @@
           <p>{{ address.country }}</p>
 
           <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); display: flex; gap: 1rem;">
-            <form method="post" action="/account/addresses/{{ address.id }}">
+            <form method="post" action="{{ routes.account_addresses_url }}/{{ address.id }}">
               <input type="hidden" name="_method" value="delete">
               <button type="submit" style="font-size: 12px; color: var(--color-sale); cursor: pointer; text-decoration: underline;">Sil</button>
             </form>

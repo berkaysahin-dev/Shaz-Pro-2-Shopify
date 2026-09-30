@@ -4,7 +4,7 @@
       <!-- Media View -->
       <div class="showcase-media" data-reveal="fade-up">
         {%- if section.settings.image != blank -%}
-          <img src="{{ section.settings.image | image_url: width: 1400 }}" alt="{{ section.settings.heading | escape }}" loading="lazy">
+          <img src="{{ section.settings.image | image_url: width: 1400 }}" alt="{{ section.settings.heading | escape }}" loading="lazy" width="1400" height="1050">
         {%- else -%}
           <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #11141A 0%, #1A1F2B 100%); display: flex; align-items: center; justify-content: center; color: #475569; padding: 3rem; border-radius: var(--border-radius-lg);">
             {{ 'product-1' | placeholder_svg_tag }}

@@ -1,5 +1,5 @@
 /**
- * VISION SH — INTERACTIVE CUSTOM CURSOR
+ * SHAZ AGENCY — INTERACTIVE CUSTOM CURSOR
  * Desktop Only, Context-Aware, Magnetic Feedback
  */
 

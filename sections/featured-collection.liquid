@@ -1,7 +1,6 @@
 {%- liquid
   assign featured_collection = collections[section.settings.collection]
   assign products_to_show = section.settings.products_to_show | default: 4
-  assign columns_desktop = section.settings.columns_desktop | default: 4
 -%}
 
 <section class="section-spacing" style="background-color: {{ section.settings.bg_color }};">
@@ -34,11 +33,11 @@
         {%- for img in sample_images limit: products_to_show -%}
           <div class="product-card" data-reveal="fade-up" class="delay-{{ forloop.index }}">
             <div class="product-card__media-wrapper ratio--portrait">
-              <img src="{{ img }}" alt="Vision SH Edition Item {{ forloop.index }}" class="product-card__image" loading="lazy" width="600" height="800">
+              <img src="{{ img }}" alt="Shaz Agency Ürünü {{ forloop.index }}" class="product-card__image" loading="lazy" width="600" height="800">
             </div>
             <div class="product-card__info">
-              <span class="product-card__vendor">Vision SH Studio</span>
-              <h3 class="product-card__title"><a href="/collections/all">Titanium Spatial Pedestal 0{{ forloop.index }}</a></h3>
+              <span class="product-card__vendor">Shaz Agency</span>
+              <h3 class="product-card__title"><a href="{{ routes.all_products_collection_url }}">Titanyum Mekânsal Stand 0{{ forloop.index }}</a></h3>
               <div class="product-card__price">$240.00</div>
             </div>
           </div>

@@ -16,7 +16,7 @@
     <div class="before-after-slider" data-before-after data-reveal="fade-up">
       <!-- Before Image (CNC Raw) -->
       {%- if section.settings.image_before != blank -%}
-        <img src="{{ section.settings.image_before | image_url: width: 1600 }}" alt="Ham CNC İşleme" class="before-after-slider__img before-after-slider__img--before" loading="lazy">
+        <img src="{{ section.settings.image_before | image_url: width: 1600 }}" alt="Ham CNC İşleme" class="before-after-slider__img before-after-slider__img--before" loading="lazy" width="1600" height="900">
       {%- else -%}
         <div class="before-after-slider__img before-after-slider__img--before" style="background: linear-gradient(135deg, #181B22 0%, #2A303C 100%); display: flex; align-items: center; justify-content: center; color: #94A3B8;">
           <div style="text-align: center;">
@@ -29,7 +29,7 @@
       <!-- After Image (Satin Hand Buffed) -->
       <div class="before-after-slider__img--after-wrap">
         {%- if section.settings.image_after != blank -%}
-          <img src="{{ section.settings.image_after | image_url: width: 1600 }}" alt="Saten El Polisajı" class="before-after-slider__img" loading="lazy">
+          <img src="{{ section.settings.image_after | image_url: width: 1600 }}" alt="Saten El Polisajı" class="before-after-slider__img" loading="lazy" width="1600" height="900">
         {%- else -%}
           <div class="before-after-slider__img" style="background: linear-gradient(135deg, #0A0C10 0%, #151821 100%); display: flex; align-items: center; justify-content: center; color: #FFFFFF;">
             <div style="text-align: center;">
@@ -50,7 +50,7 @@
 
 {% schema %}
 {
-  "name": "Öncesi / Sonrası Karşılaştırma",
+  "name": "Öncesi / Sonrası",
   "settings": [
     {
       "type": "text",
@@ -89,7 +89,7 @@
   ],
   "presets": [
     {
-      "name": "Öncesi / Sonrası Karşılaştırma"
+      "name": "Öncesi / Sonrası"
     }
   ]
 }

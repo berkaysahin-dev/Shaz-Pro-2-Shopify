@@ -1,5 +1,5 @@
 {%- comment -%}
-  VISION PRO 2 — ULTRA-PREMIUM PRODUCT CARD
+  SHAZ AGENCY PRO 2 — ULTRA-PREMIUM PRODUCT CARD
   Supports secondary hover image, color swatches, quick add, quick view, wishlist
 {%- endcomment -%}
 
@@ -77,7 +77,7 @@
     <div class="product-card__quick-actions">
       {%- if show_quick_add and card_product.available -%}
         {%- if card_product.has_only_default_variant -%}
-          <form action="/cart/add" method="post" enctype="multipart/form-data" style="flex: 1;">
+          <form action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" style="flex: 1;">
             <input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id }}">
             <button type="submit" class="product-card__quick-btn btn-full">
               {{ 'products.product.quick_add' | t | default: 'Hızlı Ekle' }}
@@ -105,7 +105,7 @@
     {%- endif -%}
 
     <h3 class="product-card__title">
-      <a href="{{ card_product.url | default: '#' }}">{{ card_product.title | default: 'Shaz Pro Ürünü' }}</a>
+      <a href="{{ card_product.url | default: '#' }}">{{ card_product.title | default: 'Shaz Agency Ürünü' }}</a>
     </h3>
 
     {%- if show_rating -%}

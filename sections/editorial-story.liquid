@@ -16,7 +16,7 @@
         {%- endif -%}
 
         <div style="color: var(--color-text-muted); font-size: 1.0625rem; line-height: 1.8;">
-          <p>{{ section.settings.body_text | default: 'Shaz Pro, dijital donanımların modern ve rafine fiziksel ortamlarla tam bir estetik uyum içinde var olması gerektiği inancıyla geliştirildi.' }}</p>
+          <p>{{ section.settings.body_text | default: 'Shaz Agency, dijital donanımların modern ve rafine fiziksel ortamlarla tam bir estetik uyum içinde var olması gerektiği inancıyla geliştirildi.' }}</p>
         </div>
 
         {%- if section.settings.cta_text != blank -%}
@@ -32,7 +32,7 @@
       <div class="story-images" data-reveal="fade-up">
         <div class="story-img-main">
           {%- if section.settings.image_main != blank -%}
-            <img src="{{ section.settings.image_main | image_url: width: 900 }}" alt="{{ section.settings.title | escape }}" loading="lazy">
+            <img src="{{ section.settings.image_main | image_url: width: 900 }}" alt="{{ section.settings.title | escape }}" loading="lazy" width="900" height="1125">
           {%- else -%}
             <div style="width: 100%; aspect-ratio: 4/5; background: #16181F; display: flex; align-items: center; justify-content: center; color: #475569; border-radius: var(--border-radius-lg);">
               {{ 'lifestyle-1' | placeholder_svg_tag }}
@@ -42,7 +42,7 @@
 
         <div class="story-img-secondary">
           {%- if section.settings.image_secondary != blank -%}
-            <img src="{{ section.settings.image_secondary | image_url: width: 600 }}" alt="{{ section.settings.title | escape }}" loading="lazy">
+            <img src="{{ section.settings.image_secondary | image_url: width: 600 }}" alt="{{ section.settings.title | escape }}" loading="lazy" width="600" height="600">
           {%- else -%}
             <div style="width: 100%; aspect-ratio: 1/1; background: #1E222D; display: flex; align-items: center; justify-content: center; color: #64748B; border-radius: var(--border-radius);">
               {{ 'lifestyle-2' | placeholder_svg_tag }}
@@ -80,7 +80,7 @@
       "type": "textarea",
       "id": "body_text",
       "label": "Açıklama Metni",
-      "default": "Shaz Pro, dijital donanımların modern ve rafine fiziksel ortamlarla tam bir estetik uyum içinde var olması gerektiği inancıyla geliştirildi."
+      "default": "Shaz Agency, dijital donanımların modern ve rafine fiziksel ortamlarla tam bir estetik uyum içinde var olması gerektiği inancıyla geliştirildi."
     },
     {
       "type": "text",

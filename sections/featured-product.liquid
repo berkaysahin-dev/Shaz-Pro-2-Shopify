@@ -72,10 +72,10 @@
       <!-- Product Information & Purchase Form (Right Side) -->
       <div class="product-info" data-reveal="fade-up">
         <div>
-          <div class="product-info__vendor">{{ product.vendor | default: shop.name | default: 'SHAZ PRO' }}</div>
+          <div class="product-info__vendor">{{ product.vendor | default: shop.name | default: 'SHAZ AGENCY' }}</div>
           <h2 class="product-info__title" style="font-size: clamp(1.75rem, 1.5rem + 1.2vw, 2.5rem);">
             <a href="{{ product.url | default: '#' }}" style="color: inherit;">
-              {{ product.title | default: 'Shaz Pro Spatial Titanyum Stand' }}
+              {{ product.title | default: 'Shaz Agency Titanyum Stand' }}
             </a>
           </h2>
         </div>
@@ -213,13 +213,13 @@
 
             <!-- Direct Full Page Link -->
             <div style="margin-top: 1rem; text-align: center;">
-              <a href="{{ product.url | default: '/collections/all' }}" style="font-size: 13px; color: var(--color-text-muted); text-decoration: underline; text-underline-offset: 4px;">
+              <a href="{{ product.url | default: routes.all_products_collection_url }}" style="font-size: 13px; color: var(--color-text-muted); text-decoration: underline; text-underline-offset: 4px;">
                 Tüm Teknik Özellikleri &amp; Detayları İncele →
               </a>
             </div>
           {% endform %}
         {%- else -%}
-          <form action="/cart/add" method="post" id="FeaturedProductForm" class="product-form">
+          <form action="{{ routes.cart_add_url }}" method="post" id="FeaturedProductForm" class="product-form">
             <div class="product-actions-row">
               <button
                 type="submit"
@@ -230,7 +230,7 @@
               </button>
             </div>
             <div style="margin-top: 1rem; text-align: center;">
-              <a href="/collections/all" style="font-size: 13px; color: var(--color-text-muted); text-decoration: underline; text-underline-offset: 4px;">
+              <a href="{{ routes.all_products_collection_url }}" style="font-size: 13px; color: var(--color-text-muted); text-decoration: underline; text-underline-offset: 4px;">
                 Tüm Koleksiyonu İncele →
               </a>
             </div>

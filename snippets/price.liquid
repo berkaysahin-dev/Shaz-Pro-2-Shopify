@@ -7,7 +7,6 @@
   assign target = product_resource | default: product
   assign price = target.price | default: 19900
   assign compare_at_price = target.compare_at_price
-  assign available = target.available | default: true
   assign on_sale = false
 
   if compare_at_price > price

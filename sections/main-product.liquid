@@ -58,8 +58,8 @@
       <div class="product-info">
         <!-- Vendor & Title -->
         <div>
-          <div class="product-info__vendor">{{ product.vendor | default: shop.name | default: 'SHAZ PRO' }}</div>
-          <h1 class="product-info__title">{{ product.title | default: 'Shaz Pro Spatial Titanium Stand' }}</h1>
+          <div class="product-info__vendor">{{ product.vendor | default: shop.name | default: 'SHAZ AGENCY' }}</div>
+          <h1 class="product-info__title">{{ product.title | default: 'Shaz Agency Titanyum Stand' }}</h1>
         </div>
 
         <!-- Rating & Social Proof -->
@@ -283,10 +283,10 @@
       <div class="container sticky-atc-bar__container">
         <div class="sticky-atc-bar__product">
           {%- if product.featured_media -%}
-            <img src="{{ product.featured_media | image_url: width: 90 }}" alt="{{ product.title }}" class="sticky-atc-bar__thumb" loading="lazy">
+            <img src="{{ product.featured_media | image_url: width: 90 }}" alt="{{ product.title }}" class="sticky-atc-bar__thumb" loading="lazy" width="90" height="90">
           {%- endif -%}
           <div>
-            <div class="sticky-atc-bar__title">{{ product.title | default: 'Shaz Pro Spatial Titanyum Stand' }}</div>
+            <div class="sticky-atc-bar__title">{{ product.title | default: 'Shaz Agency Titanyum Stand' }}</div>
             <div class="sticky-atc-bar__price text-muted">{{ current_variant.price | default: 24000 | money }}</div>
           </div>
         </div>
@@ -325,7 +325,7 @@
       "type": "text",
       "id": "vendor_fallback",
       "label": "Marka İsmi (Boşsa)",
-      "default": "SHAZ PRO"
+      "default": "SHAZ AGENCY"
     },
     {
       "type": "checkbox",

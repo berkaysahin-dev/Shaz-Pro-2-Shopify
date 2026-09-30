@@ -1,5 +1,5 @@
 /**
- * VISION SH — MASTER MOTION & SCROLL REVEAL ENGINE
+ * SHAZ AGENCY — MASTER MOTION & SCROLL REVEAL ENGINE
  * High-Performance Hardware-Accelerated Animation Orchestrator (60fps)
  */
 

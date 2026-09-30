@@ -1,5 +1,5 @@
 /**
- * VISION SH — AJAX CART DRAWER ENGINE
+ * SHAZ AGENCY — AJAX CART DRAWER ENGINE
  * Fly-to-Bag Animation, Free Shipping Threshold Meter & In-Drawer Upsells
  */
 

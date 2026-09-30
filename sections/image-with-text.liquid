@@ -11,7 +11,7 @@
       <!-- Media -->
       <div style="direction: ltr; border-radius: var(--border-radius-lg); overflow: hidden; background: var(--color-surface); aspect-ratio: 4/3;">
         {%- if section.settings.image != blank -%}
-          <img src="{{ section.settings.image | image_url: width: 1200 }}" alt="{{ section.settings.heading | escape }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="{{ section.settings.image | image_url: width: 1200 }}" alt="{{ section.settings.heading | escape }}" loading="lazy" width="1200" height="900" style="width: 100%; height: 100%; object-fit: cover;">
         {%- else -%}
           <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
             {{ 'lifestyle-1' | placeholder_svg_tag }}

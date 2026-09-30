@@ -33,7 +33,7 @@
           <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
             {{ 'general.search.no_results' | t: terms: search.terms }}
           </p>
-          <a href="/collections/all" class="btn btn-secondary btn-sm">Tüm Ürünleri Keşfet</a>
+          <a href="{{ routes.all_products_collection_url }}" class="btn btn-secondary btn-sm">Tüm Ürünleri Keşfet</a>
         </div>
       {%- else -%}
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(clamp(230px, 20vw, 300px), 1fr)); gap: clamp(1rem, 2.5vw, 2.5rem);">

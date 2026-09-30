@@ -7,7 +7,7 @@
 
     {%- if article.image -%}
       <div style="border-radius: var(--border-radius-lg); overflow: hidden; aspect-ratio: 16/9; margin-bottom: var(--space-xl);">
-        <img src="{{ article.image | image_url: width: 1400 }}" alt="{{ article.title | escape }}" loading="eager" style="width: 100%; height: 100%; object-fit: cover;">
+        <img src="{{ article.image | image_url: width: 1400 }}" alt="{{ article.title | escape }}" loading="eager" width="1400" height="788" style="width: 100%; height: 100%; object-fit: cover;">
       </div>
     {%- endif -%}
 

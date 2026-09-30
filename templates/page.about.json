@@ -43,8 +43,8 @@
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "badge": "Shaz Pro Bülten",
-        "title": "Shaz Pro Topluluğuna Katılın",
+        "badge": "Shaz Agency Bülten",
+        "title": "Shaz Agency Topluluğuna Katılın",
         "subtitle": "Özel davetiyeler, mevsimlik ön izleme katalogları ve editoryal tasarım perspektifleri alın.",
         "bg_color": "#FFFFFF"
       }

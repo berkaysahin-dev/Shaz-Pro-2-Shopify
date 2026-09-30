@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Vision Pro 2",
-    "theme_version": "2.0.0",
-    "theme_author": "Vision SH Studio",
-    "theme_documentation_url": "https://visionsh.dev/docs",
-    "theme_support_url": "https://visionsh.dev/support"
+    "theme_name": "Shaz Agency Pro 2",
+    "theme_version": "2.2.0",
+    "theme_author": "Shaz Agency",
+    "theme_documentation_url": "https://shazagency.com",
+    "theme_support_url": "https://shazagency.com"
   },
   {
     "name": "Renk Paleti",
@@ -85,13 +85,13 @@
         "type": "font_picker",
         "id": "font_heading",
         "label": "Başlık Fontu",
-        "default": "helvetica_n4"
+        "default": "assistant_n4"
       },
       {
         "type": "font_picker",
         "id": "font_body",
         "label": "Gövde Fontu",
-        "default": "helvetica_n4"
+        "default": "assistant_n4"
       },
       {
         "type": "range",

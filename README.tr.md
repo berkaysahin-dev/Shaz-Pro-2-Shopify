@@ -16,7 +16,7 @@
   <strong>Lüks endüstriyel tasarımdan, titanyum metalurjisinden ve modern mekansal bilişim (spatial computing) estetiğinden ilham alan, mimari ve yüksek dönüşüm odaklı ticari Shopify Online Store 2.0 teması.</strong>
 </p>
 
-[Canlı Demo Mağaza](https://vision-sh.myshopify.com) &bull; [Shaz Vision](https://shazvision.com) &bull; [Tema ZIP Dosyasını İndir](Vision-Pro-2-Theme.zip)
+[Canlı Demo Mağaza](https://vision-sh.myshopify.com) &bull; [Shaz Agency](https://shazagency.com) &bull; [Tema ZIP Dosyasını İndir](Vision-Pro-2-Theme.zip)
 
 </div>
 
@@ -55,7 +55,7 @@ Vision Pro 2, sıradan ve karmaşık e-ticaret şablonlarından ayrılmak üzere
 | **Basın ve Marka Logoları** | Minimalist yayıncı ve basın logosu satırı (Wallpaper*, Monocle, Wired, Architectural Digest) | İsteğe bağlı SVG/PNG logoları içeren sınırsız basın blokları |
 | **SSS Akordeonu** | Yerel açılır/kapanır soru ve cevap akordeonları | Tekli veya çoklu açılma modları, zengin metin yanıtları |
 | **Bülten Aboneliği** | Gizlilik uyarılarına sahip yüksek dönüşümlü e-posta yakalama alanı | Başlık, alt başlık, rozet, arka plan renkleri |
-| **Alt Bilgi ve Wordmark** | Ortalanmış büyük marka wordmark'ı ve Shaz Vision imzası içeren editoryal alt bilgi | Özelleştirilebilir ortalanmış wordmark, marka biyografisi, çok sütunlu gezinme, bülten |
+| **Alt Bilgi ve Wordmark** | Ortalanmış büyük marka wordmark'ı ve Shaz Agency imzası içeren editoryal alt bilgi | Özelleştirilebilir ortalanmış wordmark, marka biyografisi, çok sütunlu gezinme, bülten |
 
 ---
 
@@ -97,7 +97,7 @@ shopify theme dev --store magazaniz.myshopify.com
 
 ## Emeği Geçenler ve İmza
 
-Tasarım ve Mühendislik: **[Shaz Vision](https://shazvision.com)**.
+Tasarım ve Mühendislik: **[Shaz Agency](https://shazagency.com)**.
 
 ---
 

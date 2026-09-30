@@ -1,20 +1,20 @@
 {%- liquid
   if section.settings.flip_horizontal
-    assign scaleX = 'scaleX(-1)'
+    assign scale_x = 'scaleX(-1)'
   else
-    assign scaleX = 'scaleX(1)'
+    assign scale_x = 'scaleX(1)'
   endif
 
   if section.settings.flip_vertical
-    assign scaleY = 'scaleY(-1)'
+    assign scale_y = 'scaleY(-1)'
   else
-    assign scaleY = 'scaleY(1)'
+    assign scale_y = 'scaleY(1)'
   endif
 -%}
 
 {% style %}
   .section-divider-{{ section.id }} {
-    transform: {{ scaleX }} {{ scaleY }};
+    transform: {{ scale_x }} {{ scale_y }};
     background-color: {{ section.settings.bg_color | default: 'transparent' }};
     overflow: hidden;
     line-height: 0;
@@ -206,7 +206,7 @@
   ],
   "presets": [
     {
-      "name": "Bölüm Ayırıcı (Animated Divider)",
+      "name": "Bölüm Ayırıcı",
       "settings": {
         "shape": "waves_3",
         "fill_color": "#07080A",

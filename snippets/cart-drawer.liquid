@@ -47,7 +47,7 @@
     {% render 'icon', icon: 'cart' %}
     <h3>{{ 'cart.empty' | t | default: 'Alışveriş sepetiniz boş' }}</h3>
     <p class="text-muted" style="font-size: 14px;">Yeni sezon ürünlerimizi ve tasarım ürünlerini keşfedin.</p>
-    <a href="/collections/all" class="btn btn-primary btn-sm" style="margin-top: 0.5rem;">
+    <a href="{{ routes.all_products_collection_url }}" class="btn btn-primary btn-sm" style="margin-top: 0.5rem;">
       {{ 'cart.empty_cta' | t | default: 'Yeni Ürünleri Keşfet' }}
     </a>
   </div>

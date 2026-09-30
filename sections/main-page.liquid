@@ -1,7 +1,7 @@
 <section class="section-spacing">
   <div class="container-narrow">
     <div style="margin-bottom: var(--space-lg); text-align: center;" data-reveal="fade-up">
-      <h1 class="display-title">{{ page.title | default: 'About Vision SH' }}</h1>
+      <h1 class="display-title">{{ page.title | default: 'Hakkımızda' }}</h1>
     </div>
 
     {%- if page.content != blank -%}
@@ -23,7 +23,7 @@
           <p style="font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem); line-height: 1.5; font-style: italic; color: var(--color-text); margin: 1.5rem auto; max-width: 720px;">
             "Dijital bilgi işlemeyi dokunsal, heykelsi bir ritüele dönüştüren, yüzeysel gürültüyü ortadan kaldıran mekânsal nesneler tasarlıyoruz."
           </p>
-          <span style="font-size: 13px; color: var(--color-text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">Shaz Pro Stüdyo</span>
+          <span style="font-size: 13px; color: var(--color-text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">Shaz Agency Stüdyo</span>
         </div>
 
         <!-- Editorial Split -->
@@ -35,7 +35,7 @@
             <span class="section-subtitle">Tasarım Mirası</span>
             <h2 class="h2">Mimarlık ve Metalürjinin Kesişiminde Doğdu</h2>
             <p style="color: var(--color-text-muted); font-size: 1.0625rem; line-height: 1.8;">
-              Saf malzemelere ve mikro toleranslara adanmış bir taahhütle kurulan Shaz Pro, mekânsal bilgisayar donanımlarını klasik heykel sanatının saygınlığıyla ele alan aksesuarlar ve ayaklar tasarlar.
+              Saf malzemelere ve mikro toleranslara adanmış bir taahhütle kurulan Shaz Agency, mekânsal bilgisayar donanımlarını klasik heykel sanatının saygınlığıyla ele alan aksesuarlar ve ayaklar tasarlar.
             </p>
             <p style="color: var(--color-text-muted); font-size: 1.0625rem; line-height: 1.8;">
               Her kavis, pah ve manyetik bağlantı noktası yekpare 5. Seviye titanyum bloktan işlenir, sınırlı sayıda numaralı edisyonlar halinde el işçiliğiyle cilalanır.
@@ -70,11 +70,11 @@
 
         <!-- CTA Box -->
         <div style="background: #0B0C10; color: #FFFFFF; padding: clamp(2.5rem, 5vw, 4.5rem); border-radius: var(--border-radius-lg); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;" data-reveal="fade-up">
-          <h2 class="h2" style="color: #FFFFFF;">Shaz Pro Koleksiyonunu Keşfedin</h2>
+          <h2 class="h2" style="color: #FFFFFF;">Shaz Agency Koleksiyonunu Keşfedin</h2>
           <p style="color: #94A3B8; font-size: 1.0625rem; max-width: 560px; line-height: 1.7;">
             Hassas ayaklar, mekânsal bilgisayar aksesuarları ve monolitik masaüstü serimizi keşfedin.
           </p>
-          <a href="/collections/all" class="btn btn-white btn-lg">
+          <a href="{{ routes.all_products_collection_url }}" class="btn btn-white btn-lg">
             Koleksiyonu Keşfet →
           </a>
         </div>

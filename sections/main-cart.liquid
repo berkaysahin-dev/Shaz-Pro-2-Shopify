@@ -9,18 +9,18 @@
         <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
           {{ 'cart.empty' | t | default: 'Alışveriş sepetiniz şu anda boş.' }}
         </p>
-        <a href="/collections/all" class="btn btn-primary">
+        <a href="{{ routes.all_products_collection_url }}" class="btn btn-primary">
           {{ 'cart.empty_cta' | t | default: 'Yeni Ürünleri Keşfet' }}
         </a>
       </div>
     {%- else -%}
-      <form action="/cart" method="post" id="cart">
+      <form action="{{ routes.cart_url }}" method="post" id="cart">
         <div style="display: flex; flex-direction: column; gap: 1.5rem; border-top: 1px solid var(--color-border); padding-top: 1.5rem;">
           {%- for item in cart.items -%}
             <div style="display: flex; gap: 1.5rem; align-items: center; border-bottom: 1px solid var(--color-border); padding-bottom: 1.5rem;">
               <div style="width: 100px; height: 120px; border-radius: var(--border-radius-sm); overflow: hidden; background: var(--color-surface); flex-shrink: 0;">
                 {%- if item.image -%}
-                  <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title | escape }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                  <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title | escape }}" width="200" height="240" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                 {%- endif -%}
               </div>
               <div style="flex-grow: 1;">
@@ -41,7 +41,7 @@
                   class="form-input"
                   style="width: 60px; text-align: center; height: 40px;"
                 >
-                <a href="/cart/change?line={{ forloop.index }}&quantity=0" style="font-size: 13px; color: var(--color-text-muted); text-decoration: underline;">Kaldır</a>
+                <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0" style="font-size: 13px; color: var(--color-text-muted); text-decoration: underline;">Kaldır</a>
               </div>
             </div>
           {%- endfor -%}
