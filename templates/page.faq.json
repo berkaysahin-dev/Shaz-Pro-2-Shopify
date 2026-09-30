@@ -2,6 +2,42 @@
   "sections": {
     "faq": {
       "type": "faq-accordion",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Siparişler ne kadar sürede kargoya verilir?",
+            "answer": "Hafta içi saat 16:00'a kadar oluşturulan tüm siparişler aynı gün VIP Express Kargo ile yola çıkar. Kargonuz 1-3 iş günü içerisinde adresinize teslim edilir."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
+            "answer": "Tüm kredi ve banka kartları (Visa, MasterCard, Troy), 256-bit SSL şifreleme ve 3D Secure güvencesiyle tek çekim ve taksitli olarak desteklenmektedir."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "İade ve değişim şartlarınız nelerdir?",
+            "answer": "Siparişinizi teslim aldıktan sonraki 30 gün içinde, orijinal ambalajında ve eksiksiz kutusuyla ücretsiz iade edebilir veya değiştirebilirsiniz."
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Ürünler garanti kapsamında mıdır?",
+            "answer": "Tüm Shaz Agency donanım ve aksesuarları 2 yıl resmi garanti ve ömür boyu yapısal gövde dayanıklılık taahhüdü altındadır."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
       "settings": {
         "subtitle": "Bilgi Merkezi",
         "title": "Sıkça Sorulan Sorular",

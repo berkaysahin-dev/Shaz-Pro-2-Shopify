@@ -13,7 +13,7 @@
     </div>
 
     <!-- Feature Grid with Clean SVG Icons -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem;" data-reveal="fade-up">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.5rem; margin-top: 3rem;" data-reveal="fade-up">
       {%- for block in section.blocks -%}
         <div style="background: {{ section.settings.card_bg_color | default: 'var(--color-surface)' }}; padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--color-border); display: flex; flex-direction: column; gap: 1rem; transition: transform var(--transition-fast), border-color var(--transition-fast);" {{ block.shopify_attributes }}>
           <div style="width: 44px; height: 44px; border-radius: var(--border-radius-sm); background: #0F1115; color: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -37,7 +37,7 @@
         <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; text-align: left;">
           {{ section.settings.table_title | default: 'Teknik Özellikler Tablosu' }}
         </h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1.25rem;">
           <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem;">
             <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); font-weight: 600;">Gövde Malzemesi</div>
             <div style="font-size: 14px; font-weight: 600; color: var(--color-text); margin-top: 0.25rem;">Havacılık Sınıfı Grade 5 Ti-6Al-4V Titanyum</div>

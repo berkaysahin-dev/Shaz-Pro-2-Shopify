@@ -27,7 +27,7 @@
             <div style="font-size: 12px; color: var(--color-text-muted); margin-bottom: 0.5rem;">
               {{ hotspot_product.price | money | default: '2.400 ₺' }}
             </div>
-            <a href="{{ hotspot_product.url | default: '/collections/all' }}" class="btn btn-primary btn-sm btn-full" style="padding: 0.35rem 0.5rem; font-size: 11px;">
+            <a href="{{ hotspot_product.url | default: routes.all_products_collection_url }}" class="btn btn-primary btn-sm btn-full" style="padding: 0.35rem 0.5rem; font-size: 11px;">
               Detayı İncele →
             </a>
           </div>
@@ -39,7 +39,7 @@
 
 {% schema %}
 {
-  "name": "İnteraktif Ürün Noktaları",
+  "name": "İnteraktif Noktalar",
   "settings": [
     {
       "type": "image_picker",

@@ -8,17 +8,56 @@
     </div>
 
     <div class="faq-container" data-accordion-type="single">
-      {%- for block in section.blocks -%}
-        <div class="faq-item {% if forloop.first %}is-open{% endif %}" {{ block.shopify_attributes }}>
-          <button type="button" class="faq-header" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
-            <span>{{ block.settings.question }}</span>
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          <div class="faq-item {% if forloop.first %}is-open{% endif %}" {{ block.shopify_attributes }}>
+            <button type="button" class="faq-header" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+              <span>{{ block.settings.question }}</span>
+              <span class="faq-icon">{% render 'icon', icon: 'chevron-down' %}</span>
+            </button>
+            <div class="faq-content">
+              <p>{{ block.settings.answer }}</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        <div class="faq-item is-open">
+          <button type="button" class="faq-header" aria-expanded="true">
+            <span>Hangi cihazlar ve modeller ile uyumludur?</span>
             <span class="faq-icon">{% render 'icon', icon: 'chevron-down' %}</span>
           </button>
           <div class="faq-content">
-            <p>{{ block.settings.answer }}</p>
+            <p>Apple Vision Pro ve tüm standart mekânsal bilgi işlem başlıkları ile %100 uyumludur. Hassas ayarlanabilir manyetik ve akustik temas noktaları sayesinde cihazınızı güvenle sabitler.</p>
           </div>
         </div>
-      {%- endfor -%}
+        <div class="faq-item">
+          <button type="button" class="faq-header" aria-expanded="false">
+            <span>Titanyum parçalar hangi kalitede üretiliyor?</span>
+            <span class="faq-icon">{% render 'icon', icon: 'chevron-down' %}</span>
+          </button>
+          <div class="faq-content">
+            <p>Tüm gövde, olağanüstü dayanıklılık ve korozyon direnciyle bilinen havacılık sınıfı Grade 5 Ti-6Al-4V titanyumdan 0.02mm CNC hassasiyetiyle üretilmektedir.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-header" aria-expanded="false">
+            <span>Kargo ve teslimat süreci nasıl işliyor?</span>
+            <span class="faq-icon">{% render 'icon', icon: 'chevron-down' %}</span>
+          </button>
+          <div class="faq-content">
+            <p>Siparişleriniz aynı gün VIP Express kargo ile özenle paketlenip yola çıkarılır. 1-3 iş günü içinde kapınıza teslim edilir.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-header" aria-expanded="false">
+            <span>İade, değişim ve garanti şartlarınız nedir?</span>
+            <span class="faq-icon">{% render 'icon', icon: 'chevron-down' %}</span>
+          </button>
+          <div class="faq-content">
+            <p>30 gün koşulsuz iade ve deneme garantisi sunuyoruz. Ayrıca tüm ürünlerimiz 2 yıl resmi garanti ve ömür boyu gövde dayanıklılık güvencesine sahiptir.</p>
+          </div>
+        </div>
+      {%- endif -%}
     </div>
   </div>
 </section>

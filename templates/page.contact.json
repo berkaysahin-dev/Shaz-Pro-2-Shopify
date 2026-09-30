@@ -6,6 +6,34 @@
     },
     "faq": {
       "type": "faq-accordion",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Müşteri desteğine nasıl ulaşabilirim?",
+            "answer": "Yukarıdaki formu doldurarak veya doğrudan support@shazagency.com adresine yazarak 7/24 destek ekibimize ulaşabilirsiniz. Ortalama yanıt süremiz 2 saattir."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Siparişim ne zaman kargolanır?",
+            "answer": "Saat 16:00'a kadar verilen tüm siparişler aynı gün VIP Express kargoya teslim edilir. Takip numarası SMS ve e-posta ile iletilir."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Hasarlı veya eksik teslimat durumunda ne yapmalıyım?",
+            "answer": "Teslimat esnasında hasarlı paketleri kargo görevlisine tutanak tutturarak teslim almayabilir veya doğrudan bizimle iletişime geçerek anında birebir değişim talep edebilirsiniz."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
       "settings": {
         "subtitle": "Doğrudan Cevaplar",
         "title": "Destek & Kargo SSS",

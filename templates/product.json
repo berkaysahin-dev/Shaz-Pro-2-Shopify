@@ -172,6 +172,42 @@
     },
     "faq": {
       "type": "faq-accordion",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Hangi cihazlar ve modeller ile uyumludur?",
+            "answer": "Apple Vision Pro ve tüm standart mekânsal bilgi işlem başlıkları ile %100 uyumludur. Hassas ayarlanabilir manyetik ve akustik temas noktaları sayesinde cihazınızı güvenle sabitler."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Titanyum parçalar hangi kalitede üretiliyor?",
+            "answer": "Tüm gövde, olağanüstü dayanıklılık ve korozyon direnciyle bilinen havacılık sınıfı Grade 5 Ti-6Al-4V titanyumdan 0.02mm CNC hassasiyetiyle üretilmektedir."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Kargo ve teslimat süreci nasıl işliyor?",
+            "answer": "Siparişleriniz aynı gün VIP Express kargo ile özenle paketlenip yola çıkarılır. 1-3 iş günü içinde kapınıza teslim edilir."
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "İade, değişim ve garanti şartlarınız nedir?",
+            "answer": "30 gün koşulsuz iade ve deneme garantisi sunuyoruz. Ayrıca tüm ürünlerimiz 2 yıl resmi garanti ve ömür boyu gövde dayanıklılık güvencesine sahiptir."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
       "settings": {
         "subtitle": "Sıkça Sorulan Sorular",
         "title": "Ürün Hakkında Merak Edilenler",

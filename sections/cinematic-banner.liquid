@@ -32,17 +32,17 @@
         </span>
       {%- endif -%}
 
-      <h2 class="display-title" style="color: {{ section.settings.heading_color | default: '#FFFFFF' }}; font-size: clamp(2.5rem, 2rem + 3vw, 4.75rem); text-align: center; width: 100%;">
+      <h2 class="display-title" style="color: {{ section.settings.heading_color | default: '#FFFFFF' }}; font-size: clamp(1.75rem, 1.4rem + 2.5vw, 4.25rem); text-align: center; width: 100%;">
         {{ section.settings.heading | default: 'Saf Materyal. Sıfır Taviz.' }}
       </h2>
 
-      <p style="color: {{ section.settings.subheading_color | default: 'rgba(255, 255, 255, 0.88)' }}; font-size: 1.125rem; line-height: 1.7; max-width: 620px; text-align: center; margin: 0 auto;">
+      <p style="color: {{ section.settings.subheading_color | default: 'rgba(255, 255, 255, 0.88)' }}; font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.125rem); line-height: 1.7; max-width: 620px; text-align: center; margin: 0 auto;">
         {{ section.settings.subheading | default: 'Her parça, ISO sertifikalı mikroskobik toleranslarla üretilerek onlarca yıllık günlük kullanımda bile formunu koruyan zamansız bir sanat eserine dönüşür.' }}
       </p>
 
       <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 0.5rem; width: 100%;">
         {%- if section.settings.cta_1_text != blank -%}
-          <a href="{{ section.settings.cta_1_url | default: '/collections/all' }}" class="btn btn-white btn-lg">
+          <a href="{{ section.settings.cta_1_url | default: routes.all_products_collection_url }}" class="btn btn-white btn-lg">
             {{ section.settings.cta_1_text }}
           </a>
         {%- endif -%}
